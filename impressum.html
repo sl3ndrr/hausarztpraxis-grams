@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Hausarztpraxis Grams</title>
+  <meta name="description" content="Impressum der Hausarztpraxis Grams in Wiesbaden-Schierstein. Facharztpraxis für Allgemeinmedizin.">
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root,
+    [data-theme="light"] {
+      --bg:           #f0f6ff;
+      --bg-2:         #ffffff;
+      --bg-3:         #e8f0fe;
+      --bg-card:      #ffffff;
+      --border:       #dbeafe;
+      --border-soft:  #e2e8f0;
+
+      --blue-900: #1e3a5f;
+      --blue-800: #1d4ed8;
+      --blue-700: #1e40af;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-400: #60a5fa;
+      --blue-300: #93c5fd;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50:  #eff6ff;
+
+      --teal:       #0d9488;
+      --teal-light: #ccfbf1;
+
+      --white:    #ffffff;
+      --gray-800: #1e293b;
+      --gray-700: #334155;
+      --gray-500: #64748b;
+      --gray-400: #94a3b8;
+      --gray-300: #cbd5e1;
+      --gray-100: #f1f5f9;
+      --gray-50:  #f8fafc;
+
+      --text:         #1e293b;
+      --text-muted:   #64748b;
+      --text-light:   #94a3b8;
+
+      --header-bg:    rgba(255,255,255,0.88);
+      --header-text:  #1e293b;
+      --header-link:  #374151;
+      --header-border:rgba(37,99,235,0.10);
+
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:  0 4px 20px rgba(37,99,235,.10);
+      --shadow-lg:  0 12px 40px rgba(37,99,235,.14);
+      --shadow-xl:  0 20px 60px rgba(37,99,235,.18);
+
+      --radius:    12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --transition:.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    [data-theme="dark"] {
+      --bg:           #0d1117;
+      --bg-2:         #161b22;
+      --bg-3:         #1a2233;
+      --bg-card:      #1e2737;
+      --border:       #2d3748;
+      --border-soft:  #253047;
+
+      --blue-900: #1e3a5f;
+      --blue-800: #1d4ed8;
+      --blue-700: #3b82f6;
+      --blue-600: #60a5fa;
+      --blue-500: #93c5fd;
+      --blue-400: #bfdbfe;
+      --blue-300: #dbeafe;
+      --blue-200: #e0effe;
+      --blue-100: #1e3a5f;
+      --blue-50:  #162032;
+
+      --teal:       #14b8a6;
+      --teal-light: #0d2d2a;
+
+      --white:    #f0f6ff;
+      --gray-800: #e2e8f0;
+      --gray-700: #cbd5e1;
+      --gray-500: #94a3b8;
+      --gray-400: #64748b;
+      --gray-300: #334155;
+      --gray-100: #1a2233;
+      --gray-50:  #161b22;
+
+      --text:         #e2e8f0;
+      --text-muted:   #94a3b8;
+      --text-light:   #64748b;
+
+      --header-bg:    rgba(13,17,23,0.92);
+      --header-text:  #e2e8f0;
+      --header-link:  #cbd5e1;
+      --header-border:rgba(93,162,255,0.12);
+
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.3);
+      --shadow-md:  0 4px 20px rgba(0,0,0,.4);
+      --shadow-lg:  0 12px 40px rgba(0,0,0,.5);
+      --shadow-xl:  0 20px 60px rgba(0,0,0,.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    a  { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul  { list-style: none; }
+    button { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--blue-500);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-3); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-400); border-radius: 3px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── BADGE & TITLES ─────────────────────────── */
+    .badge {
+      display: inline-block;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      border: 1px solid var(--blue-200);
+    }
+
+    [data-theme="dark"] .badge {
+      color: var(--blue-400);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--blue-900);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    [data-theme="dark"] .section-title { color: var(--blue-500); }
+
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue-600), var(--teal));
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ─── HEADER ─────────────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--header-border);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 2px 24px rgba(37,99,235,.12);
+    }
+
+    [data-theme="dark"] .site-header.scrolled {
+      box-shadow: 0 2px 24px rgba(0,0,0,.4);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      flex-shrink: 0;
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--blue-700);
+      letter-spacing: .01em;
+      transition: color var(--transition);
+    }
+
+    [data-theme="dark"] .logo-name { color: var(--blue-400); }
+
+    .logo-sub {
+      font-size: .65rem;
+      color: var(--text-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .main-nav ul {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .main-nav a {
+      color: var(--header-link);
+      font-size: .85rem;
+      font-weight: 500;
+      padding: 7px 12px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--blue-600);
+      background: var(--blue-50);
+    }
+
+    [data-theme="dark"] .main-nav a:hover,
+    [data-theme="dark"] .main-nav a.active {
+      color: var(--blue-400);
+      background: var(--bg-3);
+    }
+
+    .nav-item { position: relative; }
+
+    .nav-item:hover .sub-nav,
+    .nav-item:focus-within .sub-nav {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .sub-nav {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px;
+      min-width: 190px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity var(--transition), transform var(--transition);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sub-nav li a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: .84rem;
+    }
+
+    .sub-nav li a:hover {
+      background: var(--blue-50);
+      color: var(--blue-600);
+    }
+
+    [data-theme="dark"] .sub-nav li a:hover {
+      background: var(--bg-3);
+      color: var(--blue-400);
+    }
+
+    .nav-cta {
+      background: var(--blue-600) !important;
+      color: var(--white) !important;
+      padding: 8px 16px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-700) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ─── THEME TOGGLE ───────────────────────────── */
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: background var(--transition), border var(--transition), transform var(--transition);
+      flex-shrink: 0;
+    }
+
+    .theme-toggle:hover {
+      background: var(--blue-50);
+      transform: scale(1.05);
+    }
+
+    [data-theme="dark"] .theme-toggle:hover { background: var(--bg-3); }
+
+    .theme-toggle .icon-sun  { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+    /* ─── HAMBURGER ──────────────────────────────── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      background: transparent;
+      border: none;
+      transition: background var(--transition);
+    }
+
+    .hamburger:hover { background: var(--blue-50); }
+    [data-theme="dark"] .hamburger:hover { background: var(--bg-3); }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE NAV ─────────────────────────────── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--bg-2);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+    }
+
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav a {
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 11px 32px;
+      border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+      width: min(280px, calc(100vw - 48px));
+      text-align: center;
+    }
+
+    .mobile-nav a:hover {
+      background: var(--blue-50);
+      color: var(--blue-600);
+    }
+
+    [data-theme="dark"] .mobile-nav a:hover {
+      background: var(--bg-3);
+      color: var(--blue-400);
+    }
+
+    .mobile-nav .mobile-cta {
+      background: var(--blue-600);
+      color: var(--white) !important;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .mobile-nav .mobile-cta:hover {
+      background: var(--blue-700) !important;
+    }
+
+    /* ─── PAGE HERO (Impressum) ──────────────────── */
+    .page-hero {
+      padding: 130px 0 64px;
+      background:
+        linear-gradient(135deg, rgba(15,30,60,.82) 0%, rgba(30,80,140,.70) 55%, rgba(13,148,136,.55) 100%),
+        url('https://hausarztpraxis-grams.de/.cm4all/uproc.php/0/Webseitenmedien/.2023-12-27%20(2)_upscayl_3x_ultrasharp%20(1).jpg/picture-1600') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to top, var(--bg), transparent);
+      pointer-events: none;
+    }
+
+    .page-hero-blob {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96,165,250,.18) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      animation: blobFloat 9s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes blobFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50%     { transform: translate(-20px,30px) scale(1.05); }
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeUp .8s ease both;
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(10px);
+      color: #bfdbfe;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-sub {
+      color: rgba(255,255,255,.78);
+      font-size: 1rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* ─── BREADCRUMB ─────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: var(--blue-600);
+      transition: color var(--transition);
+    }
+
+    [data-theme="dark"] .breadcrumb a { color: var(--blue-400); }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .breadcrumb-sep {
+      color: var(--text-light);
+      font-size: .7rem;
+    }
+
+    .breadcrumb-current {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ─── MAIN LAYOUT ────────────────────────────── */
+    .impressum-section {
+      padding: 72px 0 88px;
+    }
+
+    .impressum-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR / TOC ──────────────────────────── */
+    .toc-sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .toc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .toc-title {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .toc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: .82rem;
+      color: var(--text-muted);
+      transition: background var(--transition), color var(--transition);
+      border-left: 2px solid transparent;
+    }
+
+    .toc-list a:hover,
+    .toc-list a.toc-active {
+      background: var(--blue-50);
+      color: var(--blue-600);
+      border-left-color: var(--blue-500);
+    }
+
+    [data-theme="dark"] .toc-list a:hover,
+    [data-theme="dark"] .toc-list a.toc-active {
+      background: var(--bg-3);
+      color: var(--blue-400);
+      border-left-color: var(--blue-500);
+    }
+
+    /* ─── IMPRESSUM CONTENT ──────────────────────── */
+    .impressum-content {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .impressum-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition);
+    }
+
+    .impressum-block:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border-soft);
+      background: linear-gradient(90deg, var(--bg-3), var(--bg-card));
+    }
+
+    [data-theme="dark"] .block-header {
+      background: linear-gradient(90deg, var(--bg-3), var(--bg-card));
+    }
+
+    .block-icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: var(--blue-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .block-icon {
+      background: var(--bg-3);
+    }
+
+    .block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--blue-900);
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .block-title { color: var(--blue-400); }
+
+    .block-body {
+      padding: 24px 28px;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .block-body p { margin-bottom: 10px; }
+    .block-body p:last-child { margin-bottom: 0; }
+
+    .block-body a {
+      color: var(--blue-600);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    [data-theme="dark"] .block-body a { color: var(--blue-400); }
+    .block-body a:hover { text-decoration: underline; }
+
+    .block-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .block-body ul li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .block-body ul li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue-400);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* ─── INFO ROW ───────────────────────────────── */
+    .info-row {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: .89rem;
+      align-items: baseline;
+    }
+
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row:first-child { padding-top: 0; }
+
+    .info-row-label {
+      min-width: 130px;
+      color: var(--text-muted);
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      flex-shrink: 0;
+    }
+
+    .info-row-value {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── HIGHLIGHT BOX ──────────────────────────── */
+    .highlight-box {
+      background: var(--blue-50);
+      border: 1px solid var(--blue-200);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: .87rem;
+      color: var(--blue-700);
+      margin-top: 14px;
+      line-height: 1.7;
+    }
+
+    [data-theme="dark"] .highlight-box {
+      background: var(--bg-3);
+      border-color: var(--border);
+      color: var(--blue-400);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    .site-footer {
+      background: var(--blue-900);
+      color: rgba(255,255,255,.7);
+      padding: 56px 0 28px;
+    }
+
+    [data-theme="dark"] .site-footer {
+      background: #080d14;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 44px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.5);
+      max-width: 340px;
+    }
+
+    .footer-col h4 {
+      font-size: .72rem;
+      font-weight: 700;
+      color: #93c5fd;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+
+    .footer-col a,
+    .footer-col span {
+      font-size: .85rem;
+      color: rgba(255,255,255,.55);
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 22px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.3);
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.45);
+      transition: color var(--transition);
+    }
+
+    .footer-bottom a:hover { color: #fff; }
+
+    .footer-bottom a.footer-active {
+      color: #93c5fd;
+    }
+
+    /* ─── FAB ────────────────────────────────────── */
+    .fab-call {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 900;
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, var(--blue-600), var(--teal));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 22px rgba(37,99,235,.5);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: fabPop .5s 1s cubic-bezier(.34,1.56,.64,1) both;
+    }
+
+    .fab-call:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37,99,235,.6);
+    }
+
+    .fab-call::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(37,99,235,.4);
+      animation: ripple 2.5s ease-out infinite;
+    }
+
+    @keyframes ripple {
+      0%   { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    @keyframes fabPop {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .fab-call svg { width: 24px; height: 24px; fill: #fff; }
+
+    /* ─── DARK MODE TOAST ────────────────────────── */
+    .dm-toast {
+      position: fixed;
+      bottom: 96px;
+      right: 28px;
+      z-index: 890;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      font-size: .8rem;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .4s, transform .4s;
+      white-space: nowrap;
+    }
+
+    .dm-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── REVEAL ─────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .08s; }
+    .reveal-delay-2 { transition-delay: .16s; }
+    .reveal-delay-3 { transition-delay: .24s; }
+    .reveal-delay-4 { transition-delay: .32s; }
+    .reveal-delay-5 { transition-delay: .40s; }
+    .reveal-delay-6 { transition-delay: .48s; }
+    .reveal-delay-7 { transition-delay: .56s; }
+    .reveal-delay-8 { transition-delay: .64s; }
+    .reveal-delay-9 { transition-delay: .72s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 960px) {
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+
+      .impressum-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc-sidebar {
+        position: static;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .info-row { flex-direction: column; gap: 3px; }
+      .info-row-label { min-width: auto; }
+
+      .block-header { padding: 18px 20px; }
+      .block-body   { padding: 18px 20px; }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .fab-call { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .dm-toast { right: 20px; bottom: 84px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ══════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/Willkommen/" class="logo" aria-label="Hausarztpraxis Grams Startseite">
+        <span class="logo-name">Hausarztpraxis Grams</span>
+        <span class="logo-sub">Allgemeinmedizin · Wiesbaden</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="/Willkommen/">Willkommen</a></li>
+          <li class="nav-item">
+            <a href="/Leistungen/" aria-haspopup="true">Leistungen</a>
+            <ul class="sub-nav" aria-label="Untermenü Leistungen">
+              <li><a href="/Leistungen/Gesundheit/">Gesundheit</a></li>
+              <li><a href="/Leistungen/Vorsorge/">Vorsorge</a></li>
+              <li><a href="/Leistungen/Sportmedizin/">Sportmedizin</a></li>
+            </ul>
+          </li>
+          <li><a href="/Arzt/">Arzt</a></li>
+          <li><a href="/Rezeptwunsch/">Rezeptwunsch</a></li>
+          <li><a href="/Ueberweisungswunsch/">Überweisungswunsch</a></li>
+          <li><a href="/Anfahrt/">Anfahrt</a></li>
+          <li>
+            <a href="tel:061121211" class="nav-cta" aria-label="Praxis anrufen: 0611 21211">
+              📞 0611 21211
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Dark Mode umschalten"
+          title="Dark Mode umschalten"
+          type="button"
+        >
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun"  aria-hidden="true">☀️</span>
+        </button>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+          type="button"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBILE NAV ══════════════════════════════════ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <a href="/Willkommen/">Willkommen</a>
+  <a href="/Leistungen/">Leistungen</a>
+  <a href="/Leistungen/Gesundheit/">&nbsp;&nbsp;↳ Gesundheit</a>
+  <a href="/Leistungen/Vorsorge/">&nbsp;&nbsp;↳ Vorsorge</a>
+  <a href="/Leistungen/Sportmedizin/">&nbsp;&nbsp;↳ Sportmedizin</a>
+  <a href="/Arzt/">Arzt</a>
+  <a href="/Rezeptwunsch/">Rezeptwunsch</a>
+  <a href="/Ueberweisungswunsch/">Überweisungswunsch</a>
+  <a href="/Anfahrt/">Anfahrt</a>
+  <a href="tel:061121211" class="mobile-cta" aria-label="Praxis anrufen: 0611 21211">
+    📞 0611 21211 anrufen
+  </a>
+</nav>
+
+<main>
+  <!-- ═══ PAGE HERO ════════════════════════════════ -->
+  <section class="page-hero" aria-label="Impressum">
+    <div class="page-hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-eyebrow">
+          📋 Rechtliche Informationen
+        </div>
+        <h1 class="page-hero-title">Impressum</h1>
+        <p class="page-hero-sub">
+          Angaben gemäß § 5 TMG – Hausarztpraxis Grams,
+          Wiesbaden-Schierstein
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IMPRESSUM CONTENT ════════════════════════ -->
+  <section class="impressum-section">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb reveal" aria-label="Breadcrumb">
+        <a href="/Willkommen/">Startseite</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Impressum</span>
+      </nav>
+
+      <div class="impressum-layout">
+
+        <!-- ── SIDEBAR / TOC ── -->
+        <aside class="toc-sidebar reveal" aria-label="Inhaltsverzeichnis">
+          <div class="toc-card">
+            <div class="toc-title">Inhalt</div>
+            <nav class="toc-list" aria-label="Sprunglinks">
+              <a href="#verantwortlich">Verantwortlich</a>
+              <a href="#berufsbezeichnung">Berufsbezeichnung</a>
+              <a href="#schwerpunkte">Schwerpunkte</a>
+              <a href="#umsatzsteuer">Umsatzsteuer-ID</a>
+              <a href="#datenschutz">Datenschutz</a>
+              <a href="#aerztekammer">Ärztekammer</a>
+              <a href="#kv">Kassenärztl. Vereinigung</a>
+              <a href="#berufsrecht">Berufsrecht</a>
+              <a href="#streitbeilegung">Streitbeilegung</a>
+              <a href="#urheberrecht">Urheberrecht</a>
+              <a href="#haftung-links">Haftung für Links</a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- ── BLOCKS ── -->
+        <div class="impressum-content">
+
+          <!-- 1 · Verantwortlich -->
+          <article class="impressum-block reveal reveal-delay-1" id="verantwortlich">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🏥</div>
+              <h2 class="block-title">Verantwortlich für den Inhalt</h2>
+            </div>
+            <div class="block-body">
+              <div class="info-row">
+                <span class="info-row-label">Name</span>
+                <span class="info-row-value">Oliver Grams</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Einrichtung</span>
+                <span class="info-row-value">Facharztpraxis für Allgemeinmedizin</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Adresse</span>
+                <span class="info-row-value">Narzissenweg 4, 65201 Wiesbaden</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Telefon</span>
+                <span class="info-row-value">
+                  <a href="tel:061121211">0611 21211</a>
+                </span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Telefax</span>
+                <span class="info-row-value">0611 2617050</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">E-Mail</span>
+                <span class="info-row-value">
+                  <a href="mailto:kontakt@hausarztpraxis-grams.de">kontakt@hausarztpraxis-grams.de</a>
+                </span>
+              </div>
+              <div class="highlight-box">
+                Verantwortliche Stelle ist die natürliche oder juristische Person,
+                die allein oder gemeinsam mit anderen über die Zwecke und Mittel
+                der Verarbeitung von personenbezogenen Daten (z. B. Namen,
+                E-Mail-Adressen o. Ä.) entscheidet.
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 · Berufsbezeichnung -->
+          <article class="impressum-block reveal reveal-delay-2" id="berufsbezeichnung">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🎓</div>
+              <h2 class="block-title">Gesetzliche Berufsbezeichnung</h2>
+            </div>
+            <div class="block-body">
+              <ul>
+                <li>
+                  Facharzt für Allgemeinmedizin – verliehen durch die
+                  Landesärztekammer Hessen am 29.09.2004
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3 · Schwerpunkte -->
+          <article class="impressum-block reveal reveal-delay-3" id="schwerpunkte">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🩺</div>
+              <h2 class="block-title">Tätigkeitsschwerpunkte</h2>
+            </div>
+            <div class="block-body">
+              <p>
+                Hausärztliche Versorgung als Facharzt für Allgemeinmedizin,
+                Innere Medizin und Sportmedizin.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4 · Umsatzsteuer -->
+          <article class="impressum-block reveal reveal-delay-4" id="umsatzsteuer">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🔢</div>
+              <h2 class="block-title">Umsatzsteueridentifikationsnummer</h2>
+            </div>
+            <div class="block-body">
+              <p>040 822 32079</p>
+            </div>
+          </article>
+
+          <!-- 5 · Datenschutz -->
+          <article class="impressum-block reveal reveal-delay-5" id="datenschutz">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🔒</div>
+              <h2 class="block-title">Datenschutzbeauftragte</h2>
+            </div>
+            <div class="block-body">
+              <div class="info-row">
+                <span class="info-row-label">Name</span>
+                <span class="info-row-value">Constance Grams</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">E-Mail</span>
+                <span class="info-row-value">
+                  <a href="mailto:kontakt@hausarztpraxis-grams.de">
+                    kontakt@hausarztpraxis-grams.de
+                  </a>
+                </span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Erklärung</span>
+                <span class="info-row-value">
+                  <a href="/Datenschutzerklaerung/">
+                    Datenschutzerklärung aufrufen →
+                  </a>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 · Ärztekammer -->
+          <article class="impressum-block reveal reveal-delay-6" id="aerztekammer">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🏛️</div>
+              <h2 class="block-title">Ärztekammer</h2>
+            </div>
+            <div class="block-body">
+              <div class="info-row">
+                <span class="info-row-label">Organisation</span>
+                <span class="info-row-value">Landesärztekammer Hessen</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Adresse</span>
+                <span class="info-row-value">
+                  Hanauer Landstraße 152, 60314 Frankfurt<br>
+                  Postfach 60 05 66, 60335 Frankfurt
+                </span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Website</span>
+                <span class="info-row-value">
+                  <a href="https://www.laekh.de/" target="_blank" rel="noopener noreferrer">
+                    laekh.de →
+                  </a>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7 · Kassenärztliche Vereinigung -->
+          <article class="impressum-block reveal reveal-delay-7" id="kv">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🏢</div>
+              <h2 class="block-title">Kassenärztliche Vereinigung</h2>
+            </div>
+            <div class="block-body">
+              <div class="info-row">
+                <span class="info-row-label">Organisation</span>
+                <span class="info-row-value">Kassenärztliche Vereinigung Hessen</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Adresse</span>
+                <span class="info-row-value">Europa-Allee 90, 60486 Frankfurt am Main</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Website</span>
+                <span class="info-row-value">
+                  <a href="https://www.kvhessen.de/" target="_blank" rel="noopener noreferrer">
+                    kvhessen.de →
+                  </a>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8 · Berufsrecht -->
+          <article class="impressum-block reveal reveal-delay-8" id="berufsrecht">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">⚖️</div>
+              <h2 class="block-title">Berufsrechtliche Regelung</h2>
+            </div>
+            <div class="block-body">
+              <p>
+                Es gelten die Berufsordnung für die Ärztinnen und Ärzte in Hessen
+                sowie das Hessische Heilberufsgesetz. Die Regelungen finden sich
+                im Gesetzblatt des Landes Hessen.
+              </p>
+              <p>
+                Die jeweils aktuellen berufsrechtlichen Regelungen können auf der
+                <a
+                  href="https://www.laekh.de/fuer-aerztinnen-und-aerzte/rund-ums-recht/rechtsquellen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Internetseite der Landesärztekammer Hessen</a>
+                eingesehen werden. Sie können zudem die Suchfunktion der
+                <a href="https://www.laekh.de/" target="_blank" rel="noopener noreferrer">
+                  Landesärztekammer Hessen
+                </a>
+                mit den Begriffen „Berufsordnung" bzw. „Heilberufsgesetz" verwenden.
+              </p>
+            </div>
+          </article>
+
+          <!-- 9 · Streitbeilegung -->
+          <article class="impressum-block reveal reveal-delay-9" id="streitbeilegung">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🤝</div>
+              <h2 class="block-title">Verbraucherstreitbeilegungsgesetz</h2>
+            </div>
+            <div class="block-body">
+              <p>
+                Wir sind nicht bereit oder verpflichtet, an
+                Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+            </div>
+          </article>
+
+          <!-- 10 · Urheberrecht -->
+          <article class="impressum-block reveal" id="urheberrecht">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">©️</div>
+              <h2 class="block-title">Urheberrecht</h2>
+            </div>
+            <div class="block-body">
+              <p>
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+                diesen Seiten unterliegen dem deutschen Urheberrecht. Die
+                Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der
+                schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+              </p>
+              <p>
+                Downloads und Kopien dieser Seite sind nur für den privaten,
+                nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf
+                dieser Seite nicht vom Betreiber erstellt wurden, werden die
+                Urheberrechte Dritter beachtet. Insbesondere werden Inhalte
+                Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine
+                Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
+                entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
+                werden wir derartige Inhalte umgehend entfernen.
+              </p>
+            </div>
+          </article>
+
+          <!-- 11 · Haftung für Links -->
+          <article class="impressum-block reveal" id="haftung-links">
+            <div class="block-header">
+              <div class="block-icon" aria-hidden="true">🔗</div>
+              <h2 class="block-title">Haftung für Links</h2>
+            </div>
+            <div class="block-body">
+              <p>
+                Unser Angebot enthält Links zu externen Webseiten Dritter, auf
+                deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
+                diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+                oder Betreiber der Seiten verantwortlich.
+              </p>
+              <p>
+                Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf
+                mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren
+                zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
+                inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+                konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
+                Bei Bekanntwerden von Rechtsverletzungen werden wir derartige
+                Links umgehend entfernen.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /impressum-content -->
+      </div><!-- /impressum-layout -->
+    </div><!-- /container -->
+  </section>
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Hausarztpraxis Grams</span>
+        <p>
+          Hausärztliche Versorgung in Wiesbaden-Schierstein – persönlich,
+          zuverlässig und kompetent. Wir begleiten Sie in Fragen der
+          Allgemeinmedizin, Inneren Medizin und Sportmedizin.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><span>Narzissenweg 4, 65201 Wiesbaden</span></li>
+          <li><a href="tel:061121211">Telefon: 0611 21211</a></li>
+          <li><span>Fax: 0611 2617050</span></li>
+          <li><a href="mailto:kontakt@hausarztpraxis-grams.de">E-Mail schreiben</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/Willkommen/">Willkommen</a></li>
+          <li><a href="/Leistungen/">Leistungen</a></li>
+          <li><a href="/Arzt/">Arzt</a></li>
+          <li><a href="/Rezeptwunsch/">Rezeptwunsch</a></li>
+          <li><a href="/Ueberweisungswunsch/">Überweisungswunsch</a></li>
+          <li><a href="/Anfahrt/">Anfahrt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      <span>© 2026 Hausarztpraxis Grams. Alle Rechte vorbehalten.</span>
+      <div style="display:flex;gap:14px;">
+        <a href="/Impressum/" class="footer-active" aria-current="page">Impressum</a>
+        <a href="/Datenschutzerklaerung/">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FAB CALL ══════════════════════════════════════ -->
+<a href="tel:061121211" class="fab-call" aria-label="Praxis anrufen: 0611 21211">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+  </svg>
+</a>
+
+<!-- ═══ DARK MODE TOAST ═══════════════════════════════ -->
+<div class="dm-toast" id="dmToast" role="status" aria-live="polite"></div>
+
+<script>
+  /* ── THEME ────────────────────────────────────────── */
+  const html        = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const dmToast     = document.getElementById('dmToast');
+  const STORAGE_KEY = 'grams-theme';
+  let toastTimer;
+
+  function isDarkHour() {
+    const h = new Date().getHours();
+    return h >= 19 || h < 6;
+  }
+
+  function applyTheme(theme, announce) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    themeToggle.setAttribute(
+      'aria-label',
+      theme === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln'
+    );
+    if (announce) showToast(theme === 'dark' ? '🌙 Dunkler Modus aktiviert' : '☀️ Heller Modus aktiviert');
+  }
+
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    dmToast.textContent = msg;
+    dmToast.classList.add('show');
+    toastTimer = setTimeout(() => dmToast.classList.remove('show'), 2800);
+  }
+
+  function initTheme() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    applyTheme(saved || (isDarkHour() ? 'dark' : 'light'), false);
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next, true);
+  });
+
+  initTheme();
+
+  /* ── HEADER SCROLL ────────────────────────────────── */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  /* ── MOBILE NAV ───────────────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function toggleMobileNav() {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Menü öffnen');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', toggleMobileNav);
+  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMobileNav));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileNav(); });
+
+  /* ── REVEAL ON SCROLL ─────────────────────────────── */
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── ACTIVE TOC LINK ON SCROLL ────────────────────── */
+  const tocLinks   = document.querySelectorAll('.toc-list a');
+  const sections   = document.querySelectorAll('.impressum-block');
+
+  const tocObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach(link => {
+          link.classList.toggle('toc-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => tocObserver.observe(s));
+</script>
+
+</body>
+</html>
