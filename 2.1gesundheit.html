@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hausarztpraxis Grams – Vorsorge</title>
+  <meta name="description" content="Vorsorgeuntersuchungen in der Hausarztpraxis Grams Wiesbaden. Krebsfrüherkennung, Impfungen, Reisemedizin und mehr.">
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root, [data-theme="light"] {
+      --bg:           #f0f6ff;
+      --bg-2:         #ffffff;
+      --bg-3:         #e8f0fe;
+      --bg-card:      #ffffff;
+      --border:       #dbeafe;
+      --border-soft:  #e2e8f0;
+      --blue-900: #1e3a5f;
+      --blue-800: #1d4ed8;
+      --blue-700: #1e40af;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-400: #60a5fa;
+      --blue-300: #93c5fd;
+      --blue-200: #bfdbfe;
+      --blue-100: #dbeafe;
+      --blue-50:  #eff6ff;
+      --teal:       #0d9488;
+      --teal-light: #ccfbf1;
+      --white:    #ffffff;
+      --gray-800: #1e293b;
+      --gray-700: #334155;
+      --gray-500: #64748b;
+      --gray-400: #94a3b8;
+      --gray-300: #cbd5e1;
+      --gray-100: #f1f5f9;
+      --gray-50:  #f8fafc;
+      --text:         #1e293b;
+      --text-muted:   #64748b;
+      --text-light:   #94a3b8;
+      --header-bg:    rgba(255,255,255,0.88);
+      --header-text:  #1e293b;
+      --header-link:  #374151;
+      --header-border:rgba(37,99,235,0.10);
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:  0 4px 20px rgba(37,99,235,.10);
+      --shadow-lg:  0 12px 40px rgba(37,99,235,.14);
+      --shadow-xl:  0 20px 60px rgba(37,99,235,.18);
+      --radius:    12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --transition:.3s cubic-bezier(.4,0,.2,1);
+    }
+
+    [data-theme="dark"] {
+      --bg:           #0d1117;
+      --bg-2:         #161b22;
+      --bg-3:         #1a2233;
+      --bg-card:      #1e2737;
+      --border:       #2d3748;
+      --border-soft:  #253047;
+      --blue-900: #1e3a5f;
+      --blue-800: #1d4ed8;
+      --blue-700: #3b82f6;
+      --blue-600: #60a5fa;
+      --blue-500: #93c5fd;
+      --blue-400: #bfdbfe;
+      --blue-300: #dbeafe;
+      --blue-200: #e0effe;
+      --blue-100: #1e3a5f;
+      --blue-50:  #162032;
+      --teal:       #14b8a6;
+      --teal-light: #0d2d2a;
+      --white:    #f0f6ff;
+      --gray-800: #e2e8f0;
+      --gray-700: #cbd5e1;
+      --gray-500: #94a3b8;
+      --gray-400: #64748b;
+      --gray-300: #334155;
+      --gray-100: #1a2233;
+      --gray-50:  #161b22;
+      --text:         #e2e8f0;
+      --text-muted:   #94a3b8;
+      --text-light:   #64748b;
+      --header-bg:    rgba(13,17,23,0.92);
+      --header-text:  #e2e8f0;
+      --header-link:  #cbd5e1;
+      --header-border:rgba(93,162,255,0.12);
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.3);
+      --shadow-md:  0 4px 20px rgba(0,0,0,.4);
+      --shadow-lg:  0 12px 40px rgba(0,0,0,.5);
+      --shadow-xl:  0 20px 60px rgba(0,0,0,.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    a   { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul  { list-style: none; }
+    button { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid var(--blue-500);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-3); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-400); border-radius: 3px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 80px 0; }
+
+    /* ── BADGE & TITLES ── */
+    .badge {
+      display: inline-block;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+      border: 1px solid var(--blue-200);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--blue-900);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    [data-theme="dark"] .section-title { color: var(--blue-500); }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: .95rem;
+      margin-bottom: 44px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue-600), var(--teal));
+      border-radius: 2px;
+      margin-bottom: 32px;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--header-border);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    .site-header.scrolled { box-shadow: 0 2px 24px rgba(37,99,235,.12); }
+    [data-theme="dark"] .site-header.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.4); }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 16px;
+    }
+
+    .logo { display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--blue-700);
+      letter-spacing: .01em;
+      transition: color var(--transition);
+    }
+    [data-theme="dark"] .logo-name { color: var(--blue-400); }
+    .logo-sub {
+      font-size: .65rem;
+      color: var(--text-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .main-nav ul { display: flex; gap: 2px; align-items: center; }
+    .main-nav a {
+      color: var(--header-link);
+      font-size: .85rem;
+      font-weight: 500;
+      padding: 7px 12px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+    .main-nav a:hover, .main-nav a.active { color: var(--blue-600); background: var(--blue-50); }
+    [data-theme="dark"] .main-nav a:hover,
+    [data-theme="dark"] .main-nav a.active { color: var(--blue-400); background: var(--bg-3); }
+
+    .nav-item { position: relative; }
+    .nav-item:hover .sub-nav,
+    .nav-item:focus-within .sub-nav { opacity: 1; pointer-events: all; transform: translateY(0); }
+
+    .sub-nav {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 8px;
+      min-width: 190px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity var(--transition), transform var(--transition);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sub-nav li a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: .84rem;
+    }
+    .sub-nav li a:hover { background: var(--blue-50); color: var(--blue-600); }
+    [data-theme="dark"] .sub-nav li a:hover { background: var(--bg-3); color: var(--blue-400); }
+
+    .nav-cta {
+      background: var(--blue-600) !important;
+      color: var(--white) !important;
+      padding: 8px 16px !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--blue-700) !important; transform: translateY(-1px); }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      transition: background var(--transition), border var(--transition), transform var(--transition);
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { background: var(--blue-50); transform: scale(1.05); }
+    [data-theme="dark"] .theme-toggle:hover { background: var(--bg-3); }
+    .theme-toggle .icon-sun  { display: none; }
+    .theme-toggle .icon-moon { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px; border-radius: 8px;
+      background: transparent; border: none;
+      transition: background var(--transition);
+    }
+    .hamburger:hover { background: var(--blue-50); }
+    [data-theme="dark"] .hamburger:hover { background: var(--bg-3); }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── MOBILE NAV ── */
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: var(--bg-2); flex-direction: column;
+      align-items: center; justify-content: center; gap: 6px;
+      opacity: 0; visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+    }
+    .mobile-nav.open { display: flex; opacity: 1; visibility: visible; }
+    .mobile-nav a {
+      color: var(--text); font-size: 1.05rem; font-weight: 500;
+      padding: 11px 32px; border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition);
+      width: min(280px, calc(100vw - 48px)); text-align: center;
+    }
+    .mobile-nav a:hover { background: var(--blue-50); color: var(--blue-600); }
+    [data-theme="dark"] .mobile-nav a:hover { background: var(--bg-3); color: var(--blue-400); }
+    .mobile-nav .mobile-cta {
+      background: var(--blue-600); color: var(--white) !important;
+      margin-top: 10px; font-weight: 600;
+    }
+    .mobile-nav .mobile-cta:hover { background: var(--blue-700) !important; }
+
+    /* ── PAGE HERO (subpage variant) ── */
+    .page-hero {
+      min-height: 40vh;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(135deg, rgba(15,30,60,.82) 0%, rgba(30,80,140,.68) 55%, rgba(13,148,136,.54) 100%),
+        url('https://hausarztpraxis-grams.de/.cm4all/uproc.php/0/Webseitenmedien/.2023-12-27%20(2)_upscayl_3x_ultrasharp%20(1).jpg/picture-1600') center/cover no-repeat;
+      padding-top: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 90px;
+      background: linear-gradient(to top, var(--bg), transparent);
+      pointer-events: none;
+    }
+
+    .page-hero-blob {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(96,165,250,.18) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      animation: blobFloat 9s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes blobFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50%     { transform: translate(-30px,40px) scale(1.06); }
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 52px 0 72px;
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(10px);
+      color: #bfdbfe;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 100px;
+      margin-bottom: 20px;
+      animation: fadeUp .8s ease both;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      animation: fadeUp .8s .1s ease both;
+    }
+
+    .page-hero-title span { color: #93c5fd; }
+
+    .page-hero-desc {
+      color: rgba(255,255,255,.85);
+      font-size: 1.05rem;
+      max-width: 560px;
+      animation: fadeUp .8s .2s ease both;
+      line-height: 1.75;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--bg-2);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 12px 0;
+    }
+
+    .breadcrumb-inner {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .82rem; color: var(--text-muted);
+    }
+
+    .breadcrumb-inner a {
+      color: var(--blue-600);
+      transition: color var(--transition);
+    }
+    [data-theme="dark"] .breadcrumb-inner a { color: var(--blue-400); }
+    .breadcrumb-inner a:hover { text-decoration: underline; }
+    .breadcrumb-sep { color: var(--text-light); }
+
+    /* ── CONTENT SECTIONS ── */
+    .vorsorge-section { background: var(--bg); }
+    .vorsorge-section:nth-child(even) { background: var(--bg-2); }
+
+    /* ── LEISTUNGS ROW (left label + right content) ── */
+    .leistung-row {
+      display: grid;
+      grid-template-columns: minmax(220px, 30%) 1fr;
+      gap: 40px;
+      align-items: start;
+      padding: 44px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .leistung-row:first-of-type { padding-top: 0; }
+    .leistung-row:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+    .leistung-label {
+      position: sticky;
+      top: 90px;
+    }
+
+    .leistung-label-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--blue-900);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    [data-theme="dark"] .leistung-label-title { color: var(--blue-400); }
+
+    .leistung-label-sub {
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .leistung-label-pill {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .pill-kasse {
+      background: var(--teal-light);
+      color: var(--teal);
+      border: 1px solid rgba(13,148,136,.25);
+    }
+    [data-theme="dark"] .pill-kasse { border-color: rgba(20,184,166,.3); }
+
+    .pill-privat {
+      background: var(--blue-100);
+      color: var(--blue-700);
+      border: 1px solid var(--blue-200);
+    }
+    [data-theme="dark"] .pill-privat { color: var(--blue-400); }
+
+    /* ── CONTENT CARD ── */
+    .leistung-content {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-soft);
+      transition: box-shadow var(--transition);
+    }
+
+    .leistung-content:hover { box-shadow: var(--shadow-md); }
+
+    .leistung-content p {
+      font-size: .92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .leistung-content p:last-child { margin-bottom: 0; }
+
+    /* ── CHECK LIST ── */
+    .check-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .check-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .check-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--blue-100);
+      border: 1px solid var(--blue-200);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 1px;
+    }
+
+    [data-theme="dark"] .check-list li::before {
+      background-color: var(--bg-3);
+      border-color: var(--border);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2360a5fa'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    }
+
+    .check-list .item-bold { font-weight: 600; color: var(--text); }
+    .check-list .item-note { display: block; font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── AGE TAGS ── */
+    .age-tag {
+      display: inline-block;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-right: 6px;
+      border: 1px solid var(--blue-100);
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .age-tag { color: var(--blue-400); background: var(--bg-3); border-color: var(--border); }
+
+    /* ── IMPFPLAN TABLE ── */
+    .impf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .88rem;
+      margin-top: 8px;
+    }
+
+    .impf-table thead tr {
+      background: var(--bg-3);
+    }
+
+    .impf-table th {
+      padding: 11px 14px;
+      text-align: left;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--blue-700);
+    }
+    [data-theme="dark"] .impf-table th { color: var(--blue-400); }
+
+    .impf-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .impf-table tr:last-child td { border-bottom: none; }
+    .impf-table tr:hover td { background: var(--bg-3); }
+
+    .impf-table .td-who { font-weight: 500; color: var(--text); }
+    .impf-table .td-note { font-size: .8rem; color: var(--text-muted); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: linear-gradient(135deg, var(--blue-50), var(--bg-card));
+      border: 1px solid var(--blue-200);
+      border-left: 4px solid var(--blue-500);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-top: 16px;
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    [data-theme="dark"] .highlight-box {
+      background: linear-gradient(135deg, var(--bg-3), var(--bg-card));
+      border-color: var(--border);
+      border-left-color: var(--blue-600);
+    }
+
+    .highlight-box strong { color: var(--blue-700); }
+    [data-theme="dark"] .highlight-box strong { color: var(--blue-400); }
+
+    /* ── ICON GRID ── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .icon-tile {
+      background: var(--bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      text-align: center;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    [data-theme="dark"] .icon-tile { background: var(--bg-3); }
+
+    .icon-tile:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .icon-tile-icon { font-size: 2rem; margin-bottom: 10px; }
+    .icon-tile-label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .icon-tile-note {
+      font-size: .74rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    /* ── REISE CARDS ── */
+    .reise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .reise-card {
+      background: var(--bg);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    [data-theme="dark"] .reise-card { background: var(--bg-3); }
+    .reise-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .reise-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .reise-card-title {
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .reise-card-body {
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 60%, #0d9488 100%);
+      padding: 70px 0;
+    }
+
+    .cta-inner {
+      text-align: center;
+    }
+
+    .cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,.78);
+      font-size: .95rem;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.75;
+    }
+
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 26px; border-radius: var(--radius);
+      font-weight: 600; font-size: .95rem;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,.25); }
+
+    .btn-white {
+      background: #fff;
+      color: var(--blue-700);
+    }
+    .btn-white:hover { background: var(--blue-50); }
+
+    .btn-ghost-white {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(8px);
+    }
+    .btn-ghost-white:hover { background: rgba(255,255,255,.25); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--blue-900);
+      color: rgba(255,255,255,.7);
+      padding: 56px 0 28px;
+    }
+    [data-theme="dark"] .site-footer {
+      background: #080d14;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 44px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: #fff;
+      margin-bottom: 14px; display: block;
+    }
+
+    .footer-brand p {
+      font-size: .85rem; line-height: 1.75;
+      color: rgba(255,255,255,.5); max-width: 340px;
+    }
+
+    .footer-col h4 {
+      font-size: .72rem; font-weight: 700;
+      color: #93c5fd; letter-spacing: .1em;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+
+    .footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a, .footer-col span {
+      font-size: .85rem; color: rgba(255,255,255,.55);
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin-bottom: 22px; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+      font-size: .78rem; color: rgba(255,255,255,.3);
+    }
+    .footer-bottom a { color: rgba(255,255,255,.45); transition: color var(--transition); }
+    .footer-bottom a:hover { color: #fff; }
+
+    /* ── FAB ── */
+    .fab-call {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, var(--blue-600), var(--teal));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 22px rgba(37,99,235,.5);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: fabPop .5s 1s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .fab-call:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,99,235,.6); }
+    .fab-call::before {
+      content: ''; position: absolute; inset: -4px;
+      border-radius: 50%; border: 2px solid rgba(37,99,235,.4);
+      animation: ripple 2.5s ease-out infinite;
+    }
+    @keyframes ripple { 0%{transform:scale(1);opacity:1;} 100%{transform:scale(1.6);opacity:0;} }
+    @keyframes fabPop { from{transform:scale(0);opacity:0;} to{transform:scale(1);opacity:1;} }
+    .fab-call svg { width: 24px; height: 24px; fill: #fff; }
+
+    /* ── TOAST ── */
+    .dm-toast {
+      position: fixed; bottom: 96px; right: 28px; z-index: 890;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 10px 16px;
+      font-size: .8rem; color: var(--text-muted);
+      box-shadow: var(--shadow-md);
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+      transition: opacity .4s, transform .4s; white-space: nowrap;
+    }
+    .dm-toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .leistung-row { grid-template-columns: 1fr; gap: 20px; }
+      .leistung-label { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .fab-call { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+      .dm-toast { right: 20px; bottom: 84px; }
+      .icon-grid { grid-template-columns: repeat(2,1fr); }
+      .reise-grid { grid-template-columns: 1fr; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .impf-table { font-size: .8rem; }
+      .impf-table th, .impf-table td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ══════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/Willkommen/" class="logo" aria-label="Hausarztpraxis Grams Startseite">
+        <span class="logo-name">Hausarztpraxis Grams</span>
+        <span class="logo-sub">Allgemeinmedizin · Wiesbaden</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="/Willkommen/">Willkommen</a></li>
+          <li class="nav-item">
+            <a href="/Leistungen/" class="active" aria-current="true" aria-haspopup="true">Leistungen</a>
+            <ul class="sub-nav" aria-label="Untermenü Leistungen">
+              <li><a href="/Leistungen/Gesundheit/">Gesundheit</a></li>
+              <li><a href="/Leistungen/Vorsorge/" aria-current="page">Vorsorge</a></li>
+              <li><a href="/Leistungen/Sportmedizin/">Sportmedizin</a></li>
+            </ul>
+          </li>
+          <li><a href="/Arzt/">Arzt</a></li>
+          <li><a href="/Rezeptwunsch/">Rezeptwunsch</a></li>
+          <li><a href="/Ueberweisungswunsch/">Überweisungswunsch</a></li>
+          <li><a href="/Anfahrt/">Anfahrt</a></li>
+          <li>
+            <a href="tel:061121211" class="nav-cta" aria-label="Praxis anrufen: 0611 21211">
+              📞 0611 21211
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Dark Mode umschalten" type="button">
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+          <span class="icon-sun"  aria-hidden="true">☀️</span>
+        </button>
+        <button class="hamburger" id="hamburger"
+          aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBILE NAV ══════════════════════════════════ -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+  <a href="/Willkommen/">Willkommen</a>
+  <a href="/Leistungen/">Leistungen</a>
+  <a href="/Leistungen/Gesundheit/">&nbsp;&nbsp;↳ Gesundheit</a>
+  <a href="/Leistungen/Vorsorge/">&nbsp;&nbsp;↳ Vorsorge</a>
+  <a href="/Leistungen/Sportmedizin/">&nbsp;&nbsp;↳ Sportmedizin</a>
+  <a href="/Arzt/">Arzt</a>
+  <a href="/Rezeptwunsch/">Rezeptwunsch</a>
+  <a href="/Ueberweisungswunsch/">Überweisungswunsch</a>
+  <a href="/Anfahrt/">Anfahrt</a>
+  <a href="tel:061121211" class="mobile-cta">📞 0611 21211 anrufen</a>
+</nav>
+
+<main>
+
+  <!-- ═══ PAGE HERO ════════════════════════════════ -->
+  <section class="page-hero" aria-label="Vorsorge">
+    <div class="page-hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="page-hero-eyebrow">Leistungen</div>
+        <h1 class="page-hero-title">Vorsorge &amp;<br><span>Früherkennung</span></h1>
+        <p class="page-hero-desc">
+          Regelmäßige Vorsorgeuntersuchungen schützen Ihre Gesundheit – oft
+          bevor Beschwerden überhaupt entstehen. Wir begleiten Sie dabei.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BREADCRUMB ════════════════════════════════ -->
+  <nav class="breadcrumb" aria-label="Seitenstruktur">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="/Willkommen/">Startseite</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/Leistungen/">Leistungen</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Vorsorge</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ SECTION 1: KREBSFRÜHERKENNUNG ════════════ -->
+  <section class="section vorsorge-section" aria-labelledby="kfe-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Kassenleistung</span>
+        <h2 class="section-title" id="kfe-title">Krebsfrüherkennung</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Gesetzlich Versicherte haben Anspruch auf folgende Krebsfrüherkennungsuntersuchungen –
+          kostenlos und ohne zusätzliche Zuzahlung.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Hautkrebs&shy;screening</div>
+          <div class="leistung-label-sub">Früherkennung von Melanomen und anderen Hauttumoren</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <p>
+            Alle zwei Jahre können gesetzlich Versicherte <strong>ab 35 Jahren</strong> eine
+            Ganzkörperinspektion der Haut in Anspruch nehmen. Ziel ist die frühzeitige
+            Erkennung von Melanomen, Basalzell- und Plattenepithelkarzinomen.
+          </p>
+          <ul class="check-list">
+            <li>
+              <span>
+                <span class="item-bold">Ab 35 Jahren, alle 2 Jahre</span>
+                <span class="item-note">Visuelle Inspektion des gesamten Integuments</span>
+              </span>
+            </li>
+            <li>
+              <span>Beratung zu UV-Schutz und Risikofaktoren</span>
+            </li>
+            <li>
+              <span>Ggf. Weiterleitung zum Dermatologen bei auffälligem Befund</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Darmkrebs&shy;früherkennung</div>
+          <div class="leistung-label-sub">Stuhltest &amp; Darmspiegelung</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <p>
+            Darmkrebs ist eine der häufigsten Krebserkrankungen – und bei frühzeitiger Erkennung
+            sehr gut behandelbar. Wir führen Beratung und Stuhltestausgabe durch und leiten
+            bei Bedarf zur Darmspiegelung weiter.
+          </p>
+          <ul class="check-list">
+            <li>
+              <span>
+                <span class="item-bold"><span class="age-tag">Ab 50</span> Stuhltest (iFOBT), jährlich</span>
+                <span class="item-note">Für Männer und Frauen</span>
+              </span>
+            </li>
+            <li>
+              <span>
+                <span class="item-bold"><span class="age-tag">Männer ab 50</span><span class="age-tag">Frauen ab 55</span> Darmspiegelung</span>
+                <span class="item-note">Zwei Koloskopien im Abstand von mind. 10 Jahren</span>
+              </span>
+            </li>
+            <li>
+              <span>Ausführliche Beratung vor der Untersuchung</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Weitere Krebsfrüherkennung</div>
+          <div class="leistung-label-sub">Für Männer und Frauen</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <div class="icon-grid">
+            <div class="icon-tile">
+              <div class="icon-tile-icon">🔬</div>
+              <div class="icon-tile-label">Prostata (PSA)</div>
+              <div class="icon-tile-note">Ab 45 J., auf Wunsch als IGeL-Leistung</div>
+            </div>
+            <div class="icon-tile">
+              <div class="icon-tile-icon">🫁</div>
+              <div class="icon-tile-label">Bauchaorten&shy;aneurysma</div>
+              <div class="icon-tile-note">Männer ab 65 J., einmalig per Ultraschall</div>
+            </div>
+            <div class="icon-tile">
+              <div class="icon-tile-icon">🏥</div>
+              <div class="icon-tile-label">Genitalorgane Männer</div>
+              <div class="icon-tile-note">Ab 45 J., Hoden, Penis, Prostata</div>
+            </div>
+            <div class="icon-tile">
+              <div class="icon-tile-icon">📋</div>
+              <div class="icon-tile-label">Anamnese &amp; Beratung</div>
+              <div class="icon-tile-note">Individuelle Risikobewertung</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 2: IMPFUNGEN ══════════════════════ -->
+  <section class="section vorsorge-section" aria-labelledby="impf-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Impfschutz</span>
+        <h2 class="section-title" id="impf-title">Impfungen</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Impfungen sind die effektivste Methode, sich und andere vor gefährlichen
+          Infektionskrankheiten zu schützen. Wir beraten Sie individuell und führen
+          alle von der STIKO empfohlenen Impfungen durch.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">STIKO-Empfehlungen für Erwachsene</div>
+          <div class="leistung-label-sub">
+            Ständige Impfkommission am Robert Koch-Institut
+          </div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <table class="impf-table" aria-label="Impfempfehlungen">
+            <thead>
+              <tr>
+                <th>Impfung</th>
+                <th>Für wen</th>
+                <th>Intervall</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tetanus / Diphtherie / Pertussis</strong></td>
+                <td class="td-who">Alle Erwachsenen</td>
+                <td>Alle 10 Jahre (einmalig Pertussis)</td>
+              </tr>
+              <tr>
+                <td><strong>Influenza (Grippe)</strong></td>
+                <td class="td-who">Ab 60 J., Risikogruppen, med. Personal</td>
+                <td>Jährlich</td>
+              </tr>
+              <tr>
+                <td><strong>Pneumokokken</strong></td>
+                <td class="td-who">Ab 60 J., chronisch Kranke</td>
+                <td>Einmalig (ggf. Auffrischung)</td>
+              </tr>
+              <tr>
+                <td><strong>Herpes zoster (Gürtelrose)</strong></td>
+                <td class="td-who">Ab 60 J. (Immungeschwächte ab 50)</td>
+                <td>2 Dosen (Totimpfstoff)</td>
+              </tr>
+              <tr>
+                <td><strong>COVID-19</strong></td>
+                <td class="td-who">Ab 60 J., Risikogruppen</td>
+                <td>Jährliche Auffrischung empfohlen</td>
+              </tr>
+              <tr>
+                <td><strong>Masern / Mumps / Röteln</strong></td>
+                <td class="td-who">Nach 1970 Geborene ohne Immunschutz</td>
+                <td>Einmalig MMR-Impfung</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="highlight-box">
+            <strong>Tipp:</strong> Bringen Sie Ihren Impfausweis zum nächsten Termin mit –
+            wir prüfen Ihren individuellen Impfschutz und erinnern Sie rechtzeitig an
+            fällige Auffrischungen.
+          </div>
+        </div>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Reiseimpfungen</div>
+          <div class="leistung-label-sub">Individuelle Beratung je nach Reiseziel</div>
+          <span class="leistung-label-pill pill-privat">Privatleistung</span>
+        </div>
+        <div class="leistung-content">
+          <p>
+            Vor Fernreisen empfehlen wir eine individuelle reisemedizinische Beratung.
+            Je nach Reiseziel, Reisedauer und persönlichem Gesundheitszustand empfehlen
+            wir gezielte Schutzimpfungen.
+          </p>
+          <ul class="check-list">
+            <li><span><span class="item-bold">Hepatitis A &amp; B</span><span class="item-note">Tropen, Mittelmeer, Entwicklungsländer</span></span></li>
+            <li><span><span class="item-bold">Typhus</span><span class="item-note">Süd- und Südostasien, Afrika, Lateinamerika</span></span></li>
+            <li><span><span class="item-bold">Gelbfieber</span><span class="item-note">Teile Afrikas und Südamerikas (WHO-Pflichtimpfung)</span></span></li>
+            <li><span><span class="item-bold">Meningokokken</span><span class="item-note">Afrikameningitis-Gürtel, Mekka-Pilger</span></span></li>
+            <li><span><span class="item-bold">Japanische Enzephalitis &amp; Tollwut</span><span class="item-note">Langzeitreisen in Risikogebiete</span></span></li>
+            <li><span><span class="item-bold">Malariaprophylaxe</span><span class="item-note">Medikamentöse Vorbeugung je nach Region</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 3: GESUNDHEITS-CHECK ═════════════ -->
+  <section class="section vorsorge-section" aria-labelledby="check-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Check-up</span>
+        <h2 class="section-title" id="check-title">Gesundheits&shy;check &amp; Labor</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Regelmäßige Laborkontrollen und Gesundheitschecks helfen, stille Risikofaktoren
+          früh zu erkennen – lange bevor sie zu ernsthaften Erkrankungen führen.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Gesundheits&shy;untersuchung (GU)</div>
+          <div class="leistung-label-sub">Allgemeiner Check-up beim Hausarzt</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <ul class="check-list">
+            <li>
+              <span>
+                <span class="item-bold"><span class="age-tag">18–34 J.</span> Einmaliger Basis-Check</span>
+                <span class="item-note">Anamnese, Beratung, körperliche Untersuchung</span>
+              </span>
+            </li>
+            <li>
+              <span>
+                <span class="item-bold"><span class="age-tag">Ab 35 J.</span> Alle 3 Jahre</span>
+                <span class="item-note">
+                  Körperliche Untersuchung, Blutzucker, Blutfette,
+                  Blutdruck, Beratung zu Herzinfarkt- und Schlaganfallrisiko
+                </span>
+              </span>
+            </li>
+            <li>
+              <span>Beurteilung von Übergewicht, Bewegungsmangel und Rauchen</span>
+            </li>
+            <li>
+              <span>Ggf. Weiterleitung zu Spezialisten</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Erweitertes Labor</div>
+          <div class="leistung-label-sub">Individuelle Zusatzdiagnostik auf Wunsch</div>
+          <span class="leistung-label-pill pill-privat">Privatleistung</span>
+        </div>
+        <div class="leistung-content">
+          <p>
+            Über die Kassenleistungen hinaus bieten wir ein umfangreiches Laborprogramm
+            zur gezielten Abklärung und Gesundheitsoptimierung an.
+          </p>
+          <ul class="check-list">
+            <li><span><span class="item-bold">Großes Blutbild</span><span class="item-note">Differentialblutbild, Entzündungswerte</span></span></li>
+            <li><span><span class="item-bold">Schilddrüse</span><span class="item-note">TSH, fT3, fT4, Anti-TPO</span></span></li>
+            <li><span><span class="item-bold">Vitaminstatus</span><span class="item-note">Vitamin D, B12, Folsäure, Eisen/Ferritin</span></span></li>
+            <li><span><span class="item-bold">Hormonstatus</span><span class="item-note">Testosteron, DHEA, Östrogen (je nach Indikation)</span></span></li>
+            <li><span><span class="item-bold">Leberwerte &amp; Nierenwerte</span><span class="item-note">GOT, GPT, GGT, Kreatinin, GFR</span></span></li>
+            <li><span><span class="item-bold">Herzmarker</span><span class="item-note">Troponin, BNP bei kardialer Fragestellung</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 4: TECHNISCHE DIAGNOSTIK ═════════ -->
+  <section class="section vorsorge-section" aria-labelledby="diag-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Diagnostik</span>
+        <h2 class="section-title" id="diag-title">Technische Untersuchungen</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Modernste Gerätemedizin direkt in der Praxis – für eine schnelle und präzise Diagnose.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Ultraschall (Sonographie)</div>
+          <div class="leistung-label-sub">KV-Hessen-zertifiziert</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <ul class="check-list">
+            <li><span><span class="item-bold">Abdomen &amp; Retroperitoneum</span><span class="item-note">Leber, Gallenblase, Milz, Pankreas, Nieren, Aorta</span></span></li>
+            <li><span><span class="item-bold">Schilddrüse</span><span class="item-note">Knoten, Volumen, Durchblutung</span></span></li>
+            <li><span><span class="item-bold">Venen der Extremitäten</span><span class="item-note">Thrombosediagnostik, Veneninsuffizienz</span></span></li>
+            <li><span><span class="item-bold">Bewegungsapparat</span><span class="item-note">Schulter, Knie, Sehnen, Bursa</span></span></li>
+            <li><span><span class="item-bold">Carotis-Duplex</span><span class="item-note">Arteriosklerosediagnostik der hirnversorgenden Gefäße</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">EKG &amp; Lungenfunktion</div>
+          <div class="leistung-label-sub">Herzrhythmus &amp; Atemwege</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <ul class="check-list">
+            <li><span><span class="item-bold">Ruhe-EKG</span><span class="item-note">Herzrhythmus, Leitungsstörungen, Ischämiezeichen</span></span></li>
+            <li><span><span class="item-bold">Belastungs-EKG (Ergometrie)</span><span class="item-note">Belastbarkeit, koronare Herzerkrankung</span></span></li>
+            <li><span><span class="item-bold">Spirometrie (Lungenfunktionstest)</span><span class="item-note">Asthma, COPD, Einschränkung der Atemkapazität</span></span></li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Hinweis:</strong> EKG und Lungenfunktionstest können als
+            Wunschleistung (IGeL) ohne medizinische Indikation als Privatleistung
+            erbracht werden.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 5: REISEMEDIZIN ══════════════════ -->
+  <section class="section vorsorge-section" aria-labelledby="reise-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Reisemedizin</span>
+        <h2 class="section-title" id="reise-title">Reisemedizin &amp; Reiseberatung</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Gut vorbereitet in den Urlaub – wir beraten Sie umfassend vor Ihrer Reise.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">Reisemedizinische Beratung</div>
+          <div class="leistung-label-sub">Individuelle Vorbereitung auf Ihren Urlaub</div>
+          <span class="leistung-label-pill pill-privat">Privatleistung</span>
+        </div>
+        <div class="leistung-content">
+          <p>
+            Wir empfehlen eine Beratung mindestens <strong>4–6 Wochen vor Reiseantritt</strong>,
+            damit ausreichend Zeit für Impfserien und die Besorgung von Medikamenten bleibt.
+          </p>
+          <div class="reise-grid">
+            <div class="reise-card">
+              <div class="reise-card-icon">🌍</div>
+              <div class="reise-card-title">Reiseimpfungen</div>
+              <div class="reise-card-body">Individuelle Impfempfehlungen je nach Zielregion, Reisedauer und Reisestil.</div>
+            </div>
+            <div class="reise-card">
+              <div class="reise-card-icon">💊</div>
+              <div class="reise-card-title">Malariaprophylaxe</div>
+              <div class="reise-card-body">Medikamentöse Vorbeugung für Endemiegebiete in Tropen und Subtropen.</div>
+            </div>
+            <div class="reise-card">
+              <div class="reise-card-icon">🧳</div>
+              <div class="reise-card-title">Reiseapotheke</div>
+              <div class="reise-card-body">Empfehlungen für Medikamente und Verbandsmaterial auf Reisen.</div>
+            </div>
+            <div class="reise-card">
+              <div class="reise-card-icon">📄</div>
+              <div class="reise-card-title">Gesundheitszeugnisse</div>
+              <div class="reise-card-body">Internationaler Impfausweis, Reisefähigkeitsbescheinigung auf Wunsch.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ SECTION 6: DMP-PROGRAMME ═════════════════ -->
+  <section class="section vorsorge-section" aria-labelledby="dmp-title">
+    <div class="container">
+
+      <div class="reveal">
+        <span class="badge">Chronisch Krank</span>
+        <h2 class="section-title" id="dmp-title">Disease-Management-Programme (DMP)</h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Strukturierte Behandlungsprogramme für Menschen mit chronischen Erkrankungen –
+          wir sind koordinierender Arzt für alle wichtigen DMP.
+        </p>
+      </div>
+
+      <div class="leistung-row reveal">
+        <div class="leistung-label">
+          <div class="leistung-label-title">DMP-Programme in unserer Praxis</div>
+          <div class="leistung-label-sub">KV-Hessen-zertifiziert</div>
+          <span class="leistung-label-pill pill-kasse">Kassenleistung</span>
+        </div>
+        <div class="leistung-content">
+          <ul class="check-list">
+            <li><span><span class="item-bold">DMP Diabetes mellitus Typ II</span><span class="item-note">inkl. Schulungen mit und ohne Insulintherapie</span></span></li>
+            <li><span><span class="item-bold">DMP Asthma bronchiale</span><span class="item-note">koordinierender Arzt</span></span></li>
+            <li><span><span class="item-bold">DMP COPD</span><span class="item-note">Chronisch obstruktive Lungenerkrankung</span></span></li>
+            <li><span><span class="item-bold">DMP Koronare Herzkrankheit (KHK)</span><span class="item-note">koordinierender Arzt</span></span></li>
+            <li><span><span class="item-bold">Hypertonieschulung</span><span class="item-note">nach Grüßer &amp; Jörgens im DMP</span></span></li>
+            <li><span><span class="item-bold">Gestationsdiabetes-Schulung</span><span class="item-note">mit und ohne Insulin</span></span></li>
+            <li><span><span class="item-bold">Psychosomatische Grundversorgung</span></span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══════════════════════════════════════ -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 id="cta-title">Vorsorge vereinbaren</h2>
+        <p>
+          Warten Sie nicht auf Beschwerden. Vereinbaren Sie jetzt Ihre Vorsorgeuntersuchung –
+          wir beraten Sie individuell und nehmen uns Zeit für Ihre Fragen.
+        </p>
+        <div class="cta-actions">
+          <a href="tel:061121211" class="btn btn-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+            </svg>
+            0611 21211 anrufen
+          </a>
+          <a href="/Anfahrt/" class="btn btn-ghost-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            Anfahrt &amp; Kontakt
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">Hausarztpraxis Grams</span>
+        <p>
+          Hausärztliche Versorgung in Wiesbaden-Schierstein – persönlich,
+          zuverlässig und kompetent. Wir begleiten Sie in Fragen der
+          Allgemeinmedizin, Inneren Medizin und Sportmedizin.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><span>Narzissenweg 4, 65201 Wiesbaden</span></li>
+          <li><a href="tel:061121211">Telefon: 0611 21211</a></li>
+          <li><span>Fax: 0611 2617050</span></li>
+          <li><a href="mailto:kontakt@hausarztpraxis-grams.de">E-Mail schreiben</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/Willkommen/">Willkommen</a></li>
+          <li><a href="/Leistungen/">Leistungen</a></li>
+          <li><a href="/Arzt/">Arzt</a></li>
+          <li><a href="/Rezeptwunsch/">Rezeptwunsch</a></li>
+          <li><a href="/Ueberweisungswunsch/">Überweisungswunsch</a></li>
+          <li><a href="/Anfahrt/">Anfahrt</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <span>© 2026 Hausarztpraxis Grams. Alle Rechte vorbehalten.</span>
+      <div style="display:flex;gap:14px;">
+        <a href="/Impressum/">Impressum</a>
+        <a href="/Datenschutz/">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FAB CALL ══════════════════════════════════════ -->
+<a href="tel:061121211" class="fab-call" aria-label="Praxis anrufen: 0611 21211">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+  </svg>
+</a>
+
+<!-- ═══ TOAST ══════════════════════════════════════════ -->
+<div class="dm-toast" id="dmToast" role="status" aria-live="polite"></div>
+
+<script>
+  /* ── THEME ─────────────────────────────────────────── */
+  const html        = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const dmToast     = document.getElementById('dmToast');
+  const STORAGE_KEY = 'grams-theme';
+  let toastTimer;
+
+  function isDarkHour() { const h = new Date().getHours(); return h >= 19 || h < 6; }
+
+  function applyTheme(theme, announce) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem(STORAGE_KEY, theme);
+    themeToggle.setAttribute('aria-label',
+      theme === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln');
+    if (announce) showToast(theme === 'dark' ? '🌙 Dunkler Modus aktiviert' : '☀️ Heller Modus aktiviert');
+  }
+
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    dmToast.textContent = msg;
+    dmToast.classList.add('show');
+    toastTimer = setTimeout(() => dmToast.classList.remove('show'), 2800);
+  }
+
+  (function initTheme() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    applyTheme(saved || (isDarkHour() ? 'dark' : 'light'), false);
+  })();
+
+  themeToggle.addEventListener('click', () => {
+    applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+  });
+
+  /* ── HEADER SCROLL ──────────────────────────────────── */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  /* ── MOBILE NAV ─────────────────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function toggleMobileNav() {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', toggleMobileNav);
+  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Menü öffnen');
+    document.body.style.overflow = '';
+  }));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  /* ── REVEAL ─────────────────────────────────────────── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
