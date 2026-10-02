@@ -3,8 +3,6 @@
   Eingaben: Architektur des statischen Entwurfs.
   Start- und Prüfbefehle bei Änderungen aktuell halten.
 -->
-> Zwischenstand: Die Praxis-Seiten sind lauffähig. Wunschansichten zeigen derzeit Hinweise und Telefonkontakt; gemeinsame Formular-Komponente und Datumsvalidierung folgen im nächsten Commit. Die Dokumentation beschreibt zusätzlich den Zielzustand.
-
 # Hausarztpraxis Grams
 
 Visueller Relaunch als Entwurf zur Freigabe durch den Praxisinhaber. Reines HTML, CSS und Vanilla-JavaScript, ohne Build und ohne Abhängigkeiten. Die Formulare laufen im Demo-Modus: Es werden keine Daten übermittelt oder gespeichert.

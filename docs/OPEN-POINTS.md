@@ -3,8 +3,6 @@
   Eingaben: Repository-Prüfung und tatsächlich durchgeführte Verifikation.
   Erledigte Punkte mit Datum und Nachweis aktualisieren.
 -->
-> Zwischenstand: Die Praxis-Seiten sind lauffähig. Wunschansichten zeigen derzeit Hinweise und Telefonkontakt; gemeinsame Formular-Komponente und Datumsvalidierung folgen im nächsten Commit. Die Dokumentation beschreibt zusätzlich den Zielzustand.
-
 # Offene Punkte
 
 ## Vorgefundener Repository-Zustand

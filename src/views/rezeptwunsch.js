@@ -1,12 +1,13 @@
 /**
- * Wunschansicht im ersten lauffähigen Zwischenstand.
- * Eingaben: zentrale Hinweise und Kontakt; Formular folgt im nächsten Commit.
- * Texte in content/forms.js, Kontakt in content/practice.js ändern.
+ * Rezeptansicht als Konfiguration der gemeinsamen Formular-Komponente.
+ * Eingaben: forms.prescription und zentrale Demo-Beschriftungen.
+ * Felder und Hinweise in content/forms.js ändern.
  */
-import { forms } from '../../content/forms.js';
-import { practice } from '../../content/practice.js';
-import { ui } from '../../content/site.js';
+import { forms, formText } from '../../content/forms.js';
 import { h, pageHeading } from '../lib/dom.js';
+import { requestForm } from '../components/request-form.js';
+import { notice } from '../components/notice.js';
 export function prescriptionView() {
-  return { element: h('div', { className: 'container page page--reading' }, pageHeading(forms.prescription), h('p', { className: 'lead' }, forms.prescription.notice), h('a', { href: practice.phone.href, className: 'button' }, ui.call)) };
+  const form = requestForm('prescription');
+  return { element: h('div', { className: 'container page page--reading' }, pageHeading(forms.prescription), h('p', { className: 'lead' }, forms.prescription.notice), notice(formText.demoTitle, formText.demoNote, 'mint'), form.element), destroy: form.destroy };
 }

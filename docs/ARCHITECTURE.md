@@ -3,8 +3,6 @@
   Eingaben: tatsächlicher Code; kein Build-System.
   Bei Struktur- oder Verhaltensänderungen hier nachführen.
 -->
-> Zwischenstand: Die Praxis-Seiten sind lauffähig. Wunschansichten zeigen derzeit Hinweise und Telefonkontakt; gemeinsame Formular-Komponente und Datumsvalidierung folgen im nächsten Commit. Die Dokumentation beschreibt zusätzlich den Zielzustand.
-
 # Architektur
 
 `content/` exportiert reine Objekte und Arrays. Inhalte werden mit expliziten Imports in Komponenten/Views gelesen. `h()` erzeugt DOM-Nodes und Text; Strings werden nie als HTML interpretiert. Geteilte Fakten stehen ausschließlich in `practice.js` bzw. `hours.js`. Name und Bild-Alttexte beziehen sich auf diese Daten. Ausnahmen sind statisches JSON-LD und `noscript` im HTML; `check.mjs` gleicht sie exakt ab.
