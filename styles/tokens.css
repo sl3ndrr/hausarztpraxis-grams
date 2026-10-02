@@ -1,0 +1,107 @@
+/*
+ * Alle Designwerte einschließlich vollständiger Light-/Dark-Parität.
+ * Eingaben: Designrichtung; Farben und Maße ausschließlich hier ändern.
+ * Dark-Tokens immer in BEIDEN Blöcken ändern. Prüfung: scripts/check.mjs.
+ */
+:root {
+  color-scheme: light dark;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
+  --space-4: 1rem; --space-5: 1.5rem; --space-6: 2rem;
+  --space-7: 3rem; --space-8: 4rem; --space-9: 5rem;
+  --radius-small: .5rem; --radius-card: 1rem; --radius-pill: 99rem;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --font-heading: Charter, "Iowan Old Style", Georgia, serif; --font-base: 20px;
+  --font-base-large: 22px; --font-base-largest: 24px; --font-small: .85rem;
+  --font-label: .9rem; --font-body-size: 1rem; --font-h1: clamp(2.2rem, 5.2vw, 3.9rem);
+  --font-h2: clamp(1.65rem, 3vw, 2.4rem); --font-h3: 1.25rem; --font-mark: 2.2rem;
+  --line-body: 1.65; --line-heading: 1.12; --weight-body: 400;
+  --weight-medium: 600; --weight-bold: 700; --letter-eyebrow: .1em;
+  --letter-heading: -.025em; --width-container: 1200px; --width-reading: 900px;
+  --width-prose: 70ch; --width-hero: 34rem; --width-icon: 1.25rem;
+  --width-avatar: 200px; --width-logo: 200px; --width-mark: 2.8rem;
+  --width-small-input: 7rem; --size-touch: 2.8rem; --size-mobile-bar: 4.5rem;
+  --size-focus: 3px; --size-border: 1px; --size-line: 2px;
+  --size-status-dot: .55rem; --size-hidden: 1px; --offset-hidden: -1px;
+  --duration-reveal: 450ms; --duration-page: 350ms; --duration-hero: 600ms;
+  --duration-theme: 160ms; --duration-zoom: 16000ms; --duration-status: 1600ms;
+  --duration-none: 0ms; --ease-soft: cubic-bezier(.2,.65,.25,1); --reveal-offset: .6rem;
+  --lift-offset: -.15rem; --press-scale: .985; --hero-scale: 1.04;
+  --photo-brightness: 1; --color-logo-surface: #FFFFFF; --color-hero-bg: #0A3F4C;
+  --color-hero-text: #F8FBFB; --color-overlay: rgba(10, 63, 76, .93); --color-footer-bg: #0B2028;
+  --color-footer-text: #E8F1F2; --color-print-bg: #FFFFFF; --color-print-text: #000000;
+  --color-bg: #F8FBFB; --color-surface: #FFFFFF; --color-surface-raised: #E6F3F2;
+  --color-text: #14272E; --color-muted: #334A51; --color-primary: #0D5666;
+  --color-on-primary: #FFFFFF; --color-primary-hover: #0A3F4C; --color-border: #60767D;
+  --color-divider: #CBDDDF; --color-focus: #0D5666; --color-warm: #F3E3CF;
+  --color-on-warm: #392B1C; --color-status: #14522F; --color-error: #85263B;
+  --color-error-bg: #FFF0F2; --color-highlight: #D3EAE8; --shadow-card: 0 .25rem 1.5rem rgba(10, 63, 76, .05);
+  --shadow-hover: 0 .5rem 1.5rem rgba(10, 63, 76, .1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
+  --space-4: 1rem; --space-5: 1.5rem; --space-6: 2rem;
+  --space-7: 3rem; --space-8: 4rem; --space-9: 5rem;
+  --radius-small: .5rem; --radius-card: 1rem; --radius-pill: 99rem;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --font-heading: Charter, "Iowan Old Style", Georgia, serif; --font-base: 20px;
+  --font-base-large: 22px; --font-base-largest: 24px; --font-small: .85rem;
+  --font-label: .9rem; --font-body-size: 1rem; --font-h1: clamp(2.2rem, 5.2vw, 3.9rem);
+  --font-h2: clamp(1.65rem, 3vw, 2.4rem); --font-h3: 1.25rem; --font-mark: 2.2rem;
+  --line-body: 1.65; --line-heading: 1.12; --weight-body: 400;
+  --weight-medium: 600; --weight-bold: 700; --letter-eyebrow: .1em;
+  --letter-heading: -.025em; --width-container: 1200px; --width-reading: 900px;
+  --width-prose: 70ch; --width-hero: 34rem; --width-icon: 1.25rem;
+  --width-avatar: 200px; --width-logo: 200px; --width-mark: 2.8rem;
+  --width-small-input: 7rem; --size-touch: 2.8rem; --size-mobile-bar: 4.5rem;
+  --size-focus: 3px; --size-border: 1px; --size-line: 2px;
+  --size-status-dot: .55rem; --size-hidden: 1px; --offset-hidden: -1px;
+  --duration-reveal: 450ms; --duration-page: 350ms; --duration-hero: 600ms;
+  --duration-theme: 160ms; --duration-zoom: 16000ms; --duration-status: 1600ms;
+  --duration-none: 0ms; --ease-soft: cubic-bezier(.2,.65,.25,1); --reveal-offset: .6rem;
+  --lift-offset: -.15rem; --press-scale: .985; --hero-scale: 1.04;
+  --photo-brightness: .92; --color-logo-surface: #FFFFFF; --color-hero-bg: #0A3F4C;
+  --color-hero-text: #F8FBFB; --color-overlay: rgba(10, 63, 76, .93); --color-footer-bg: #0B2028;
+  --color-footer-text: #E8F1F2; --color-print-bg: #FFFFFF; --color-print-text: #000000;
+  --color-bg: #0F1C21; --color-surface: #172A31; --color-surface-raised: #1D343C;
+  --color-text: #E8F1F2; --color-muted: #B8CDD2; --color-primary: #80CCDC;
+  --color-on-primary: #0A2A32; --color-primary-hover: #9DDFE9; --color-border: #829FA8;
+  --color-divider: #45606B; --color-focus: #80CCDC; --color-warm: #3A2F22;
+  --color-on-warm: #F3E3CF; --color-status: #5FD38D; --color-error: #FFD5DC;
+  --color-error-bg: #36232C; --color-highlight: #264651; --shadow-card: none;
+  --shadow-hover: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
+  --space-4: 1rem; --space-5: 1.5rem; --space-6: 2rem;
+  --space-7: 3rem; --space-8: 4rem; --space-9: 5rem;
+  --radius-small: .5rem; --radius-card: 1rem; --radius-pill: 99rem;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; --font-heading: Charter, "Iowan Old Style", Georgia, serif; --font-base: 20px;
+  --font-base-large: 22px; --font-base-largest: 24px; --font-small: .85rem;
+  --font-label: .9rem; --font-body-size: 1rem; --font-h1: clamp(2.2rem, 5.2vw, 3.9rem);
+  --font-h2: clamp(1.65rem, 3vw, 2.4rem); --font-h3: 1.25rem; --font-mark: 2.2rem;
+  --line-body: 1.65; --line-heading: 1.12; --weight-body: 400;
+  --weight-medium: 600; --weight-bold: 700; --letter-eyebrow: .1em;
+  --letter-heading: -.025em; --width-container: 1200px; --width-reading: 900px;
+  --width-prose: 70ch; --width-hero: 34rem; --width-icon: 1.25rem;
+  --width-avatar: 200px; --width-logo: 200px; --width-mark: 2.8rem;
+  --width-small-input: 7rem; --size-touch: 2.8rem; --size-mobile-bar: 4.5rem;
+  --size-focus: 3px; --size-border: 1px; --size-line: 2px;
+  --size-status-dot: .55rem; --size-hidden: 1px; --offset-hidden: -1px;
+  --duration-reveal: 450ms; --duration-page: 350ms; --duration-hero: 600ms;
+  --duration-theme: 160ms; --duration-zoom: 16000ms; --duration-status: 1600ms;
+  --duration-none: 0ms; --ease-soft: cubic-bezier(.2,.65,.25,1); --reveal-offset: .6rem;
+  --lift-offset: -.15rem; --press-scale: .985; --hero-scale: 1.04;
+  --photo-brightness: .92; --color-logo-surface: #FFFFFF; --color-hero-bg: #0A3F4C;
+  --color-hero-text: #F8FBFB; --color-overlay: rgba(10, 63, 76, .93); --color-footer-bg: #0B2028;
+  --color-footer-text: #E8F1F2; --color-print-bg: #FFFFFF; --color-print-text: #000000;
+  --color-bg: #0F1C21; --color-surface: #172A31; --color-surface-raised: #1D343C;
+  --color-text: #E8F1F2; --color-muted: #B8CDD2; --color-primary: #80CCDC;
+  --color-on-primary: #0A2A32; --color-primary-hover: #9DDFE9; --color-border: #829FA8;
+  --color-divider: #45606B; --color-focus: #80CCDC; --color-warm: #3A2F22;
+  --color-on-warm: #F3E3CF; --color-status: #5FD38D; --color-error: #FFD5DC;
+  --color-error-bg: #36232C; --color-highlight: #264651; --shadow-card: none;
+  --shadow-hover: none;
+}
+:root[data-theme="light"] { color-scheme: light; }

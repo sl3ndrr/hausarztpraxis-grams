@@ -1,0 +1,43 @@
+/*
+ * Aufbau der Startseite, Arzt- und Anfahrtansicht.
+ * Eingaben: Design-Tokens und Klassen der jeweiligen Views.
+ * Inhalte in content/ ändern; Reihenfolge in src/views/.
+ */
+.hero { position: relative; overflow: hidden; background: var(--color-hero-bg); color: var(--color-hero-text); }
+.hero__picture { position: absolute; inset: 0; border-radius: 0; }
+.hero__picture::after { content: ''; position: absolute; inset: 0; background: var(--color-overlay); }
+.hero__picture img { filter: none; }
+.hero__picture .picture__fallback { background: var(--color-hero-bg); color: var(--color-hero-text); }
+.hero__inner { position: relative; padding-block: var(--space-8); }
+.hero__text { max-width: var(--width-hero); }
+.hero__text > * + * { margin-top: var(--space-5); }
+.hero .eyebrow, .hero a { color: var(--color-hero-text); }
+.hero__address { font-size: var(--font-small); }
+.hero :focus-visible { outline-color: var(--color-hero-text); }
+.button--hero { color: var(--color-hero-bg) !important; background: var(--color-hero-text); border-color: var(--color-hero-text); }
+.button--hero:hover { color: var(--color-hero-bg); background: var(--color-hero-text); }
+.button--hero-secondary { color: var(--color-hero-text); background: var(--color-hero-bg); border-color: var(--color-hero-text); }
+.button--hero-secondary:hover { background: var(--color-hero-bg); }
+.home-info { display: grid; gap: var(--space-5); padding-top: var(--space-6); }
+.home-info .notice { display: flex; flex-direction: column; justify-content: center; }
+.doctor-intro { display: grid; gap: var(--space-6); }
+.doctor-intro h2 { margin-block: var(--space-3) var(--space-5); }
+.doctor-intro h3, .doctor-intro .text-list { margin-bottom: var(--space-4); }
+.teaching { display: grid; gap: var(--space-6); align-items: center; border-top: var(--size-border) solid var(--color-divider); }
+.teaching p { margin-top: var(--space-4); max-width: var(--width-prose); }
+.teaching__logo { background: var(--color-logo-surface); border-radius: var(--radius-small); padding: var(--space-4); width: fit-content; }
+.teaching__logo .picture { max-width: var(--width-logo); border-radius: 0; background: var(--color-logo-surface); }
+.teaching__logo img { object-fit: contain; filter: none; }
+.doctor-page { display: grid; gap: var(--space-7); }
+.doctor-page__profile { align-self: start; }
+.doctor-page .timeline { margin-block: var(--space-6) var(--space-7); }
+.directions-contact .button-row { margin-top: var(--space-5); }
+@media (min-width: 900px) {
+  .hero__inner { padding-block: var(--space-9); }
+  .hero__picture { left: 35%; }
+  .hero__picture::after { background: linear-gradient(90deg, var(--color-hero-bg), var(--color-overlay)); }
+  .home-info { grid-template-columns: 1.25fr 1fr; }
+  .doctor-intro { grid-template-columns: var(--width-avatar) minmax(0, 1fr); align-items: center; }
+  .teaching { grid-template-columns: auto minmax(0, 1fr); }
+  .doctor-page { grid-template-columns: 1fr 1.7fr; }
+}

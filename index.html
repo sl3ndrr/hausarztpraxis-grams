@@ -1,0 +1,85 @@
+<!doctype html>
+<!--
+  Shell mit statischen SEO-Daten und Kontakt-Fallback; Inhalte sonst in content/.
+  JSON-LD und noscript nach Faktenänderungen abgleichen: scripts/check.mjs.
+  Keine Tracker/Drittinhalte außer Praxisbildern; nur Theme/Schrift lokal gespeichert.
+  Kein Cookie-Banner vorgesehen; Datenschutzerklärung hierzu vor Livegang prüfen.
+-->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="">
+  <title>Willkommen · Hausarztpraxis Grams</title>
+  <meta name="description" content="Sprechzeiten, Kontakt und Leistungen Ihrer Hausarztpraxis in Wiesbaden.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Willkommen · Hausarztpraxis Grams">
+  <meta property="og:description" content="Sprechzeiten, Kontakt und Leistungen Ihrer Hausarztpraxis in Wiesbaden.">
+  <meta property="og:url" content="https://hausarztpraxis-grams.de/">
+  <meta property="og:image" content="https://hausarztpraxis-grams.de/.cm4all/uproc.php/0/Webseitenmedien/2023-12-27%20(2).jpg">
+  <link rel="icon">
+  <script src="./src/theme-init.js"></script>
+  <link rel="stylesheet" href="./styles/tokens.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/layout.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <link rel="stylesheet" href="./styles/views.css">
+  <link rel="stylesheet" href="./styles/motion.css">
+  <link rel="stylesheet" href="./styles/print.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalClinic", "Physician"],
+    "name": "Hausarztpraxis Grams",
+    "url": "https://hausarztpraxis-grams.de/",
+    "telephone": "0611 21211",
+    "faxNumber": "0611 2617050",
+    "email": "kontakt@hausarztpraxis-grams.de",
+    "address": {"@type": "PostalAddress", "streetAddress": "Narzissenweg 4", "postalCode": "65201", "addressLocality": "Wiesbaden", "addressCountry": "DE"},
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "07:30", "closes": "12:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "17:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "07:30", "closes": "12:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "15:00", "closes": "17:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:30", "closes": "12:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "07:30", "closes": "12:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "15:00", "closes": "17:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "12:00"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-skip-link>Zum Inhalt</a>
+  <div data-header-mount></div>
+  <main id="main-content" tabindex="-1"></main>
+  <p class="sr-only" aria-live="polite" aria-atomic="true" data-route-announcer></p>
+  <div data-footer-mount></div>
+  <div data-mobile-mount></div>
+  <noscript>
+    <section class="container page">
+      <h1>Hausarztpraxis Grams</h1>
+      <p>Bitte aktivieren Sie JavaScript für alle Ansichten. Unsere Kontaktdaten und Sprechzeiten finden Sie hier.</p>
+      <h2>Kontakt</h2>
+      <p>Oliver Grams · Narzissenweg 4, 65201 Wiesbaden</p>
+      <p>Telefon: <a href="tel:061121211">0611 21211</a> · Telefax: 0611 2617050</p>
+      <p>E-Mail: <a href="mailto:kontakt@hausarztpraxis-grams.de">kontakt@hausarztpraxis-grams.de</a></p>
+      <h2>Sprechzeiten</h2>
+      <table class="hours-table">
+        <tbody>
+          <tr data-weekday="1"><th scope="row">Montag</th><td><span>7:30–12:00</span><span>15:00–17:30</span></td></tr>
+          <tr data-weekday="2"><th scope="row">Dienstag</th><td><span>7:30–12:00</span><span>15:00–17:30</span></td></tr>
+          <tr data-weekday="3"><th scope="row">Mittwoch</th><td><span>7:30–12:00</span></td></tr>
+          <tr data-weekday="4"><th scope="row">Donnerstag</th><td><span>7:30–12:00</span><span>15:00–17:30</span></td></tr>
+          <tr data-weekday="5"><th scope="row">Freitag</th><td><span>7:30–12:00</span></td></tr>
+        </tbody>
+      </table>
+      <p><a href="https://hausarztpraxis-grams.de/Impressum/">Impressum</a> · <a href="https://hausarztpraxis-grams.de/Datenschutzerklaerung/">Datenschutzerklärung</a></p>
+      <p>Im Notfall: <a href="tel:112">112</a> · Ärztlicher Bereitschaftsdienst: <a href="tel:116117">116 117</a></p>
+    </section>
+  </noscript>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

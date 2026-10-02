@@ -1,0 +1,7 @@
+# Lokale Arbeitsdateien ausschließen.
+# Eingabe: Arbeitsverzeichnis; keine Abhängigkeiten.
+# Neue temporäre Dateitypen hier ergänzen.
+.DS_Store
+coverage/
+*.log
+node_modules/

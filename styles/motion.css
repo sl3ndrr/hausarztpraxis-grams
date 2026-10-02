@@ -1,0 +1,26 @@
+/*
+ * Ausschließlich ruhige transform-/opacity-Bewegung mit zentralen Dauern.
+ * Eingaben: JS-Reveal-Zustände und Systemeinstellung reduzierte Bewegung.
+ * Dauern in tokens.css ändern; alle Inhalte bleiben ohne JS sichtbar.
+ */
+.hero__text { animation: fade-in var(--duration-hero) var(--ease-soft) both; }
+.hero__picture img { animation: hero-zoom var(--duration-zoom) var(--ease-soft) both; }
+main > * { animation: page-in var(--duration-page) var(--ease-soft) both; }
+.button, .service-card, .person-card { transition: transform var(--duration-reveal) var(--ease-soft); }
+.button:hover, .service-card:hover, .person-card:hover { transform: translateY(var(--lift-offset)); }
+.button:active { transform: scale(var(--press-scale)); }
+.js [data-reveal-pending]:not([data-revealed]) { opacity: 0; transform: translateY(var(--reveal-offset)); }
+.js [data-reveal-pending] { transition: opacity var(--duration-reveal) var(--ease-soft), transform var(--duration-reveal) var(--ease-soft); }
+.js .timeline[data-reveal-pending]:not([data-revealed])::before { transform: scaleY(0); }
+.timeline::before { transition: transform var(--duration-hero) var(--ease-soft); }
+.header__panel:not([hidden]), .accordion__panel:not([hidden]) { animation: fade-in var(--duration-page) var(--ease-soft); }
+.hours-card__status[data-open="true"]::before { animation: status-pulse var(--duration-status) var(--ease-soft) 3; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(var(--reveal-offset)); } to { opacity: 1; transform: translateY(0); } }
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-zoom { from { transform: scale(1); } to { transform: scale(var(--hero-scale)); } }
+@keyframes status-pulse { 50% { opacity: .65; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js [data-reveal-pending]:not([data-revealed]) { opacity: 1; transform: none; }
+  .timeline::before { transform: none !important; }
+}

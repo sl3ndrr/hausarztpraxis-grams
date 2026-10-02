@@ -1,0 +1,42 @@
+/*
+ * Druck erzwingt helle Flächen, dunkle Schrift und sichtbare Inhalte.
+ * Eingaben: ausschließlich semantische Druck-Tokens aus tokens.css.
+ * Druckinhalt hier ändern; Navigation und feste Leisten bleiben verborgen.
+ */
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    color-scheme: light;
+    --color-bg: var(--color-print-bg);
+    --color-surface: var(--color-print-bg);
+    --color-surface-raised: var(--color-print-bg);
+    --color-text: var(--color-print-text);
+    --color-muted: var(--color-print-text);
+    --color-primary: var(--color-print-text);
+    --color-on-primary: var(--color-print-bg);
+    --color-border: var(--color-print-text);
+    --color-divider: var(--color-print-text);
+    --color-warm: var(--color-print-bg);
+    --color-on-warm: var(--color-print-text);
+    --color-status: var(--color-print-text);
+    --color-error: var(--color-print-text);
+    --color-error-bg: var(--color-print-bg);
+    --color-footer-bg: var(--color-print-bg);
+    --color-footer-text: var(--color-print-text);
+    --color-hero-bg: var(--color-print-bg);
+    --color-hero-text: var(--color-print-text);
+    --shadow-card: none;
+    --shadow-hover: none;
+  }
+  .header, .mobile-bar, .skip-link, .button-row, .footer__nav, .theme-switch, .font-switch, .hero__picture, .form__submit, .picture, .service-card__icon { display: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  body { background: var(--color-print-bg) !important; color: var(--color-print-text) !important; }
+  .footer, .hero, .card, .notice { background: var(--color-print-bg); color: var(--color-print-text); box-shadow: none; }
+  a, .small, .eyebrow, .hero .eyebrow, .hero a, .footer a { color: var(--color-print-text); }
+  .js [data-reveal-pending] { opacity: 1 !important; transform: none !important; }
+  .hero__inner, .section, .page, .footer { padding-block: var(--space-5); }
+  .footer__grid, .home-info, .grid, .doctor-page { display: block; }
+  .card, .notice, .footer section, .timeline__item { break-inside: avoid; }
+  .accordion__panel[hidden] { display: block !important; }
+  .accordion__mark { display: none; }
+  .container { width: 100%; }
+}

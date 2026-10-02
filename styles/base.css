@@ -1,0 +1,37 @@
+/*
+ * Lesbare, semantische Grundeinstellungen und sichtbarer Tastaturfokus.
+ * Eingaben: ausschließlich Design-Tokens.
+ * Farben und Schriftgrößen in tokens.css ändern.
+ */
+* { box-sizing: border-box; }
+html { font-size: var(--font-base); scroll-padding-top: var(--space-8); }
+html[data-font-size="1"] { font-size: var(--font-base-large); }
+html[data-font-size="2"] { font-size: var(--font-base-largest); }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: var(--font-body-size); line-height: var(--line-body); overflow-wrap: anywhere; }
+h1, h2, h3, p, ul, ol, fieldset { margin: 0; }
+h1, h2 { font-family: var(--font-heading); font-weight: var(--weight-body); line-height: var(--line-heading); letter-spacing: var(--letter-heading); text-wrap: balance; }
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); font-weight: var(--weight-medium); line-height: var(--line-heading); }
+p + p { margin-top: var(--space-4); }
+a { color: var(--color-primary); text-underline-offset: var(--space-1); text-decoration-thickness: var(--size-border); overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: var(--size-line); }
+button, input { font: inherit; }
+button, a, input { -webkit-tap-highlight-color: var(--color-highlight); }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+:focus-visible { outline: var(--size-focus) solid var(--color-focus); outline-offset: var(--space-1); }
+h1:focus { outline: none; }
+img { display: block; max-width: 100%; }
+address { font-style: normal; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: var(--size-hidden); height: var(--size-hidden); padding: 0; margin: var(--offset-hidden); overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: var(--space-2); left: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--color-surface); z-index: 50; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.small { font-size: var(--font-small); color: var(--color-muted); }
+.lead { font-size: var(--font-body-size); max-width: var(--width-prose); }
+.eyebrow { font-size: var(--font-small); font-weight: var(--weight-bold); letter-spacing: var(--letter-eyebrow); text-transform: uppercase; color: var(--color-primary); }
+.text-list { padding-left: var(--space-5); }
+.text-list li + li { margin-top: var(--space-2); }
+.prose { max-width: var(--width-prose); }
+.prose > * + * { margin-top: var(--space-5); }
