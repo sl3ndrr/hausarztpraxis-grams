@@ -103,7 +103,10 @@ for (const route of [...routes, fallbackRoute]) {
 function checkLink(link) { if (link.href.startsWith('#/')) expect(known.has(link.href), 'content/navigation.js', `Unbekannte Route: ${link.href}`); link.children?.forEach(checkLink); }
 [...navigation, ...footerLinks, ...home.shortcuts].forEach(checkLink);
 for (const [key, image] of Object.entries(images)) expect(Boolean(image.alt && image.initials && image.width > 0 && image.height > 0), 'content/images.js', `Bild ${key}: alt, Maße oder Fallback fehlen.`);
-for (const person of team) expect(!person.image || Boolean(images[person.image]), 'content/team.js', `Bildschlüssel fehlt: ${person.image}`);
+for (const person of team) {
+  expect(!person.image || Boolean(images[person.image]), 'content/team.js', `Bildschlüssel fehlt: ${person.image}`);
+  if (person.image && images[person.image]) expect(images[person.image].alt.includes(person.name), 'content/images.js', `Alttext passt nicht zum Teammitglied: ${person.image}`);
+}
 checkTokens(sources['styles/tokens.css'], sources, fail);
 const pkg = JSON.parse(await readFile(root + 'package.json', 'utf8'));
 expect(Object.keys(pkg).every(key => ['type', 'scripts'].includes(key)) && pkg.type === 'module', 'package.json', 'Nur type:module und scripts sind erlaubt.');

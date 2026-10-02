@@ -33,7 +33,7 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
 
 ## Teammitglied ergänzen
 
-1. Einen bestätigten Datensatz in `content/team.js` ergänzen; Schema:
+1. Einen bestätigten Datensatz in `content/team.js` ergänzen; bestehende Namen liegen dort in `teamNames` und werden von Bild-Alttexten stabil über ihren Schlüssel referenziert. Die Reihenfolge des Teams darf geändert werden. Schema für eine neue Person ohne Foto:
 
 ```js
 { name: 'Bestätigter Name', role: 'Bestätigte Aufgabe', note: 'Optionaler bestätigter Zusatz' }

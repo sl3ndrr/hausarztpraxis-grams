@@ -24,3 +24,12 @@ Am 02.10.2026 war `sl3ndrr/hausarztpraxis-grams` leer: keine Branches und keine 
 ## Technische Abnahme
 
 `node scripts/check.mjs` prüft Fakten-/Fallback-Konsistenz, Importpfade und Syntax, neun Routen, Bildmetadaten, erlaubte Hosts, Token-Verwendung, Dark-Parität und definierte Kontrastpaare. `node --test` prüft Öffnungsgrenzen, Mittagspause/Wochenende, Berliner Zeitumstellungen, Theme-Auflösung und Geburtsdatum/Pflichtfelder. Ergebnisse vor jedem Commit erneut ausführen.
+
+Prüfergebnisse am 02.10.2026:
+
+- Statische Prüfung bestanden: 79 Dateien, neun Routen und neun Bild-Datensätze; inklusive Hero-Textkontrast auf Overlay über weißem Bild.
+- 13 Tests bestanden, keine Fehler oder übersprungenen Tests.
+- Zusätzlicher DOM-Smoke-Test mit einem schlanken DOM-Testdouble: alle neun Views, ein `h1` je Ansicht, Bild-Fallbacks, Menü/Escape, Router-Fokus/SEO/Markierung, unbekannte Route sowie Fehler-/Demo-Erfolgszustände beider Formulare bestanden. Dies prüft Rendering und Verhalten, keine Browser-Layoutberechnung.
+- Lokaler HTTP-Smoke-Test: alle 62 HTML/CSS/JS-Dateien mit Status 200 und passenden Modul-MIME-Typen ausgeliefert; Pfadüberschreitung ergibt 403, unbekannte Datei 404.
+- Checker mit sechs absichtlichen Verstößen geprüft: falsches JSON-LD-Fax, Dark-Paritätsfehler, Fremdhost, unbekannte Navigationsroute, RGB-Wert außerhalb der Tokens und unzureichender Textkontrast wurden zuverlässig abgelehnt.
+- Visuelle Browser-, Bildmotiv-, Drucklayout- und Screenreader-Abnahme bleiben aufgrund der oben beschriebenen Umgebungsgrenzen offen.

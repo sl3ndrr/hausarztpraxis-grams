@@ -4,6 +4,7 @@
  * Begrüßung und Startseitenabschnitte hier ändern; Fakten in practice/hours belassen.
  * @typedef {{title:string,text:string}} TextSection
  */
+import { practice } from './practice.js';
 export const home = {
   eyebrow: 'Willkommen in unserer Praxis',
   title: 'Herzlich willkommen in Ihrer Hausarztpraxis.',
@@ -18,7 +19,7 @@ export const home = {
     { title: 'So finden Sie uns', text: 'Adresse und Wege zur Praxis.', href: '#/anfahrt', icon: 'pin' }
   ],
   doctorTitle: 'Medizin mit einem persönlichen Gesicht.',
-  doctorLink: { text: 'Oliver Grams kennenlernen', href: '#/arzt' },
+  doctorLink: { text: `${practice.doctor} kennenlernen`, href: '#/arzt' },
   teamTitle: 'Das Praxisteam',
   teamIntro: 'Wir freuen uns auf Ihren Besuch.',
   teaching: { title: 'Akademische Lehrpraxis', text: 'Wir sind akademische Lehrpraxis des Zentrums für Allgemeinmedizin der Universitätsmedizin Mainz.', link: { text: 'Universitätsmedizin Mainz', href: 'https://www.unimedizin-mainz.de/allgemeinmedizin/allgemeinmedizin/uebersicht.html' } }
