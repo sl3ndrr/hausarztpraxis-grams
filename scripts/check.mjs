@@ -100,7 +100,7 @@ for (const route of [...routes, fallbackRoute]) {
   expect(typeof route.view === 'function', 'src/routes.js', `View-Funktion fehlt: ${route.file}`);
   expect(files.includes('src/views/' + route.file), 'src/routes.js', `View-Datei fehlt: ${route.file}`);
 }
-function checkLink(link) { if (link.href.startsWith('#/')) expect(known.has(link.href), 'content/navigation.js', `Unbekannte Route: ${link.href}`); link.children?.forEach(checkLink); }
+function checkLink(link) { if (link.href.startsWith('#/')) expect(known.has(link.href.split('?')[0]), 'content/navigation.js', `Unbekannte Route: ${link.href}`); link.children?.forEach(checkLink); }
 [...navigation, ...footerLinks, ...home.shortcuts].forEach(checkLink);
 for (const [key, image] of Object.entries(images)) expect(Boolean(image.alt && image.initials && image.width > 0 && image.height > 0), 'content/images.js', `Bild ${key}: alt, Maße oder Fallback fehlen.`);
 for (const person of team) {
@@ -114,3 +114,4 @@ for (const key of ['check', 'test', 'serve']) expect(Boolean(pkg.scripts?.[key])
 for (const path of ['README.md', 'AGENTS.md', 'docs/ARCHITECTURE.md', 'docs/CONTENT-GUIDE.md', 'docs/DESIGN-SYSTEM.md', 'docs/TEXT-CHANGES.md', 'docs/OPEN-POINTS.md']) expect(files.includes(path), path, 'Pflichtdokument fehlt.');
 if (failures) { console.error(`Prüfung fehlgeschlagen: ${failures} Fehler.`); process.exitCode = 1; }
 else console.log(`Prüfung bestanden: ${files.length} Dateien, ${routes.length} Routen, ${Object.keys(images).length} Bilder; Fakten, Imports, Tokens und Kontraste konsistent.`);
+

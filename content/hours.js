@@ -12,3 +12,6 @@ export const hours = [
   { weekday: 4, label: 'Donnerstag', intervals: [['07:30', '12:00'], ['15:00', '17:30']] },
   { weekday: 5, label: 'Freitag', intervals: [['07:30', '12:00']] }
 ];
+
+
+export const weekend = [{ weekday: 6, label: 'Samstag', intervals: [] }, { weekday: 7, label: 'Sonntag', intervals: [] }];

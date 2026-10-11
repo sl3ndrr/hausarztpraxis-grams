@@ -22,3 +22,8 @@ Keine Tracker, externen Fonts, Skripte oder automatischen Karten-Embeds. Externe
 Dateinamen/Klassen sind englisch, Kommentare/Texte deutsch. Styles verwenden semantische Tokens; Mediengrenzen dürfen feste Pixelwerte haben, da CSS-Variablen in Media-Queries nicht auswertbar sind. `motion.css` bewegt nur `transform`/`opacity`, zentral mit Tokens. Reveal-Ausgangszustände gelten nur mit aktivem JS/Observer; reduzierte Bewegung zeigt alle Inhalte sofort. Die Statusanimation ist auf drei Wiederholungen begrenzt. Druck erzwingt helle Flächen und dunkle Schrift, zeigt auch Akkordeoninhalte und verbirgt Navigation/feste Leisten.
 
 Die Website läuft unter jedem statischen HTTP-Server, einschließlich GitHub Pages im Branch-Root und einem Unterpfad. ES-Module erfordern HTTP(S), nicht `file://`. Kein Build und keine Dependencies. `scripts/check.mjs` prüft syntaktische und inhaltliche Konsistenz; `scripts/lib/check-tokens.mjs` hält Kontrastmathematik separat. Diese Prüfungen ersetzen keine visuelle Browser- und Screenreader-Abnahme.
+
+
+## Präsentationsschicht 11.10.2026
+
+`content/presentation.js` bündelt neue Bedienbeschriftungen. `route-location.js` zerlegt Hash-Routen mit `?section=id`; der Router fokussiert und scrollt zu vorhandenen Deep-Ankern, sonst zum H1. `live-status.js` nutzt unverändert die reine Öffnungslogik; `week-hours.js` ergänzt Textzeiten um in `week-segments.js` berechnete Balken und Jetzt-Marke. Beide geben einen Timer-Cleanup zurück. Das Hero-Foto ist ein eigenes Element ohne Overlay; der Checker verbietet die alte Overlay-Regel.

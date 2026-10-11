@@ -41,12 +41,6 @@ export function checkTokens(css, sources, fail) {
     const ratio = contrast(fg, bg);
     if (ratio < minimum) fail('styles/tokens.css', `${mode}: ${foreground}/${background} ${ratio.toFixed(2)}:1; benötigt ${minimum}:1.`);
   }
-  for (const [mode, tokens] of [['Hell', light], ['Dunkel', explicitDark]]) {
-    const overlay = tokens['--color-overlay']?.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)$/);
-    if (!overlay) { fail('styles/tokens.css', `${mode}: Hero-Overlay nicht als prüfbares rgba definiert.`); continue; }
-    const alpha = Number(overlay[4]);
-    const composite = '#' + overlay.slice(1, 4).map(value => Math.round(Number(value) * alpha + 255 * (1 - alpha)).toString(16).padStart(2, '0')).join('');
-    if (contrast(tokens['--color-hero-text'], composite) < 7) fail('styles/tokens.css', `${mode}: Hero-Text auf Overlay über weißem Bild unter 7:1.`);
-  }
+  // Das Foto ist eine eigene Fläche. Jeder Text bleibt außerhalb seiner DOM-Hülle.
+  if (/color-overlay|hero__picture::after/.test(sources['styles/views.css'] ?? '')) fail('styles/views.css', 'Hero darf keine Textüberlagerung des ungeprüften Motivs verwenden.');
 }
-

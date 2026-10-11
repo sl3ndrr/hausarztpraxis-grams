@@ -50,3 +50,10 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 
 - `content/site.js`: „Lesen & Darstellung“ als Panel-Beschriftung, Schriftzeichen zentralisiert. Reine Bedienhilfe.
 - `content/navigation.js`: drei Hauptbereiche „Leistungen“, „Arzt & Team“, „Kontakt & Anfahrt“; alle bestehenden Seiten bleiben über Footer/Anliegen erreichbar. Keine neue Tatsache.
+
+## Startseite
+
+- `content/home.js`: „Ihre Gesundheit. Unser Alltag.“ als sachliche Leitüberschrift ohne Wirkungsaussage. Anliegen aus Rezeptformular und vorhandenen Leistungsabschnitten, einschließlich Demo-Hinweis.
+- „Auf einen Blick“ verwendet ausschließlich doctor.summary, bestehende Lehrpraxis-Aussage, Hausbesuche und Termine nach Absprache.
+- `content/presentation.js`: Gliederungs- und Bedientexte für Status, Kapitel, Suche und Kontaktkomfort; keine neuen Praxisfakten.
+- `content/hours.js`: Samstag/Sonntag ohne reguläre Intervalle aus dem unveränderten Wochenplan abgeleitet.

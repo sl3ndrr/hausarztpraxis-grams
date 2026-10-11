@@ -1,0 +1,21 @@
+/*
+ * Live-Status und Wochenbalken ergänzen stets sichtbare Zeitangaben.
+ * Eingaben: reine berechnete Prozentpositionen; Flächen und Größen aus Tokens.
+ * Keine Statusanimation; Tagesmarkierung trägt zusätzlich den Text heute.
+ */
+.live-status { display: grid; gap: var(--space-2); }
+.live-status__chip { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); width: fit-content; border-radius: var(--radius-pill); background: var(--color-health); color: var(--color-on-health); padding: var(--space-2) var(--space-4); font-size: var(--font-small); font-weight: var(--weight-medium); }
+.live-status__chip::before { content: ''; width: var(--size-status-dot); height: var(--size-status-dot); border: var(--size-line) solid currentColor; border-radius: var(--radius-pill); flex-shrink: 0; }
+.live-status__chip[data-open="true"]::before { background: currentColor; }
+.live-status__note { font-size: var(--font-small); }
+.week-hours { min-width: 0; }
+.week-hours__list { list-style: none; padding: 0; margin-block: var(--space-5); display: grid; gap: var(--space-3); }
+.week-hours__day { padding: var(--space-3); border-radius: var(--radius-small); background: var(--color-surface); }
+.week-hours__day[data-current-day] { background: var(--color-health); color: var(--color-on-health); outline: var(--size-line) solid currentColor; }
+.week-hours__label { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.week-hours__today { font-size: var(--font-small); font-weight: var(--weight-bold); text-decoration: underline; }
+.week-hours__times { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); font-size: var(--font-small); margin-bottom: var(--space-4); }
+.week-hours__track { position: relative; height: var(--height-week-bar); background: var(--color-divider); border-radius: var(--radius-pill); }
+.week-hours__segment { position: absolute; top: 0; height: 100%; background: var(--color-primary); border-radius: var(--radius-pill); }
+.week-hours__now { position: absolute; height: var(--height-now-mark); width: var(--size-line); background: var(--color-on-health); bottom: 0; }
+.week-hours__now span { position: absolute; bottom: 100%; right: 0; font-size: var(--font-small); font-weight: var(--weight-bold); }
