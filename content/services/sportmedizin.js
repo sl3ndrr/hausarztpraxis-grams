@@ -5,6 +5,7 @@
  * @typedef {{id:string,title:string,text:string,items:string[]}} ServiceSection
  */
 export const sports = {
+  accent: 'sports',
   eyebrow: 'Leistungen · Sportmedizin', title: 'Bewegung medizinisch begleiten.',
   intro: 'Untersuchung, Beratung und Behandlung für Ihre sportliche Aktivität.',
   sections: [
@@ -13,3 +14,4 @@ export const sports = {
     { id: 'training', title: 'Prävention und Trainingsplanung', text: 'Wir unterstützen Sie bei Ihrer Trainingsplanung und beraten Sie zur Vorbeugung von Verletzungen.', items: ['Individuelle Trainingspläne', 'Muskelaufbau- und Regenerationsstrategien', 'Beratung zu Ernährung und Supplementierung im Sport'] }
   ]
 };
+

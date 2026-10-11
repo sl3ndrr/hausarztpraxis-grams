@@ -57,3 +57,9 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 - „Auf einen Blick“ verwendet ausschließlich doctor.summary, bestehende Lehrpraxis-Aussage, Hausbesuche und Termine nach Absprache.
 - `content/presentation.js`: Gliederungs- und Bedientexte für Status, Kapitel, Suche und Kontaktkomfort; keine neuen Praxisfakten.
 - `content/hours.js`: Samstag/Sonntag ohne reguläre Intervalle aus dem unveränderten Wochenplan abgeleitet.
+
+## Leistungsseiten
+
+- Sämtliche vorhandenen Aussagen bleiben sichtbar und unverändert. Kapitelnummern sind Orientierung, keine medizinische Rangfolge.
+- Die numerischen Altersfelder geben exakt die bereits ausgeschriebenen Grenzen wieder. Es werden keine Obergrenzen oder neuen Intervalle ergänzt.
+- Qualifikationen als DMP, Schulungen, Sonographie und Weiteres gruppiert: ausschließlich Darstellung, keine zusätzliche Genehmigungsaussage. Breadcrumbs und „Nächster Bereich“ sind Bedienhilfe.

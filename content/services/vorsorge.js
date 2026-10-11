@@ -5,6 +5,7 @@
  * @typedef {{id:string,title:string,text:string,items:string[]}} ServiceSection
  */
 export const prevention = {
+  accent: 'prevention',
   eyebrow: 'Leistungen · Vorsorge', title: 'Frühzeitig auf Ihre Gesundheit achten.',
   intro: 'Wir beraten Sie zu Vorsorgeuntersuchungen, Impfungen und Ihrem persönlichen Gesundheitsalltag.',
   sections: [
@@ -14,3 +15,4 @@ export const prevention = {
     { id: 'nutrition', title: 'Ernährungsberatung und Gewichtsmanagement', text: 'Wir beraten Sie zu Ihrer Ernährung und bieten individuelle Programme zur Gewichtsreduktion.', items: ['Individuelle Ernährungsberatung', 'Beratung bei Stoffwechselstörungen, zum Beispiel Diabetes', 'Unterstützung bei der Umstellung auf gesunde Ernährungsgewohnheiten'] }
   ]
 };
+

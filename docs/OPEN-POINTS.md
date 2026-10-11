@@ -41,3 +41,6 @@ Prüfergebnisse am 02.10.2026:
 - Der Hero muss mit ungeprüftem Motiv und Bildfehlern funktionieren; Text steht ausschließlich außerhalb des Fotos.
 - Drei Hauptbereiche reichen für den Header; Wunschformulare bleiben über Startseite und Footer erreichbar.
 - Der Status zeigt ausschließlich reguläre Zeiten in Europe/Berlin. Feiertage und Urlaub werden nicht vermutet.
+
+- Die Qualifikationsgruppen dienen allein der Lesbarkeit; Schulungen mit DMP-Bezug stehen unter Schulungen. Jede der 15 Originalqualifikationen erscheint genau einmal.
+- Die Altersleiste ist eine Folge vorhandener Stufen, keine maßstabsgerechte Darstellung von Leistungsansprüchen. Fachliche Prüfung der bewahrten Altersangaben bleibt erforderlich.

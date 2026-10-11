@@ -27,3 +27,12 @@ export const privateProcedures = [
   'Ästhetische Medizin: Botoxanwendung',
   'Aufbauinfusionen'
 ];
+
+
+// Indexgruppen sind ausschließlich Darstellung, keine neue Genehmigungskategorie.
+export const qualificationGroups = [
+  { key: 'dmp', indices: [2, 3, 4, 5] },
+  { key: 'training', indices: [0, 1, 6, 7, 8] },
+  { key: 'ultrasound', indices: [10, 11, 12, 13] },
+  { key: 'other', indices: [9, 14] }
+];

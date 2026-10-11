@@ -27,3 +27,18 @@ test('Deep-Anker erhalten Route und erlauben keine Selektoren', () => {
   assert.deepEqual(routeLocation(''), { path: '/', section: null });
   assert.equal(routeLocation('#/arzt?section=%22%5D').section, null);
 });
+
+import { health } from '../content/services/gesundheit.js';
+import { ageStages } from '../src/lib/age-stages.js';
+import { qualifications, qualificationGroups } from '../content/qualifications.js';
+test('Altersstufen behalten Grenzen und alle Originaltexte', () => {
+  const steps = health.sections[0].steps; const result = ageStages(steps);
+  assert.deepEqual(result.map(step => step.range), ['18–34', '35+', '45+', '50+', '65+']);
+  assert.deepEqual(result.map(step => step.text), steps.map(step => step.text));
+  assert.deepEqual(ageStages([]), []);
+});
+test('Qualifikationsgruppen enthalten jeden Eintrag genau einmal', () => {
+  const indices = qualificationGroups.flatMap(group => group.indices);
+  assert.equal(indices.length, qualifications.length); assert.equal(new Set(indices).size, qualifications.length);
+  assert.deepEqual(indices.toSorted((a, b) => a - b), qualifications.map((_, index) => index));
+});
