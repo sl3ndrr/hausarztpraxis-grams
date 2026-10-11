@@ -68,3 +68,9 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 
 - Keine Änderung an Namen, Rollen, Werdegang oder persönlichen Angaben. Das Team ist zusätzlich auf der Arztseite sichtbar.
 - Der Qualifikationslink führt direkt zum bestehenden Gesundheitskapitel, große Jahreszahlen ersetzen die gleichförmige Liste.
+
+## Anfahrt und Wunschformulare
+
+- Bus-Badges und Fußweg-Chips wiederholen nur die vorhandenen zwei Verbindungen; keine Park- oder Barrierefreiheitsaussagen.
+- Adresse kopieren, vCard speichern und Praxiskarte drucken sind lokale Bedienhilfen aus practice.js/hours.js.
+- Formularbutton „Wunsch im Entwurf prüfen“ macht den Demo-Modus eindeutiger. Der Ablauf zeigt Angaben, lokale Prüfung und telefonischen Kontakt; die vorhandenen mindestens zwei Werktage bleiben prominent im Hinweis.

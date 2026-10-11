@@ -3,6 +3,7 @@
  * Eingaben: forms.js, reine Validierung und einziger Submit-Austauschpunkt.
  * Felder in content/forms.js ändern; niemals Eingaben speichern oder per mailto senden.
  */
+import { requestProgress } from './request-progress.js';
 import { forms, birthFields, formText } from '../../content/forms.js';
 import { practice } from '../../content/practice.js';
 import { timeZone } from '../../content/hours.js';
@@ -12,13 +13,14 @@ import { validateRequest } from '../lib/validate.js';
 import { submitRequest } from '../lib/submit-request.js';
 export function requestForm(kind) {
   const config = forms[kind];
+  const progress = requestProgress();
   const summary = h('div', { className: 'form__summary', tabindex: '-1', role: 'alert', hidden: true });
   const result = h('div', { className: 'form__result', tabindex: '-1', role: 'status', 'aria-live': 'polite', hidden: true });
   const controls = new Map();
   const errors = new Map();
   const wrappers = new Map();
   const submit = h('button', { type: 'submit', className: 'button form__submit' }, formText.submit);
-  const form = h('form', { className: 'request-form card', novalidate: true }, summary, h('p', { className: 'small' }, formText.required));
+  const form = h('form', { className: 'request-form card', id: 'request-form', tabindex: '-1', novalidate: true }, progress.element, summary, h('p', { className: 'small' }, formText.required));
   function makeField(field) {
     const id = `${kind}-${field.name}`;
     const input = h('input', { id, name: field.name, type: field.type ?? 'text', required: field.required, autocomplete: field.autocomplete ?? 'off', maxlength: field.type === 'date' ? undefined : 200, 'aria-describedby': `${id}-error` });
@@ -48,6 +50,7 @@ export function requestForm(kind) {
   controls.set('consent', [consent]); errors.set('consent', consentError); wrappers.set('consent', consentWrap);
   form.append(consentWrap, submit, result);
   let destroyed = false;
+  form.addEventListener('input', () => progress.update(0));
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const values = Object.fromEntries(new FormData(form));
@@ -56,6 +59,7 @@ export function requestForm(kind) {
     for (const [name, fieldControls] of controls) { fieldControls.forEach(input => input.removeAttribute('aria-invalid')); if (errors.has(name)) { errors.get(name).hidden = true; wrappers.get(name).removeAttribute('data-error'); } }
     const problems = validateRequest(config, values, localParts(new Date(), timeZone));
     if (problems.length) {
+      progress.update(0);
       const links = problems.map(problem => {
         const inputs = controls.get(problem.name);
         inputs.forEach(input => input.setAttribute('aria-invalid', 'true'));
@@ -66,7 +70,7 @@ export function requestForm(kind) {
       summary.replaceChildren(h('h2', {}, formText.summary), h('ul', {}, links));
       summary.hidden = false; summary.focus(); return;
     }
-    summary.hidden = true;
+    summary.hidden = true; progress.update(1);
     submit.disabled = true; submit.textContent = formText.sending; form.setAttribute('aria-busy', 'true');
     let response;
     try { response = await submitRequest(kind, values); } catch { response = { ok: false }; }
@@ -74,8 +78,9 @@ export function requestForm(kind) {
     submit.disabled = false; submit.textContent = formText.submit; form.removeAttribute('aria-busy');
     result.replaceChildren(response.ok && response.demo ? h('h2', {}, formText.successTitle) : h('h2', {}, formText.demoTitle), h('p', {}, response.ok && response.demo ? formText.success : formText.unavailable));
     result.hidden = false;
-    if (response.ok) form.reset();
+    if (response.ok) { form.reset(); progress.update(2); } else progress.update(1);
     result.focus();
   });
   return { element: form, destroy: () => { destroyed = true; form.reset(); } };
 }
+

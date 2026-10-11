@@ -13,7 +13,7 @@ export const home = {
   shortcutsTitle: 'Ihr Anliegen. Ein kurzer Weg.',
   shortcutsIntro: 'Hier finden Sie unsere Leistungen und die Wünsche, die Sie online vorbereiten können.',
   shortcuts: [
-    { title: 'Wiederholungsrezept anfordern', text: 'Rezeptwunsch im Demo-Formular vorbereiten.', href: '#/rezeptwunsch', icon: 'prescription', accent: 'health' },
+    { title: 'Wiederholungsrezept anfordern', text: 'Rezeptwunsch im Demo-Formular vorbereiten.', href: '#/rezeptwunsch?section=request-form', icon: 'prescription', accent: 'health' },
     { title: 'Akute Beschwerden', text: 'Unsere akuten Behandlungen ansehen.', href: '#/leistungen/gesundheit?section=acute', icon: 'health', accent: 'health' },
     { title: 'Vorsorge', text: 'Untersuchungen und Impfungen entdecken.', href: '#/leistungen/vorsorge?section=cancer', icon: 'shield', accent: 'prevention' },
     { title: 'Hausbesuch', text: 'Hausbesuche nach Absprache.', href: '#/leistungen/gesundheit?section=home-visits', icon: 'pin', accent: 'health' },

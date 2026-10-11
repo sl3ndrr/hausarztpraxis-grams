@@ -1,0 +1,22 @@
+/*
+ * Anfahrt-Linienkarten, Kontaktkomfort und sichtbarer Demo-Ablauf.
+ * Eingaben: Content-Linien und Formularzustand; alle Designwerte aus Tokens.
+ * Druckkarte ausschließlich über print.css anzeigen.
+ */
+.travel-lines { margin-top: var(--space-5); }
+.travel-line { padding: var(--space-6); border-radius: var(--radius-card); }
+.travel-line > * + * { margin-top: var(--space-5); }
+.travel-line__badges { display: flex; gap: var(--space-3); }
+.travel-line__badges span { display: grid; place-items: center; min-width: var(--space-7); min-height: var(--space-7); border-radius: var(--radius-small); background: var(--color-on-health); color: var(--color-health); font-weight: var(--weight-bold); font-size: var(--font-h3); }
+.travel-line__walk { display: flex; align-items: center; gap: var(--space-3); border: var(--size-line) solid currentColor; border-radius: var(--radius-small); padding: var(--space-3); font-size: var(--font-label); }
+.contact-tools { margin-top: var(--space-5); }
+.contact-tools .small { margin-top: var(--space-3); }
+.practice-card { display: none; }
+.request-progress { margin-bottom: var(--space-6); }
+.request-progress ol { list-style: none; padding: 0; display: grid; gap: var(--space-3); margin-top: var(--space-4); }
+.request-progress li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); background: var(--color-surface-raised); padding: var(--space-4); border-radius: var(--radius-small); }
+.request-progress li[aria-current="step"] { outline: var(--size-line) solid var(--color-primary); }
+.request-progress li[aria-current="step"] strong { text-decoration: underline; }
+.request-progress__number { display: grid; place-items: center; align-self: start; width: var(--size-touch); height: var(--size-touch); background: var(--color-primary); color: var(--color-on-primary); border-radius: var(--radius-pill); font-weight: var(--weight-bold); }
+.request-progress p:not(.eyebrow) { margin-top: var(--space-2); font-size: var(--font-small); }
+.form__consent-row input { width: var(--size-touch); height: var(--size-touch); margin: 0; }

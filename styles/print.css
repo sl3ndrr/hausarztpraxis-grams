@@ -40,3 +40,13 @@
   .accordion__mark { display: none; }
   .container { width: 100%; }
 }
+
+
+@media print {
+  body:has(.practice-card) .footer { display: none; }
+  .directions-view > *:not(.practice-card) { display: none; }
+  .practice-card { display: block; background: var(--color-print-bg); color: var(--color-print-text); padding: var(--space-6); border: var(--size-line) solid var(--color-print-text); border-radius: var(--radius-small); }
+  .practice-card > * + * { margin-top: var(--space-4); }
+  .practice-card h2 { font-size: var(--font-h2); }
+  .practice-card .hours-table { font-size: var(--font-body-size); }
+}

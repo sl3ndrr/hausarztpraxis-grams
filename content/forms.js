@@ -21,7 +21,7 @@ export const formText = {
   birthOld: 'Bitte prüfen Sie das Jahr Ihres Geburtsdatums.',
   consent: 'Ich erkläre mich mit der Verarbeitung meiner personenbezogenen Daten zum Zweck der Bearbeitung und Dokumentation sowie mit der Datenschutzerklärung einverstanden.',
   consentError: 'Bitte stimmen Sie der Verarbeitung Ihrer Daten zu.',
-  required: '* Pflichtfelder', submit: 'Wunsch prüfen und absenden', sending: 'Wunsch wird geprüft …',
+  required: '* Pflichtfelder', submit: 'Wunsch im Entwurf prüfen', sending: 'Wunsch wird geprüft …',
   summary: 'Bitte prüfen Sie folgende Angaben:',
   errorMark: 'Hinweis:',
   successTitle: 'Ihr Wunsch wurde im Entwurf geprüft.',
@@ -47,4 +47,13 @@ export const forms = {
       { name: 'referral2', label: '2. Überweisung' }, { name: 'referral3', label: '3. Überweisung' }
     ]
   }
+};
+
+
+export const requestFlow = {
+  title: 'Ablauf im Entwurf', steps: [
+    { title: 'Angaben ergänzen', text: 'Füllen Sie die Pflichtfelder aus.' },
+    { title: 'Im Entwurf prüfen', text: 'Die Vorschau sendet und speichert keine Formulardaten.' },
+    { title: 'Telefonisch Kontakt aufnehmen', text: 'Wenden Sie sich für Ihren Wunsch bitte telefonisch an die Praxis.' }
+  ]
 };
