@@ -63,3 +63,8 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 - Sämtliche vorhandenen Aussagen bleiben sichtbar und unverändert. Kapitelnummern sind Orientierung, keine medizinische Rangfolge.
 - Die numerischen Altersfelder geben exakt die bereits ausgeschriebenen Grenzen wieder. Es werden keine Obergrenzen oder neuen Intervalle ergänzt.
 - Qualifikationen als DMP, Schulungen, Sonographie und Weiteres gruppiert: ausschließlich Darstellung, keine zusätzliche Genehmigungsaussage. Breadcrumbs und „Nächster Bereich“ sind Bedienhilfe.
+
+## Arzt und Team
+
+- Keine Änderung an Namen, Rollen, Werdegang oder persönlichen Angaben. Das Team ist zusätzlich auf der Arztseite sichtbar.
+- Der Qualifikationslink führt direkt zum bestehenden Gesundheitskapitel, große Jahreszahlen ersetzen die gleichförmige Liste.

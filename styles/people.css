@@ -1,0 +1,19 @@
+/*
+ * Menschen der Praxis: kleine Originalbilder, farbige Rahmen und große Jahre.
+ * Eingaben: Team- und Arztkomponenten; keine Bildvergrößerung.
+ * Farben und Maße aus Tokens, Rollentexte im Content pflegen.
+ */
+.person-card { min-width: 0; padding: 0; }
+.person-card__portrait { padding: var(--space-5); border-radius: var(--radius-card) var(--radius-small) var(--radius-card) var(--radius-card); margin-bottom: var(--space-5); }
+.person-card:nth-child(even) .person-card__portrait { border-radius: var(--radius-small) var(--radius-card) var(--radius-card) var(--radius-card); }
+.person-card .picture { margin-inline: auto; }
+.person-card h3 { font-size: var(--font-h3); font-weight: var(--weight-bold); }
+.person-card p { margin-top: var(--space-3); font-size: var(--font-label); }
+.doctor-page__profile > * + * { margin-top: var(--space-5); }
+.doctor-page__profile h2 { font-size: var(--font-h2); }
+.timeline--career { padding-left: var(--space-7); }
+.timeline--career .timeline__item { padding-block: var(--space-3) var(--space-7); }
+.timeline--career h3 { font-size: var(--font-year); font-weight: var(--weight-bold); letter-spacing: var(--letter-heading); }
+.timeline--career .timeline__item::before { left: calc(-1 * var(--space-7) + var(--space-1)); }
+@media (min-width: 768px) { .grid--four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { .grid--four { grid-template-columns: repeat(4, minmax(0, 1fr)); } }

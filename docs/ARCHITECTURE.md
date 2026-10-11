@@ -27,3 +27,5 @@ Die Website läuft unter jedem statischen HTTP-Server, einschließlich GitHub Pa
 ## Präsentationsschicht 11.10.2026
 
 `content/presentation.js` bündelt neue Bedienbeschriftungen. `route-location.js` zerlegt Hash-Routen mit `?section=id`; der Router fokussiert und scrollt zu vorhandenen Deep-Ankern, sonst zum H1. `live-status.js` nutzt unverändert die reine Öffnungslogik; `week-hours.js` ergänzt Textzeiten um in `week-segments.js` berechnete Balken und Jetzt-Marke. Beide geben einen Timer-Cleanup zurück. Das Hero-Foto ist ein eigenes Element ohne Overlay; der Checker verbietet die alte Overlay-Regel.
+
+Die Arztseite zeigt zusätzlich dieselben `team`-Daten wie die Startseite. `people.css` kapselt Porträtrahmen und Karriere-Timeline; die 200-px-Grenze ist ein festes Token und wächst nicht mit der Schriftstufe. Das Teamraster wechselt bei 768 px auf zwei und erst bei 1280 px auf vier Spalten.
