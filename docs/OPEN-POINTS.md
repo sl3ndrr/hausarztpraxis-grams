@@ -33,3 +33,11 @@ Prüfergebnisse am 02.10.2026:
 - Lokaler HTTP-Smoke-Test: alle 62 HTML/CSS/JS-Dateien mit Status 200 und passenden Modul-MIME-Typen ausgeliefert; Pfadüberschreitung ergibt 403, unbekannte Datei 404.
 - Checker mit sechs absichtlichen Verstößen geprüft: falsches JSON-LD-Fax, Dark-Paritätsfehler, Fremdhost, unbekannte Navigationsroute, RGB-Wert außerhalb der Tokens und unzureichender Textkontrast wurden zuverlässig abgelehnt.
 - Visuelle Browser-, Bildmotiv-, Drucklayout- und Screenreader-Abnahme bleiben aufgrund der oben beschriebenen Umgebungsgrenzen offen.
+
+
+## Annahmen der Überarbeitung 11.10.2026
+
+- Der vorhandene Faktenstand bleibt verbindlich; die Darstellung ist keine medizinische Aktualisierung.
+- Der Hero muss mit ungeprüftem Motiv und Bildfehlern funktionieren; Text steht ausschließlich außerhalb des Fotos.
+- Drei Hauptbereiche reichen für den Header; Wunschformulare bleiben über Startseite und Footer erreichbar.
+- Der Status zeigt ausschließlich reguläre Zeiten in Europe/Berlin. Feiertage und Urlaub werden nicht vermutet.

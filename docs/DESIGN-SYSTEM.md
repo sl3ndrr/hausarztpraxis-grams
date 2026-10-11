@@ -1,32 +1,28 @@
 <!--
-  Gestaltung, Kontrastziele und Regeln für wiederverwendbare Komponenten.
-  Eingaben: tatsächliche Tokens und Styles.
-  Bei visuellen Änderungen Light und Dark gemeinsam dokumentieren.
+  Gestaltungskonzept und Abnahmekriterien für den Relaunch.
+  Eingaben: Auftrag, vorhandene Inhalte und semantische Tokens.
+  Bei jeder Gestaltungsänderung beide Modi und Kontrastpaare abgleichen.
 -->
 # Design-System
 
-Ruhige Petrol-/Mintflächen mit warmem Sand-Akzent. Große Systemschrift für Fließtext, Charter/Iowan Old Style/Georgia für Überschriften, keine externen Fonts. Basis 20 px, vergrößerbar auf 22 und 24 px. Mobile-first ab 360 px; Hauptraster ab 900 px mehrspaltig, Inhaltsbreite maximal 1200 px. Ab 1300 px können die Einstellungen neben dem Kopfbereich stehen; darunter erhalten sie Platz oberhalb der Navigation.
+Die Praxis erhält einen typografischen, warmen und selbstbewussten Auftritt mit großen serifenlosen Systemüberschriften und deutlichem Gewichtskontrast. Petrol verankert Marke und Bedienung, Mint steht für Gesundheit, Apricot für Vorsorge und ein kräftiges Gelbgrün für Sportmedizin. Unterschiedlich große Flächen, asymmetrische Radien, organische SVG-Kurven und große Jahreszahlen ersetzen die gleichförmige Rahmenoptik. Kurze gestaffelte Einblendungen und fühlbare Hover-/Press-Reaktionen bewegen ausschließlich transform/opacity; reduzierte Bewegung schaltet sie vollständig ab, nichts blinkt oder läuft in Dauerschleifen. Die Hierarchie führt vom Telefon und Status über Anliegen und sichtbare Leistungen zu den Menschen und Kontaktinformationen, damit ältere und mobile Nutzer schnell ihr Ziel erreichen.
 
-| Semantisches Token | Hell | Dunkel |
+## Palette und Typografie
+
+| Bereich | Hell: Fläche / Schrift | Dunkel: Fläche / Schrift |
 | --- | --- | --- |
-| `--color-bg` | `#F8FBFB` | `#0F1C21` |
-| `--color-surface` | `#FFFFFF` | `#172A31` |
-| `--color-surface-raised` | `#E6F3F2` | `#1D343C` |
-| `--color-text` | `#14272E` | `#E8F1F2` |
-| `--color-muted` | `#334A51` | `#B8CDD2` |
-| `--color-primary` | `#0D5666` | `#80CCDC` |
-| `--color-on-primary` | `#FFFFFF` | `#0A2A32` |
-| `--color-border` | `#60767D` | `#829FA8` |
-| `--color-warm` | `#F3E3CF` | `#3A2F22` |
-| `--color-on-warm` | `#392B1C` | `#F3E3CF` |
-| `--color-status` | `#14522F` | `#5FD38D` |
+| Basis | #FAF7F0 / #142D30 | #101F23 / #F0F5EE |
+| Gesundheit | #D0EEDC / #14362B | #203F35 / #D6F5E2 |
+| Vorsorge | #FFC4A3 / #46281F | #503126 / #FFE2D0 |
+| Sportmedizin | #E0ED81 / #273117 | #343C20 / #EBF5B2 |
+| Bedienung | #094751 / #FFFFFF | #98D9DB / #102E33 |
 
-Verbindliche Werte stehen ausschließlich in `styles/tokens.css`. Die Startwerte für Primärfarben wurden leicht angepasst, um auch auf Mint/erhöhten Dark-Flächen mindestens 7:1 zu erreichen. Dunkle Flächen verwenden feine Trennlinien statt Schatten; Formularrahmen sind heller und kontrastreich. Der Checker prüft Fließtext ≥ 7:1, Buttontext ≥ 4,5:1 sowie Feldrahmen/Fokus ≥ 3:1. Diese Tokenpaare sind keine vollständige WCAG-Zertifizierung.
+Systemschriften ausschließlich, Basis 20/22/24 px, H1 bis 4,8 rem, H2 bis 3,15 rem, Überschriftengewicht 800 und Laufweite −0,045 em. Großzügige Rundungen (1,8 rem), Touch-Ziele mindestens 2,8 rem. Designwerte stehen ausschließlich in tokens.css und in allen drei Token-Blöcken. Neue Text-/Flächenpaare im Checker prüfen: mindestens 7:1 auch für Buttons, Fokus/Feldgrenzen mindestens 3:1. Farbe ergänzt immer Titel, Symbole oder Textmarkierungen.
 
-`--space-1` bis `--space-9` bilden die Abstandsleiter von 0,25 bis 5 rem. Kartenradius 1 rem (20 px bei Basisschrift); kleine Elemente 0,5 rem. Touch-Zielhöhe 2,8 rem (56 px bei Basisschrift), mobile Kontaktleiste 4,5 rem. Inhalte dürfen umbrechen; Bilder und Grid-Kinder sind begrenzt. Mediengrenzen sind die einzigen festen Pixelwerte außerhalb der Tokens.
+## Aufbau und Bedienung
 
-Komponenten: `card`, `button`/`button--quiet`, `notice--warm`/`notice--mint`, `service-card`, `person-card`, `hours-card`, `accordion`, `timeline`, `request-form`. `picture` reserviert Maße und bietet Initialen-Fallback. Porträts maximal 200 px breit; Logo auf `--color-logo-surface`. Der Hero verwendet identischen dunklen Hintergrund/Overlay und hellen Text in beiden Modi. Der Worst-Case des Overlays über einem weißen Bild erfüllt ebenfalls das Textziel; tatsächlicher Bildausschnitt bleibt abnahmepflichtig.
+Schlanker Header mit drei Bereichen, dauerhaft erreichbarem Telefon und eigenem Panel für Schrift/Darstellung; Escape schließt mit Fokus-Rückkehr. Hero-Text und Foto erhalten getrennte Flächen; das Motiv trägt keine Information und keine Textkontraste. Bento-Anliegen, farbcodierte Leistungen und Wochenbalken schaffen verschiedene Gewichtungen. Leistungsseiten zeigen Kapitel offen und eine Ankernavigation; Gruppen-Chips, Altersleiste und Jahres-Timeline erhalten sämtliche Inhalte. Porträts sind unabhängig von der Schriftstufe auf höchstens 200 CSS-Pixel begrenzt. Dark Mode nutzt eigenständige warme, satte Flächen statt einer Inversion.
 
-Automatik folgt dem System, manuelle Modi werden synchron vor dem Rendern gesetzt. Beide Dark-Blöcke enthalten dieselben Token-Namen/Werte. Neue Tokens in alle drei Blöcke aufnehmen. Gedämpfter Text bleibt gut lesbar. Der Schriftgrößenschalter erlaubt drei Stufen; die größte Stufe muss bei 360 px manuell geprüft werden.
+## Bewegung und Abnahme
 
-Bewegung ist dezent: Reveal 450 ms, Seitenwechsel 350 ms, Hero-Einblenden 600 ms, einmaliger Bildzoom 16 s. Statuspunkt pulsiert nur dreimal und blinkt nicht. Nur `transform`/`opacity`, keine Parallax-Effekte. `prefers-reduced-motion` deaktiviert alles zentral; Inhalte bleiben sichtbar. Druck verwendet schwarze Schrift auf weißen Flächen, öffnet Akkordeoninhalte und entfernt Navigation/Leisten.
+Reveal 520 ms mit 70-ms-Staffelung, Seitenwechsel 240 ms; keine automatische Bildbewegung oder Statusanimation. Ohne Observer bleiben Inhalte sichtbar, fokussierte Elemente werden sofort gezeigt. Bei reduced-motion ist jede Animation/Transition deaktiviert. 360/768/1280 px, beide Themes, größte Schrift und reduzierte Bewegung prüfen; Druck zeigt Adresse und Zeiten ohne Bedienleisten. Rechnerische Kontraste ersetzen keine vollständige WCAG- oder Screenreader-Abnahme.

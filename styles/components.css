@@ -10,7 +10,7 @@
 .button-row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .button-row > * { max-width: 100%; }
 .icon { width: var(--width-icon); height: var(--width-icon); vertical-align: middle; flex-shrink: 0; }
-.card { border: var(--size-border) solid var(--color-divider); border-radius: var(--radius-card); background: var(--color-surface); padding: var(--space-5); box-shadow: var(--shadow-card); }
+.card { border: 0; border-radius: var(--radius-card); background: var(--color-surface); padding: var(--space-5); box-shadow: var(--shadow-card); }
 .card > * + * { margin-top: var(--space-4); }
 .text-link { display: inline-flex; gap: var(--space-3); align-items: center; min-height: var(--size-touch); font-weight: var(--weight-medium); }
 .notice { padding: var(--space-6); background: var(--color-warm); color: var(--color-on-warm); border-radius: var(--radius-card); }
@@ -88,3 +88,4 @@
 .form__result h2 { font-size: var(--font-h3); margin-bottom: var(--space-4); }
 .form__submit { width: 100%; }
 @media (min-width: 900px) { .hours-table td span { display: inline-block; } .hours-table td span + span { margin-left: var(--space-3); } .form__names { grid-template-columns: 1fr 1fr; } .form__submit { width: auto; } }
+

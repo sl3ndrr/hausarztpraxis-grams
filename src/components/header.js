@@ -24,19 +24,23 @@ export function header() {
     submenus.push({ group, toggle, close });
     return group;
   }));
-  const panel = h('div', { id: 'navigation-panel', className: 'header__panel' },
-    h('div', { className: 'header__settings' }, fontSizeSwitch(), themeSwitch('header')), nav);
+  const settingsPanel = h('div', { id: 'settings-panel', className: 'header__settings', hidden: true }, h('p', { className: 'eyebrow' }, ui.font), fontSizeSwitch(), themeSwitch('header'));
+  const settingsButton = h('button', { type: 'button', className: 'button button--quiet header__settings-toggle', 'aria-expanded': 'false', 'aria-controls': 'settings-panel' }, ui.settings);
+  const closeSettings = () => { settingsPanel.hidden = true; settingsButton.setAttribute('aria-expanded', 'false'); };
+  settingsButton.addEventListener('click', () => { const open = settingsPanel.hidden; settingsPanel.hidden = !open; settingsButton.setAttribute('aria-expanded', String(open)); });
+  const panel = h('div', { id: 'navigation-panel', className: 'header__panel' }, nav);
   const menuButton = h('button', { type: 'button', className: 'button button--quiet header__menu', 'aria-expanded': 'false', 'aria-controls': 'navigation-panel', 'data-menu-toggle': '' }, ui.menu);
   const root = h('header', { className: 'header' }, h('div', { className: 'container header__inner' },
     h('div', { className: 'header__top' }, h('a', { href: '#/', className: 'brand' }, h('span', { className: 'brand__mark', 'aria-hidden': 'true' }, '+'), h('span', {}, practice.name, h('small', {}, practice.doctor))),
-      h('a', { href: practice.phone.href, className: 'button header__phone' }, icon('phone'), practice.phone.text), menuButton), panel));
-  const media = matchMedia('(min-width: 900px)');
-  const closeMenu = () => { menuButton.setAttribute('aria-expanded', 'false'); panel.hidden = !media.matches; submenus.forEach(item => item.close()); };
+      h('a', { href: practice.phone.href, className: 'button header__phone' }, icon('phone'), practice.phone.text), settingsButton, menuButton), panel, settingsPanel));
+  const media = matchMedia('(min-width: 1100px)');
+  const closeMenu = () => { closeSettings(); menuButton.setAttribute('aria-expanded', 'false'); panel.hidden = !media.matches; submenus.forEach(item => item.close()); };
   closeMenu();
   menuButton.addEventListener('click', () => { const open = menuButton.getAttribute('aria-expanded') !== 'true'; panel.hidden = !open; menuButton.setAttribute('aria-expanded', String(open)); });
   root.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
   document.addEventListener('click', event => { submenus.forEach(item => { if (!item.group.contains(event.target)) item.close(); }); if (!root.contains(event.target)) closeMenu(); }, { signal: controller.signal });
-  root.addEventListener('keydown', event => { if (event.key === 'Escape') { const expanded = submenus.find(item => item.toggle.getAttribute('aria-expanded') === 'true'); if (expanded) { expanded.close(); expanded.toggle.focus(); } else { closeMenu(); menuButton.focus(); } } });
+  root.addEventListener('keydown', event => { if (event.key === 'Escape') { if (!settingsPanel.hidden) { closeSettings(); settingsButton.focus(); return; } const expanded = submenus.find(item => item.toggle.getAttribute('aria-expanded') === 'true'); if (expanded) { expanded.close(); expanded.toggle.focus(); } else { closeMenu(); menuButton.focus(); } } });
   media.addEventListener('change', closeMenu, { signal: controller.signal });
   return { element: root, closeMenu, destroy: () => controller.abort() };
 }
+

@@ -44,3 +44,9 @@ Die Fakten und Leistungslisten des Auftrags wurden übernommen. Struktur, Übers
 | `content/seo.js`/Shell | Sachliche Titel und kurze Beschreibungen je Ansicht; Formulare ausdrücklich als Entwurf ohne Übermittlung beschrieben | Technische SEO-Grundlagen, keine neuen Praxisfakten |
 
 Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Original-URLs bleiben verlinkt. Teamrollen, Studienangabe, Qualifikationen, alle Leistungsstichpunkte, Kontaktdaten und Zeiten wurden unverändert inhaltlich erhalten. Alle neutralisierenden Umformulierungen stehen ausdrücklich in dieser Liste.
+
+
+## Überarbeitung 11.10.2026 – Basis
+
+- `content/site.js`: „Lesen & Darstellung“ als Panel-Beschriftung, Schriftzeichen zentralisiert. Reine Bedienhilfe.
+- `content/navigation.js`: drei Hauptbereiche „Leistungen“, „Arzt & Team“, „Kontakt & Anfahrt“; alle bestehenden Seiten bleiben über Footer/Anliegen erreichbar. Keine neue Tatsache.

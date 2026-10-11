@@ -7,7 +7,7 @@
 export const DEMO_MODE = true;
 export const site = { url: 'https://hausarztpraxis-grams.de/', locale: 'de-DE' };
 export const ui = {
-  skip: 'Zum Inhalt', menu: 'Menü', close: 'Schließen', phone: 'Telefon', fax: 'Telefax', email: 'E-Mail',
+  settings: 'Lesen & Darstellung', fontSmaller: 'A−', fontLarger: 'A+', skip: 'Zum Inhalt', menu: 'Menü', close: 'Schließen', phone: 'Telefon', fax: 'Telefax', email: 'E-Mail',
   call: 'Jetzt anrufen', directions: 'Anfahrt', contact: 'Kontakt', hours: 'Sprechzeiten',
   theme: 'Darstellung', themes: [{ value: 'auto', text: 'Automatisch' }, { value: 'light', text: 'Hell' }, { value: 'dark', text: 'Dunkel' }],
   font: 'Schriftgröße', smaller: 'Schrift verkleinern', larger: 'Schrift vergrößern',
@@ -21,3 +21,4 @@ export const ui = {
   demo: 'Website-Entwurf', demoNote: 'Die Formulare sind eine Vorschau. Es werden keine Daten übermittelt.',
   noscript: 'Bitte aktivieren Sie JavaScript für alle Ansichten. Unsere Kontaktdaten und Sprechzeiten finden Sie hier.'
 };
+

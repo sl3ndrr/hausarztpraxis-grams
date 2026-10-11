@@ -27,7 +27,8 @@ export function checkTokens(css, sources, fail) {
     ['color-text', 'color-bg', 7], ['color-text', 'color-surface', 7], ['color-text', 'color-surface-raised', 7],
     ['color-muted', 'color-bg', 7], ['color-muted', 'color-surface', 7], ['color-muted', 'color-surface-raised', 7],
     ['color-primary', 'color-bg', 7], ['color-primary', 'color-surface', 7], ['color-primary', 'color-surface-raised', 7],
-    ['color-on-primary', 'color-primary', 4.5], ['color-on-primary', 'color-primary-hover', 4.5],
+    ['color-on-primary', 'color-primary', 7], ['color-on-primary', 'color-primary-hover', 7],
+    ['color-on-health', 'color-health', 7], ['color-on-prevention', 'color-prevention', 7], ['color-on-sports', 'color-sports', 7],
     ['color-on-warm', 'color-warm', 7], ['color-status', 'color-surface', 7],
     ['color-error', 'color-surface', 7], ['color-error', 'color-error-bg', 7],
     ['color-border', 'color-surface', 3], ['color-border', 'color-bg', 3],
@@ -48,3 +49,4 @@ export function checkTokens(css, sources, fail) {
     if (contrast(tokens['--color-hero-text'], composite) < 7) fail('styles/tokens.css', `${mode}: Hero-Text auf Overlay über weißem Bild unter 7:1.`);
   }
 }
+
