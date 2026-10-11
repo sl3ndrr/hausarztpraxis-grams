@@ -5,7 +5,7 @@
 -->
 # Arbeitsanweisung
 
-Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigabe durch den Praxisinhaber. Inhalt und Fakten stammen aus der bestehenden Praxis-Webseite und dem Projektauftrag. Die Seite soll ruhig, gut lesbar und mit wenig Kontext sicher pflegbar bleiben.
+Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigabe durch den Praxisinhaber. Inhalt und Fakten stammen aus der bestehenden Praxis-Webseite und dem Projektauftrag. Die Seite soll selbstbewusst, warm, gut lesbar und mit wenig Kontext sicher pflegbar bleiben. Der sachlich-freundliche Ton und alle harten Regeln bleiben verbindlich.
 
 **Stack:** HTML, CSS, Vanilla-JS als ES-Module; nur `src/theme-init.js` ist ein synchrones klassisches Skript. Kein Build, keine Frameworks, keine Abhängigkeiten und keine externen Ressourcen außer den erlaubten Praxisbildern. Dev-Skripte verwenden ausschließlich Node-Bordmittel.
 
@@ -16,10 +16,11 @@ Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigab
 - `content/practice.js`, `hours.js`: Kontakt, Rechts-/Maps-Links, Sprechzeiten.
 - `content/navigation.js`, `seo.js`, `images.js`: Menüs, Metadaten, Bilddaten.
 - `content/home.js`, `team.js`, `doctor.js`, `qualifications.js`, `anfahrt.js`: Texte und Fakten.
+- `content/presentation.js`, `search.js`: Bedientexte und explizite Suchquellen.
 - `content/forms.js`, `content/services/`: Formularschemata und Leistungen.
 - `src/main.js`, `router.js`, `routes.js`: Einstieg, Routing, explizite View-Imports.
-- `src/components/`, `views/`: sichere DOM-Komponenten und Seitenaufbau.
-- `src/lib/`: reine Logik, DOM-Helper, Speicher, Submit-Austauschpunkt.
+- `src/components/`, `views/`: offene Kapitel, Status, Suche, Kontaktkomfort, Demo-Ablauf, sichere DOM-Ausgabe und Seitenaufbau.
+- `src/lib/`: reine Öffnungs-, Alters-, Wochenbalken-, Such-, vCard- und Deep-Anker-Logik; DOM-Helper, Speicher, Submit-Austauschpunkt.
 - `src/behaviors/`: Theme, Schrift und Reveal mit DOM-Zugriff.
 - `styles/`: je Datei ein Zweck; sämtliche Designwerte in `tokens.css`.
 - `scripts/`, `tests/`, `docs/`: Prüfung, Server, Tests und Pflegeanleitungen.
@@ -35,7 +36,9 @@ Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigab
 | Seitenaufbau | `src/views/` |
 | Teammitglied | `content/team.js` |
 | Leistung | Zuständige Datei in `content/services/` |
-| Qualifikation | `content/qualifications.js` |
+| Qualifikation / Darstellungsgruppe | `content/qualifications.js`; jeden Index genau einmal zuordnen |
+| Neue Bedienbeschriftung | `content/presentation.js` oder zuständiges Content-Modul |
+| Deep-Anker | Stabile Abschnitts-ID und `#/route?section=id`; Ziel fokussierbar halten |
 | Bild-URL/Ausschnitt/Fallback | `content/images.js` |
 | Formularfeld oder Meldung | `content/forms.js` |
 | Backend | `src/lib/submit-request.js`; `DEMO_MODE` erst nach sicherer Anbindung ändern |
@@ -63,3 +66,4 @@ node --test
 ```
 
 Beide Befehle müssen fehlerfrei sein. Änderungen mit kurzen deutschen Commit-Nachrichten in sinnvollen Schritten committen; `main` muss nach jedem Push lauffähig bleiben. Kein Force-Push. Textänderungen in `docs/TEXT-CHANGES.md` nachtragen. Unsichere Fakten und ungeprüfte Annahmen in `docs/OPEN-POINTS.md` festhalten.
+

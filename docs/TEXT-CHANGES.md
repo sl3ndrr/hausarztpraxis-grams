@@ -74,3 +74,14 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 - Bus-Badges und Fußweg-Chips wiederholen nur die vorhandenen zwei Verbindungen; keine Park- oder Barrierefreiheitsaussagen.
 - Adresse kopieren, vCard speichern und Praxiskarte drucken sind lokale Bedienhilfen aus practice.js/hours.js.
 - Formularbutton „Wunsch im Entwurf prüfen“ macht den Demo-Modus eindeutiger. Der Ablauf zeigt Angaben, lokale Prüfung und telefonischen Kontakt; die vorhandenen mindestens zwei Werktage bleiben prominent im Hinweis.
+
+## Ergänzungen
+
+- Lokale Suche verwendet sämtliche Leistungsabschnitte, Altersstufentexte, 15 Qualifikationen und vier privatärztliche Verfahren. Treffertexte stammen direkt aus dem Content.
+- Globaler Status im Header ergänzt „Anzeige auf Grundlage der regulären Sprechzeiten“ als zugänglichen Hinweis und Titel. Auf Startseite und Wochenzeiten bleibt die Grundlage sichtbar.
+- Notfallband zeigt ausschließlich die zwei vorhandenen Nummern aus practice.js; keine zusätzliche Dringlichkeitsbewertung.
+- „Aa“, „Alle Einträge anzeigen“, „Suche zurücksetzen“ und Trefferzahlen sind reine Bedienbeschriftungen.
+
+- Eigene Bedienverbesserungen: fokussierter Deep-Anker mit aktueller Kapitelmarkierung, eindeutige lokale Demo-Prüfung, sichtbare Zwischenablagefehler. Kein neuer medizinischer Inhalt.
+
+- Kompakter globaler Status beginnt sichtbar mit „Regulär:“; die vollständige Grundlage bleibt zugänglich.

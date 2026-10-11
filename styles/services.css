@@ -42,3 +42,5 @@
   .chapter-nav { position: sticky; top: var(--offset-anchor); max-height: calc(100dvh - var(--offset-anchor) - var(--space-4)); overflow-y: auto; }
   .age-bar__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+.chapter-nav a[aria-current="location"] { font-weight: var(--weight-bold); text-decoration-thickness: var(--size-line); }

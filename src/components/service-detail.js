@@ -16,7 +16,7 @@ export function serviceDetail(data, extra = []) {
   const next = overview.cards[index + 1] ?? { title: ui.showServices, href: '#/leistungen', accent: 'health' };
   const chapters = [...data.sections, ...extra];
   const nav = h('nav', { className: `chapter-nav accent--${data.accent}`, 'aria-label': presentation.chapters }, h('p', { className: 'eyebrow' }, presentation.chapters),
-    h('ol', {}, chapters.map(section => h('li', {}, h('a', { href: `${current.href}?section=${section.id}` }, section.title)))));
+    h('ol', {}, chapters.map(section => h('li', {}, h('a', { href: `${current.href}?section=${section.id}`, 'data-chapter-link': '' }, section.title)))));
   const content = chapters.map((section, index) => h('section', { className: 'chapter', id: section.id, tabindex: '-1' },
     h('span', { className: `chapter__number accent--${data.accent}`, 'aria-hidden': 'true' }, String(index + 1).padStart(2, '0')),
     h('h2', {}, section.title), section.text && h('p', { className: 'lead' }, section.text), section.items && list(section.items), section.steps && ageBar(section.steps), section.content));

@@ -24,6 +24,9 @@ export function startRouter(mount, closeMenu) {
       if (href === `#${path}`) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
       link.toggleAttribute('data-active-section', href !== '#/' && path.startsWith(href.slice(1) + '/'));
     });
+    mount.querySelectorAll('[data-chapter-link]').forEach(link => {
+      if (section && routeLocation(link.getAttribute('href')).section === section) link.setAttribute('aria-current', 'location');
+    });
     stopReveal = reveal(mount);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     const title = mount.querySelector('h1');

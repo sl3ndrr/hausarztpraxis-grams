@@ -3,6 +3,7 @@
  * Eingaben: practice/hours/navigation; keine duplizierten Fakten.
  * Kontakt in practice.js, Zeiten in hours.js ändern.
  */
+import { emergencyBand } from './emergency-band.js';
 import { practice } from '../../content/practice.js';
 import { footerLinks } from '../../content/navigation.js';
 import { ui } from '../../content/site.js';
@@ -14,10 +15,11 @@ export function contactBlock() {
     h('p', {}, `${ui.fax}: ${practice.fax}`), h('p', {}, `${ui.email}: `, h('a', { href: `mailto:${practice.email}` }, practice.email)));
 }
 export function footer() {
-  return h('footer', { className: 'footer' }, h('div', { className: 'container footer__grid' },
+  return h('div', {}, emergencyBand(), h('footer', { className: 'footer' }, h('div', { className: 'container footer__grid' },
     h('section', {}, h('h2', {}, practice.name), h('p', {}, practice.doctor), contactBlock()),
     h('section', {}, h('h2', {}, ui.hours), hoursTable()),
     h('nav', { 'aria-label': ui.contact, className: 'footer__nav' }, footerLinks.map(item => h('a', { href: item.href }, item.text)))),
     h('div', { className: 'container footer__bottom' }, h('div', { className: 'footer__emergency' }, h('a', { href: practice.emergency.href }, practice.emergency.text), h('a', { href: practice.onCall.href }, practice.onCall.text)),
-      h('div', { className: 'footer__legal' }, practice.legal.map(link => h('a', { href: link.href }, link.text)), h('span', { className: 'small' }, ui.demo))));
+      h('div', { className: 'footer__legal' }, practice.legal.map(link => h('a', { href: link.href }, link.text)), h('span', { className: 'small' }, ui.demo)))));
 }
+

@@ -7,9 +7,9 @@
 export const footerLinks = [
   { text: 'Willkommen', href: '#/' },
   { text: 'Leistungen', href: '#/leistungen', children: [
-    { text: 'Gesundheit', href: '#/leistungen/gesundheit' },
-    { text: 'Vorsorge', href: '#/leistungen/vorsorge' },
-    { text: 'Sportmedizin', href: '#/leistungen/sportmedizin' }
+    { accent: 'health', text: 'Gesundheit', href: '#/leistungen/gesundheit' },
+    { accent: 'prevention', text: 'Vorsorge', href: '#/leistungen/vorsorge' },
+    { accent: 'sports', text: 'Sportmedizin', href: '#/leistungen/sportmedizin' }
   ] },
   { text: 'Arzt', href: '#/arzt' },
   { text: 'Rezeptwunsch', href: '#/rezeptwunsch' },

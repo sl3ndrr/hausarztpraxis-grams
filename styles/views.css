@@ -49,7 +49,8 @@
 .directions-contact .button-row { margin-top: var(--space-5); }
 @media (min-width: 768px) {
   .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .concern:first-child, .concern:last-child { grid-column: span 2; }
+  .concern:first-child { grid-column: span 2; }
+  .concern:last-child { grid-column: span 3; }
 }
 @media (min-width: 900px) {
   .hero__inner { grid-template-columns: 1.3fr 1fr; align-items: center; padding-block: var(--space-7); }
@@ -58,3 +59,5 @@
   .home-contact { grid-template-columns: 1fr 1fr; }
   .doctor-page { grid-template-columns: 1fr 1.7fr; }
 }
+
+.teaching__logo .picture__fallback { color: var(--color-logo-text); background: var(--color-logo-surface); }

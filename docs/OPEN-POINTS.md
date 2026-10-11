@@ -1,46 +1,66 @@
 <!--
-  Bestätigungsbedarf, Ausgangszustand und Grenzen des visuellen Entwurfs.
-  Eingaben: Repository-Prüfung und tatsächlich durchgeführte Verifikation.
-  Erledigte Punkte mit Datum und Nachweis aktualisieren.
+  Annahmen, Bestätigungsbedarf, Erweiterungsvorschläge und tatsächliche Abnahme.
+  Eingaben: verbindlicher Auftrag, vorhandene Fakten und gemessene Prüfergebnisse.
+  Freigaben und neue bestätigte Quellen mit Datum nachführen.
 -->
 # Offene Punkte
 
-## Vorgefundener Repository-Zustand
+## Ausgangspunkt und Annahmen
 
-Am 02.10.2026 war `sl3ndrr/hausarztpraxis-grams` leer: keine Branches und keine Dateien. Lese-/Schreibzugriff wurde über das GitHub-Plugin geprüft. `main` wurde mit einem ersten README-Commit angelegt; keine vorhandenen Inhalte wurden überschrieben. Der Auftrag wurde als neuer statischer Entwurf umgesetzt. Kein Framework, Build oder Paket hinzugefügt.
+- Überarbeitung am 11.10.2026 auf `main`, Ausgangscommit `eed1a004633ed847e7930fc41cbd965a9b2e6c90`. Ausgangschecker bestanden, 13 Tests grün. Kein Framework, Build oder Paket ergänzt.
+- Alle vorhandenen medizinischen Aussagen, Rollen, Kontaktdaten und Zeiten bleiben verbindlicher Quellenstand. Die Überarbeitung ist keine fachliche Aktualisierung.
+- Drei Hauptbereiche reichen im Header. Alle ursprünglichen Seiten bleiben über Anliegen, Leistungsnavigation und Footer erreichbar. Smartphone-Header im Dokumentfluss verhindert dauerhafte Überdeckung; Telefon bleibt in der festen Mobilleiste erreichbar.
+- Das ungeprüfte Hero-Motiv ist rein ergänzend und steht ohne Textüberlagerung. Porträts maximal 200 CSS-Pixel; Bildfehler haben einen lesbaren Fallback.
+- DMP/Schulungen/Sonographie/Weiteres sind reine Darstellung. Schulungen mit DMP-Bezug stehen unter Schulungen; jede Originalqualifikation erscheint genau einmal.
+- Die Altersleiste zeigt vorhandene Stufen ohne geometrischen Anspruch auf Lebensaltermaßstab oder neue medizinische Ableitungen.
+- Status nur auf Grundlage regulärer Zeiten in Europe/Berlin. Wochenendzeilen bedeuten ausschließlich keine regulären Intervalle. Urlaub/Feiertage werden nicht vermutet.
+- Wunschformulare bleiben Demo, auch nach erfolgreicher lokaler Prüfung. Mindestens zwei Werktage bleiben vorhandene Information, keine Zusage der Demo.
 
-## Vor Freigabe und Livegang
+## Vor Freigabe durch den Praxisinhaber
 
-- **Praxisinhaber:** Alle Inhalte, Rollen, Lebenslauf, Qualifikationen und medizinischen Angaben bestätigen. Altersgrenzen und Untersuchungsintervalle wurden gemäß Auftrag bewahrt; fachliche Aktualität vor Veröffentlichung bestätigen.
-- **Backend:** `DEMO_MODE = true`. Keine Übermittlung, kein `mailto:` für Gesundheitsdaten, keine Speicherung von Formulardaten. Sicheren Backend-Endpunkt ausschließlich in `src/lib/submit-request.js` anbinden, Anforderungen an Datenschutz/Transport und Bearbeitung klären. Deaktivierter Demo-Modus bricht derzeit sicher ab.
-- **Anfahrt:** Originalseite ließ sich über Webabruf lesen. Die beiden Busangaben wurden mit Quellenhinweis übernommen. **PLATZHALTER: Anreisehinweise vom Praxisinhaber bestätigen lassen.** Buslinien, Haltestellen und Fußwege auf aktuelle Gültigkeit bestätigen. Angaben zu Parkplätzen, Barrierefreiheit oder weiteren Verbindungen wurden nicht erfunden.
-- **Bilder/Hero:** Die vorgegebene Hero-URL wurde per Webabruf erreicht, das Bildmotiv konnte in dieser Umgebung jedoch nicht verlässlich visuell geprüft werden. Direktdownload und Browseransicht wurden mit HTTP 403 bzw. `ERR_BLOCKED_BY_CLIENT` blockiert. Alttext bleibt deshalb neutral, Ausschnitt konfigurierbar. Vor Freigabe Motiv, präzisen Alttext, `objectPosition`, Originalmaße und Wirkung mit Overlay prüfen. Angegebene Maße reservieren Layoutverhältnisse; Porträtbreite maximal 200 px. Alle Bilder haben einen Initialen-Fallback.
-- **Visuelle Abnahme:** Automatisierte Browseransicht auf den lokalen Server wurde durch die Umgebung blockiert; Chromium ist lokal nicht installiert. Kein Screenshot- oder Screenreader-Audit erfolgt. Manuell bei 360 px und Desktop, in beiden Modi, mit größter Schrift, Tastatur, Browser-Zurück, Systemänderung während Automatik, gesperrtem Speicher, Bildfehlern und reduzierter Bewegung prüfen. Token-Kontraste und reine Logik sind automatisiert geprüft; dies ist keine vollständige WCAG-Abnahme.
-- **Hash-Routing/SEO:** Hash-Ansichten werden von Suchmaschinen eingeschränkt verarbeitet. Bei späterem Livegang Einzelseiten oder Pfad-Routing prüfen. Statische Open-Graph-/JSON-LD-URLs zeigen auf die Originaldomain; vor Veröffentlichung die tatsächliche Zieladresse und Freigabe abgleichen. Die statischen Metadaten sind auf die Startseite ausgerichtet.
-- **GitHub Pages:** Website ist für `main` → `/ (root)` vorbereitet. Hosting wurde nicht automatisch aktiviert; Einstellungen und Veröffentlichungsstatus separat prüfen. Lokale Vorschau mit `node scripts/serve.mjs` oder `python3 -m http.server 8080`.
-- **Regulärer Live-Status:** Feiertage, Urlaub, Notfälle und Sondertermine sind nicht modelliert. Hinweis auf reguläre Zeiten steht sichtbar an jeder Live-Statuskarte. Für spätere Ausnahmen eine bestätigte Datenquelle bestimmen.
-- **Datenschutz/Rechtsprüfung:** Original-Impressum und Datenschutzerklärung bleiben verlinkt. Nur Theme und Schriftgröße werden lokal gespeichert. Diese Einstellungen und direkte Praxisbildabrufe ggf. in der Datenschutzerklärung berücksichtigen. Finale rechtliche Freigabe einschließlich ärztlicher Berufsordnung/HWG durch Praxisinhaber.
+1. Medizinische Aktualität, Altersgrenzen/Intervalle, Qualifikationen, Lebenslauf, Teamrollen und Anfahrtangaben bestätigen. Keine unbestätigten Fakten wurden neu ergänzt.
+2. Hero-Motiv, präziseren Alttext, Originalmaße/Ausschnitt und alle Bildrechte prüfen. Direktabrufe bleiben auf der Praxisdomain; Bilder wurden in dieser Sitzung nicht visuell geprüft.
+3. Visuelle Abnahme bei 360/768/1280 px, Hell/Dunkel, größter Schrift, reduced-motion, Tastatur, Bildfehlern und Druck nachholen. Insbesondere keine horizontale Überbreite und sichtbarer Fokus sind ohne Layoutengine nicht abschließend bestätigt.
+4. Screenreader-Abnahme, tatsächliche vCard-Importe und Druckausgabe auf den Geräten der Praxis prüfen. Rechnerische Kontraste und DOM-Smoke-Tests ersetzen das nicht.
+5. Rechtliche Freigabe einschließlich HWG/Berufsordnung/Datenschutz, direkte Praxisbilder und Speicherung nur von Theme/Schrift prüfen. Original-Rechtslinks bleiben erhalten.
+6. Hosting-/SEO-Ziel bestätigen: Hash-Routing und statische Metadaten bleiben, GitHub Pages wurde nicht neu aktiviert. Demo niemals ohne sichere Anbindung zur echten Übermittlung erklären.
 
-## Technische Abnahme
+## Erweiterungsvorschläge
 
-`node scripts/check.mjs` prüft Fakten-/Fallback-Konsistenz, Importpfade und Syntax, neun Routen, Bildmetadaten, erlaubte Hosts, Token-Verwendung, Dark-Parität und definierte Kontrastpaare. `node --test` prüft Öffnungsgrenzen, Mittagspause/Wochenende, Berliner Zeitumstellungen, Theme-Auflösung und Geburtsdatum/Pflichtfelder. Ergebnisse vor jedem Commit erneut ausführen.
+Alle folgenden Punkte wurden ausschließlich vorgeschlagen, nicht umgesetzt.
 
-Prüfergebnisse am 02.10.2026:
+| Vorschlag | Nutzen | Benötigte Information/Freigabe | Aufwand |
+| --- | --- | --- | --- |
+| FAQ „Was bringe ich zum Termin mit?“ | Vorbereitung erleichtern | Bestätigte Unterlagenliste je Anlass | Klein |
+| Barrierefreiheit der Praxis / Parken | Anreise verlässlich planen | Zugang, Stufen, Aufzug, WC, Parkplätze, Entfernungen | Klein bis mittel |
+| Im Team gesprochene Sprachen | Verständigung planen | Bestätigte Sprachen und Verfügbarkeit | Klein |
+| Aktuelles-/Hinweisband | Urlaub, Vertretung, Feiertage, Impfaktionen sichtbar | Gepflegte Datenquelle, Zuständigkeit, Ablaufdatum, bestätigte Angaben | Mittel |
+| Online-Terminbuchung | Telefonwege ergänzen | Anbieter, verfügbare Terminarten, Datenschutz und Freigabe | Mittel bis groß |
+| Sichere Formularübermittlung | Wunschformulare tatsächlich nutzbar | Backend, Transport, Zugriff, Aufbewahrung, Prozess und Datenschutzfreigabe | Groß |
+| Karte mit Zwei-Klick-Einwilligung | Räumliche Orientierung | Änderung/Freigabe von Regel 3, Kartenanbieter und Datenschutz | Mittel; derzeit ausgeschlossen |
+| Praxisrundgang | Räume vorab kennenlernen | Echte freigegebene Praxisfotos, Bildrechte, Alttexte | Mittel |
+| Kurzfassung in Leichter Sprache | Verständlichkeit erweitern | Fachliche und sprachliche Prüfung durch Zielgruppe | Mittel |
+| Seite für Medizinstudierende | Lehrpraxis konkret vorstellen | Ansprechpartner, Ablauf, Voraussetzungen, Bewerbungsweg | Mittel |
+| Ausbildung / Stellen | Bewerbende gezielt informieren | Tatsächliche Angebote, Anforderungen, Kontakt und Verfahren | Mittel |
+| Statische Einzelseiten / Pfad-Routing | Suchmaschinen und Direktaufrufe verbessern | Hostingziel, URL-Konzept, Weiterleitungen; Änderung der Hash-Vorgabe | Mittel bis groß |
+| Selbst gehostete freie Schrift, z. B. Atkinson Hyperlegible | Mehr typografischer Ausdruck | Lizenz, Dateien, Performancebudget und Freigabe der Schriftregel | Klein bis mittel |
 
-- Statische Prüfung bestanden: 79 Dateien, neun Routen und neun Bild-Datensätze; inklusive Hero-Textkontrast auf Overlay über weißem Bild.
-- 13 Tests bestanden, keine Fehler oder übersprungenen Tests.
-- Zusätzlicher DOM-Smoke-Test mit einem schlanken DOM-Testdouble: alle neun Views, ein `h1` je Ansicht, Bild-Fallbacks, Menü/Escape, Router-Fokus/SEO/Markierung, unbekannte Route sowie Fehler-/Demo-Erfolgszustände beider Formulare bestanden. Dies prüft Rendering und Verhalten, keine Browser-Layoutberechnung.
-- Lokaler HTTP-Smoke-Test: alle 62 HTML/CSS/JS-Dateien mit Status 200 und passenden Modul-MIME-Typen ausgeliefert; Pfadüberschreitung ergibt 403, unbekannte Datei 404.
-- Checker mit sechs absichtlichen Verstößen geprüft: falsches JSON-LD-Fax, Dark-Paritätsfehler, Fremdhost, unbekannte Navigationsroute, RGB-Wert außerhalb der Tokens und unzureichender Textkontrast wurden zuverlässig abgelehnt.
-- Visuelle Browser-, Bildmotiv-, Drucklayout- und Screenreader-Abnahme bleiben aufgrund der oben beschriebenen Umgebungsgrenzen offen.
+## Eigene Verbesserungen
 
+| Verbesserung | Status / Nutzen | Benötigte Information | Aufwand |
+| --- | --- | --- | --- |
+| Eindeutiger Demo-Prüfbutton statt „absenden“ | Umgesetzt: verhindert falsche Übermittlungserwartung | Vorhandener Demo-Modus | Klein |
+| Kapitel-Deep-Links mit Fokus und aktuellem Anker | Umgesetzt: Teilen/Zurück/Orientierung verbessern | Bestehende Abschnitts-IDs | Klein |
+| Kopierfehler sichtbar und Logo-Fallback kontrastgeprüft | Umgesetzt: auch bei Plattform-/Bildfehlern verständlich | Vorhandene Daten | Klein |
+| Verantwortliche und regelmäßige Inhaltsprüfung | Vorschlag: fachliche/veraltete Angaben gezielt pflegen | Praxiszuständigkeit und Prüfrhythmus | Klein |
+| Ablaufdatum für künftige Statusausnahmen | Vorschlag: veraltete Urlaubshinweise vermeiden | Gepflegte Ausnahmequelle und Verantwortliche | Mittel |
+| Tatsächliche Gerätetests mit älteren Patientinnen/Patienten | Vorschlag: Bedienwege/Lesbarkeit validieren | Freiwillige Testgruppe und Freigabe | Mittel |
 
-## Annahmen der Überarbeitung 11.10.2026
+## Technische Abnahme 11.10.2026
 
-- Der vorhandene Faktenstand bleibt verbindlich; die Darstellung ist keine medizinische Aktualisierung.
-- Der Hero muss mit ungeprüftem Motiv und Bildfehlern funktionieren; Text steht ausschließlich außerhalb des Fotos.
-- Drei Hauptbereiche reichen für den Header; Wunschformulare bleiben über Startseite und Footer erreichbar.
-- Der Status zeigt ausschließlich reguläre Zeiten in Europe/Berlin. Feiertage und Urlaub werden nicht vermutet.
-
-- Die Qualifikationsgruppen dienen allein der Lesbarkeit; Schulungen mit DMP-Bezug stehen unter Schulungen. Jede der 15 Originalqualifikationen erscheint genau einmal.
-- Die Altersleiste ist eine Folge vorhandener Stufen, keine maßstabsgerechte Darstellung von Leistungsansprüchen. Fachliche Prüfung der bewahrten Altersangaben bleibt erforderlich.
+- Vor jedem der sechs Phasen-Commits: `node scripts/check.mjs` und `node --test` fehlerfrei.
+- Endzustand: statischer Checker prüft Fakten/Fallbacks, Syntax/Imports, neun Routen, neun Bilddatensätze, Tokens, Dark-Parität und alle definierten Farbpaare. Textpaare einschließlich Buttons mindestens 7:1; Fokus/Feldgrenzen mindestens 3:1. Hero-Overlay-Prüfung durch Verbot der alten Overlay-Regel ersetzt.
+- 31 Tests bestanden, keine übersprungenen Tests: Berliner Öffnungsgrenzen, Datum/Pflichtfelder, Theme, Wochenbalken/Jetzt-Grenzen, Altersstufen, vollständige Qualifikationsgruppen, Suchfilter/Deep-Ziele, vCard-Sonderzeichen/75-UTF-8-Oktett-Faltung sowie sieben DOM-Smoke-Tests.
+- DOM-Testdouble: alle neun Views, genau ein H1, eindeutige IDs, offene Leistungskapitel, Anliegenziele, Suchzustände, Einstellungen/Escape/Fokus, Formularfehler und Demo-Erfolg, Router/Fehlerroute und Ressourcen-Cleanup geprüft. Keine CSS-/Layoutberechnung.
+- `node scripts/check-http.mjs`: 85 HTML/CSS/JS-Ressourcen mit Status 200 und passenden MIME-Typen; 404/403 korrekt. `git diff --check` fehlerfrei.
+- Keine Screenshots oder visuelle Browserprüfung: Playwright ist installiert, Chromium-Binary fehlt. Cloud-Browser-Aufruf der lokalen Vorschau scheitert mit `net::ERR_BLOCKED_BY_CLIENT`. Keine Umgehung, keine behauptete visuelle Abnahme. Screenreader, Drucklayout und Gerätekontakte bleiben offen.

@@ -1,0 +1,14 @@
+/*
+ * Lokale Leistungssuche mit großen Eingaben und vollständig klickbaren Treffern.
+ * Eingaben: Suchkomponente; Trefferlisten sind normale Links, kein Spezialwidget.
+ * Tokenwerte zentral pflegen, leere/fehlende Treffer textlich anzeigen.
+ */
+.service-search { margin-top: var(--space-6); }
+.service-search label { display: block; font-weight: var(--weight-bold); font-size: var(--font-h3); }
+.service-search input { display: block; width: 100%; min-width: 0; min-height: var(--size-touch); padding: var(--space-3); border-radius: var(--radius-small); border: var(--size-border) solid var(--color-border); color: var(--color-text); background: var(--color-surface); }
+.service-search__results { list-style: none; padding: 0; display: grid; gap: var(--space-3); }
+.service-search__results a { display: grid; gap: var(--space-2); padding: var(--space-4); min-height: var(--size-touch); border-radius: var(--radius-small); text-decoration: none; }
+.service-search__results a:hover strong { text-decoration: underline; }
+.service-search__results a:focus-visible { outline-color: currentColor; }
+.service-search__results span { font-size: var(--font-small); }
+@media (min-width: 768px) { .service-search__results { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

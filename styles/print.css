@@ -50,3 +50,11 @@
   .practice-card h2 { font-size: var(--font-h2); }
   .practice-card .hours-table { font-size: var(--font-body-size); }
 }
+
+@media print {
+  .emergency-band, .chapter-nav, .service-search, .breadcrumbs, .request-progress, .contact-tools, .organic-curve, .next-area { display: none !important; }
+  .accent--health, .accent--prevention, .accent--sports, .chips li, .age-bar__stage, .service-heading, .glance, .live-status__chip { background: var(--color-print-bg); color: var(--color-print-text); }
+  .chapter-layout, .home-contact { display: block; }
+  .service-heading, .glance { padding: 0; }
+  .chapter, .age-bar__stage { break-inside: avoid; }
+}

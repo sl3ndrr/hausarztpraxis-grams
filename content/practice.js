@@ -11,8 +11,8 @@ export const practice = {
   phone: { text: '0611 21211', href: 'tel:061121211' },
   fax: '0611 2617050',
   email: 'kontakt@hausarztpraxis-grams.de',
-  emergency: { text: 'Im Notfall: 112', href: 'tel:112' },
-  onCall: { text: 'Ärztlicher Bereitschaftsdienst: 116 117', href: 'tel:116117' },
+  emergency: { label: 'Im Notfall', number: '112', text: 'Im Notfall: 112', href: 'tel:112' },
+  onCall: { label: 'Ärztlicher Bereitschaftsdienst', number: '116 117', text: 'Ärztlicher Bereitschaftsdienst: 116 117', href: 'tel:116117' },
   legal: [
     { text: 'Impressum', href: 'https://hausarztpraxis-grams.de/Impressum/' },
     { text: 'Datenschutzerklärung', href: 'https://hausarztpraxis-grams.de/Datenschutzerklaerung/' }
@@ -22,3 +22,4 @@ export const practice = {
     { text: 'In OpenStreetMap öffnen', href: 'https://www.openstreetmap.org/search?query=Narzissenweg%204%2C%2065201%20Wiesbaden' }
   ]
 };
+

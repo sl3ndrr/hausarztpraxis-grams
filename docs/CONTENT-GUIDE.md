@@ -29,7 +29,7 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
   items: ['Arbeitsunfähigkeitsbescheinigungen', 'Gesundheitszeugnisse'] }
 ```
 
-3. Eindeutige englische ID verwenden und die Quelle in `docs/TEXT-CHANGES.md` nennen. Karten/Akkordeons erscheinen automatisch. Ein neuer Leistungsbereich mit eigener Route ist eine neue Seite, siehe unten.
+3. Eindeutige englische ID verwenden und die Quelle in `docs/TEXT-CHANGES.md` nennen. Offene Kapitel erscheinen automatisch; Deep-Anker folgen der Abschnitts-ID. Ein neuer Leistungsbereich mit eigener Route ist eine neue Seite, siehe unten.
 
 ## Teammitglied ergänzen
 
@@ -45,7 +45,7 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
 ## Qualifikation ergänzen
 
 1. In `content/qualifications.js` die passende Liste wählen.
-2. Nur den bestätigten Wortlaut als zusätzlichen String eintragen. Die Gesundheitsseite liest beide Listen automatisch.
+2. Nur den bestätigten Wortlaut als zusätzlichen String eintragen. Für `qualifications` den neuen Index genau einer `qualificationGroups`-Gruppe zuordnen. Der Test erzwingt vollständige, eindeutige Abdeckung; die Gruppierung ist reine Darstellung. Gesundheitsseite und Suche lesen beide Listen automatisch.
 
 ## Seite hinzufügen
 
@@ -69,3 +69,10 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
 
 1. `content/practice.js` pflegen, einschließlich passender `tel:`-/Maps-Links.
 2. JSON-LD und `noscript` in `index.html` abgleichen; Metadaten bei geändertem Praxisnamen ebenfalls prüfen. Keine Telefonnummern oder Adressen in `src/` eintragen.
+
+
+## Bedientexte, Deep-Anker und Suche
+
+Neue Mikrotexte in `content/presentation.js` bzw. im zuständigen Content-Modul pflegen. Medizinische Texte nicht im Suchindex duplizieren: `content/search.js` referenziert Leistungsquellen. Altersstufen halten zusätzlich minAge/optional maxAge exakt passend zum ausgeschriebenen Titel; keine neuen Intervalle daraus ableiten. Deep-Links verwenden `#/route?section=id` und stabile englische IDs.
+
+`practice.js` und `hours.js` speisen lokale vCard und Druckkarte automatisch. Wunschformulare bleiben Demo; einen echten Übermittlungsschritt niemals allein durch Textänderung suggerieren. Neue Bereichsfarben samt Text-/Flächenpaaren in den Checker aufnehmen.

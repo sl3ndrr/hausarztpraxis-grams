@@ -19,5 +19,7 @@ document.querySelector('[data-mobile-mount]').replaceChildren(mobileBar());
 document.querySelector('[data-skip-link]').textContent = ui.skip;
 document.querySelector('[data-skip-link]').addEventListener('click', event => { event.preventDefault(); document.querySelector('main').focus(); });
 document.querySelector('link[rel="icon"]').href = images.favicon.src;
+document.addEventListener('click', navigation.dismissOutside);
 initializeTheme(); initializeFontSize();
 startRouter(document.querySelector('main'), navigation.closeMenu);
+

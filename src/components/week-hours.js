@@ -31,7 +31,7 @@ export function weekHours() {
       row.element.toggleAttribute('data-current-day', current); row.today.hidden = !current;
       const position = current ? nowPosition(local.minutes, scale) : null;
       row.marker.hidden = position === null;
-      if (position !== null) row.marker.style.left = `${position}%`;
+      if (position !== null) { row.marker.style.left = `${position}%`; row.marker.toggleAttribute('data-leading', position < 50); }
     });
   }
   update(); const timer = setInterval(update, 30000);

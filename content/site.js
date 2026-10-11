@@ -7,7 +7,7 @@
 export const DEMO_MODE = true;
 export const site = { url: 'https://hausarztpraxis-grams.de/', locale: 'de-DE' };
 export const ui = {
-  settings: 'Lesen & Darstellung', fontSmaller: 'A−', fontLarger: 'A+', skip: 'Zum Inhalt', menu: 'Menü', close: 'Schließen', phone: 'Telefon', fax: 'Telefax', email: 'E-Mail',
+  settingsShort: 'Aa', settings: 'Lesen & Darstellung', fontSmaller: 'A−', fontLarger: 'A+', skip: 'Zum Inhalt', menu: 'Menü', close: 'Schließen', phone: 'Telefon', fax: 'Telefax', email: 'E-Mail',
   call: 'Jetzt anrufen', directions: 'Anfahrt', contact: 'Kontakt', hours: 'Sprechzeiten',
   theme: 'Darstellung', themes: [{ value: 'auto', text: 'Automatisch' }, { value: 'light', text: 'Hell' }, { value: 'dark', text: 'Dunkel' }],
   font: 'Schriftgröße', smaller: 'Schrift verkleinern', larger: 'Schrift vergrößern',

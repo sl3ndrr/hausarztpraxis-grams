@@ -50,7 +50,7 @@ export function requestForm(kind) {
   controls.set('consent', [consent]); errors.set('consent', consentError); wrappers.set('consent', consentWrap);
   form.append(consentWrap, submit, result);
   let destroyed = false;
-  form.addEventListener('input', () => progress.update(0));
+  form.addEventListener('input', () => { progress.update(0); result.hidden = true; });
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const values = Object.fromEntries(new FormData(form));
