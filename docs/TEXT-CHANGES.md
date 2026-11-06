@@ -85,3 +85,5 @@ Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Or
 - Eigene Bedienverbesserungen: fokussierter Deep-Anker mit aktueller Kapitelmarkierung, eindeutige lokale Demo-Prüfung, sichtbare Zwischenablagefehler. Kein neuer medizinischer Inhalt.
 
 - Kompakter globaler Status beginnt sichtbar mit „Regulär:“; die vollständige Grundlage bleibt zugänglich.
+
+- Im README ist OpenAIs Codex auf Wunsch des Repository-Inhabers als Mitwirkender mit seinem GitHub-Profil verlinkt.
