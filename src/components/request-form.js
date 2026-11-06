@@ -20,7 +20,7 @@ export function requestForm(kind) {
   const errors = new Map();
   const wrappers = new Map();
   const submit = h('button', { type: 'submit', className: 'button form__submit' }, formText.submit);
-  const form = h('form', { className: 'request-form card', id: 'request-form', tabindex: '-1', novalidate: true }, progress.element, summary, h('p', { className: 'small' }, formText.required));
+  const form = h('form', { className: 'request-form', id: 'request-form', tabindex: '-1', novalidate: true }, progress.element, summary, h('p', { className: 'small' }, formText.required));
   function makeField(field) {
     const id = `${kind}-${field.name}`;
     const input = h('input', { id, name: field.name, type: field.type ?? 'text', required: field.required, autocomplete: field.autocomplete ?? 'off', maxlength: field.type === 'date' ? undefined : 200, 'aria-describedby': `${id}-error` });

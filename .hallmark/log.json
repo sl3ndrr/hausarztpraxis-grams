@@ -1,0 +1,38 @@
+[
+ {
+  "date": "2026-11-06",
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "theme": "custom",
+  "shape": "Praxisschild und Wegregister",
+  "axes": "light/grotesk-regular/cool",
+  "hero": "Name, Rufnummer und Berliner Sprechzeiten auf einem Schild",
+  "nav": "Praxisleiste mit drei Bereichen und Darstellung",
+  "footer": "Notfallband, Praxisadresse und Wege",
+  "imagery": "Vorhandenes Praxisbild, Originalporträts und Universitätslogo",
+  "photos": [],
+  "entry": "styles/tokens.css",
+  "fingerprint": {
+   "shape": "Praxisschild und Wegregister",
+   "hero": "Schrift und Wochenplan",
+   "nav": "Praxisleiste",
+   "footer": "Adresse und Wege",
+   "first": "Anliegen",
+   "image": "untergeordnet bei Kontakt"
+  },
+  "sections": [
+   "Praxisschild",
+   "Häufige Anliegen",
+   "Leistungen",
+   "Oliver Grams",
+   "Praxisteam",
+   "Lehrpraxis",
+   "Kontakt",
+   "Notfall und Footer"
+  ],
+  "signature": "Rufnummer und vollständige reguläre Woche neben der Praxisidentität",
+  "waived": [],
+  "prompt": "Vollständiges Custom-Redesign für Hausarztpraxis Grams mit unveränderten Praxisfakten und neun Routen."
+ }
+]

@@ -5,11 +5,11 @@
  * @typedef {{title:string,text:string}} CareerStep
  */
 export const doctor = {
-  eyebrow: 'Ihr Arzt', title: 'Hausärztliche Versorgung. Persönlich begleitet.',
+  breadcrumb: 'Ihr Arzt',
   focus: 'Hausärztliche Versorgung als Facharzt für Allgemeinmedizin, Innere Medizin, Sportmedizin',
   summary: ['Facharzt für Allgemeinmedizin', 'Innere Medizin und Sportmedizin'],
   personal: ['Jahrgang 1972', 'Verheiratet, zwei Kinder'],
-  careerTitle: 'Der Werdegang',
+  careerTitle: 'Werdegang',
   career: [
     { title: '1992–1994', text: 'Humanmedizin an der Martin-Luther-Universität Halle-Wittenberg' },
     { title: '1994–1998', text: 'Humanmedizin an der Ruprecht-Karls-Universität Heidelberg' },

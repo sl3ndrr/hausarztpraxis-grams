@@ -1,19 +1,42 @@
 /*
- * Menschen der Praxis: kleine Originalbilder, farbige Rahmen und große Jahre.
- * Eingaben: Team- und Arztkomponenten; keine Bildvergrößerung.
- * Farben und Maße aus Tokens, Rollentexte im Content pflegen.
+ * Menschen der Praxis mit kleinen Originalporträts und offenem Werdegang.
+ * Eingaben: Arzt- und Teamkomponenten.
+ * Bildobergrenze in tokens.css pflegen.
  */
-.person-card { min-width: 0; padding: 0; }
-.person-card__portrait { padding: var(--space-5); border-radius: var(--radius-card) var(--radius-small) var(--radius-card) var(--radius-card); margin-bottom: var(--space-5); }
-.person-card:nth-child(even) .person-card__portrait { border-radius: var(--radius-small) var(--radius-card) var(--radius-card) var(--radius-card); }
-.person-card .picture { margin-inline: auto; }
-.person-card h3 { font-size: var(--font-h3); font-weight: var(--weight-bold); }
-.person-card p { margin-top: var(--space-3); font-size: var(--font-label); }
-.doctor-page__profile > * + * { margin-top: var(--space-5); }
-.doctor-page__profile h2 { font-size: var(--font-h2); }
-.timeline--career { padding-left: var(--space-7); }
-.timeline--career .timeline__item { padding-block: var(--space-3) var(--space-7); }
-.timeline--career h3 { font-size: var(--font-year); font-weight: var(--weight-bold); letter-spacing: var(--letter-heading); }
-.timeline--career .timeline__item::before { left: calc(-1 * var(--space-7) + var(--space-1)); }
-@media (min-width: 768px) { .grid--four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1280px) { .grid--four { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.team-grid {
+  display: grid;
+  gap: var(--space-4) var(--space-5);
+  margin-top: var(--space-5);
+}
+.person-card {
+  display: grid;
+  grid-template-columns: minmax(0, var(--width-thumb)) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-top: var(--size-border) solid var(--color-divider);
+}
+.person-card p { margin-top: var(--space-2); font-size: var(--text-label); }
+.doctor-page { display: grid; gap: var(--space-6); }
+.doctor-page__profile > * + *, .doctor-page .text-list { margin-top: var(--space-3); }
+.doctor-page__profile .picture { margin-bottom: var(--space-5); }
+.doctor-page .timeline { margin-block: var(--space-4) var(--space-6); }
+.timeline { list-style: none; padding: 0; }
+.timeline__item {
+  display: grid;
+  gap: var(--space-2) var(--space-4);
+  padding-block: var(--space-3);
+  border-top: var(--size-border) solid var(--color-divider);
+}
+.timeline__item h3 { font-size: var(--text-label); font-variant-numeric: tabular-nums; }
+.timeline__item p { max-width: var(--width-prose); }
+
+@media (min-width: 45rem) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .doctor-page { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); }
+}
+@media (min-width: 69rem) {
+  .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .person-card { grid-template-columns: minmax(0, 1fr); }
+  .timeline__item { grid-template-columns: minmax(0, var(--width-timeline-date)) minmax(0, 1fr); }
+}

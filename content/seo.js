@@ -6,7 +6,7 @@
  */
 import { practice } from './practice.js';
 export const seo = {
-  home: { title: `Willkommen · ${practice.name}`, description: 'Sprechzeiten, Kontakt und Leistungen Ihrer Hausarztpraxis in Wiesbaden.' },
+  home: { title: practice.name, description: 'Sprechzeiten, Kontakt und Leistungen Ihrer Hausarztpraxis in Wiesbaden.' },
   services: { title: `Leistungen · ${practice.name}`, description: 'Gesundheit, Vorsorge und Sportmedizin: die Leistungen unserer Praxis.' },
   health: { title: `Gesundheit · ${practice.name}`, description: 'Gesundheitsuntersuchungen, akute Behandlung und Betreuung chronischer Erkrankungen.' },
   prevention: { title: `Vorsorge · ${practice.name}`, description: 'Krebsvorsorge, Impfungen, Herz-Kreislauf-Vorsorge und Ernährungsberatung.' },

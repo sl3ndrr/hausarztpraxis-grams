@@ -1,20 +1,9 @@
 /*
- * Gestaffeltes Einblenden und fühlbares Hover-/Press-Feedback ohne Dauerschleifen.
- * Eingaben: Reveal-Hooks und Systemeinstellung; nur transform und opacity.
- * Dauern in tokens.css pflegen; reduzierte Bewegung zeigt Inhalte sofort.
+ * Unmittelbare Bedienrückmeldung ohne Einblendungen oder Scroll-Effekte.
+ * Eingabe: Systemwunsch nach reduzierter Bewegung.
+ * Inhalte bleiben jederzeit vollständig sichtbar.
  */
-.js main > * { animation: page-in var(--duration-page) var(--ease-soft) both; }
-.button, .service-card, .person-card, .concern { transition: transform var(--duration-reveal) var(--ease-soft); }
-.button:hover, .service-card:hover, .concern:hover { transform: translateY(var(--lift-offset)); }
-.button:active, .concern:active { transform: scale(var(--press-scale)); }
-.js [data-reveal-pending]:not([data-revealed]) { opacity: 0; transform: translateY(var(--reveal-offset)); }
-.js [data-reveal-pending] { transition: opacity var(--duration-reveal) var(--ease-soft), transform var(--duration-reveal) var(--ease-soft); }
-.js [data-reveal-pending]:nth-child(3n + 2) { transition-delay: var(--duration-stagger); }
-.js [data-reveal-pending]:nth-child(3n) { transition-delay: calc(2 * var(--duration-stagger)); }
-.js [data-reveal-pending]:focus-within { opacity: 1; transform: none; transition-delay: var(--duration-none); }
-.js .header__settings:not([hidden]), .js .header__panel:not([hidden]) { animation: page-in var(--duration-page) var(--ease-soft); }
-@keyframes page-in { from { opacity: 0; transform: translateY(var(--space-2)); } to { opacity: 1; transform: none; } }
+.button:active:not(:disabled) { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  .js [data-reveal-pending]:not([data-revealed]) { opacity: 1; transform: none; }
 }

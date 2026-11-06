@@ -80,3 +80,54 @@ test('Router fokussiert Deep-Anker, markiert Route und erhält eine Fehleransich
   assert.equal(mount.querySelectorAll('h1').length, 1); assert.ok(document.title.includes('Seite nicht gefunden'));
   stop(); assert.equal(env.timers.size, 0);
 });
+
+test('Wochenplan steht vor den Anliegen und zeigt den Berliner Wochentag', () => {
+  const before = env.timers.size;
+  const NativeDate = Date;
+  globalThis.Date = class extends NativeDate {
+    constructor(...args) { super(...(args.length ? args : ['2026-11-08T23:30:00Z'])); }
+  };
+  try {
+    const view = routes.find(route => route.path === '/').view();
+    try {
+      const plan = view.element.querySelector('.week-hours');
+      const rows = plan.querySelectorAll('[data-weekday]');
+      assert.equal(rows.length, 7);
+      assert.equal(rows.filter(row => row.getAttribute('data-current-day') !== null).length, 1);
+      assert.equal(rows[0].querySelector('.weekday-marker').hidden, false);
+      assert.match(rows[0].textContent, /Montag heute.*7:30 bis 12:00.*15:00 bis 17:30/);
+      assert.ok(rows[6].textContent.includes('Keine Sprechzeit'));
+      assert.ok(plan.querySelector('.live-status').textContent.includes('regulären Sprechzeiten'));
+      assert.ok(view.element.children.indexOf(view.element.querySelector('.hero')) <
+        view.element.children.indexOf(view.element.querySelector('[id="concerns"]')));
+    } finally {
+      view.destroy();
+    }
+  } finally {
+    globalThis.Date = NativeDate;
+  }
+  assert.equal(env.timers.size, before);
+});
+
+test('Mobiles Menü und Einstellungen schließen einander und Escape gibt den Fokus zurück', async () => {
+  const nav = header();
+  const menu = nav.element.querySelector('[data-menu-toggle]');
+  const navigationPanel = nav.element.querySelector('[id="navigation-panel"]');
+  const settings = nav.element.querySelector('.header__settings-toggle');
+  const settingsPanel = nav.element.querySelector('[id="settings-panel"]');
+  try {
+    await menu.emit('click');
+    assert.equal(navigationPanel.hidden, false);
+    await settings.emit('click');
+    assert.equal(navigationPanel.hidden, true);
+    assert.equal(settingsPanel.hidden, false);
+    await menu.emit('click');
+    assert.equal(navigationPanel.hidden, false);
+    assert.equal(settingsPanel.hidden, true);
+    await menu.emit('keydown', { key: 'Escape' });
+    assert.equal(navigationPanel.hidden, true);
+    assert.equal(document.activeElement, menu);
+  } finally {
+    nav.destroy();
+  }
+});

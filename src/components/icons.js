@@ -22,9 +22,3 @@ export function icon(name) {
   for (const d of paths[name] ?? paths.arrow) { const path = document.createElementNS(ns, 'path'); path.setAttribute('d', d); if (svg.childElementCount === 0 && (paths[name]?.length ?? 0) > 1) { path.setAttribute('fill', 'currentColor'); path.setAttribute('fill-opacity', '.16'); } svg.append(path); }
   return svg;
 }
-
-
-export function organicCurve() {
-  const svg = icon('arrow'); svg.replaceChildren(); svg.setAttribute('viewBox', '0 0 1200 80'); svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('class', 'organic-curve');
-  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path'); path.setAttribute('d', 'M0 60C200 80 350 0 600 20S1000 100 1200 30V80H0Z'); path.setAttribute('fill', 'currentColor'); path.setAttribute('stroke', 'none'); svg.append(path); return svg;
-}

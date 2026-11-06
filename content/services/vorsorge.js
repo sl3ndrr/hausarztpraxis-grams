@@ -6,7 +6,7 @@
  */
 export const prevention = {
   accent: 'prevention',
-  eyebrow: 'Leistungen · Vorsorge', title: 'Frühzeitig auf Ihre Gesundheit achten.',
+  title: 'Vorsorge',
   intro: 'Wir beraten Sie zu Vorsorgeuntersuchungen, Impfungen und Ihrem persönlichen Gesundheitsalltag.',
   sections: [
     { id: 'cancer', title: 'Krebsvorsorgeuntersuchungen', text: 'Vorsorge dient der frühen Erkennung häufiger Krebserkrankungen.', items: ['Darmkrebsvorsorge, zum Beispiel durch einen Stuhltest', 'Prostatakrebs-Vorsorge für Männer'] },

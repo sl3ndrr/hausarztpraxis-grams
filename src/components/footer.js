@@ -17,9 +17,8 @@ export function contactBlock() {
 export function footer() {
   return h('div', {}, emergencyBand(), h('footer', { className: 'footer' }, h('div', { className: 'container footer__grid' },
     h('section', {}, h('h2', {}, practice.name), h('p', {}, practice.doctor), contactBlock()),
-    h('section', {}, h('h2', {}, ui.hours), hoursTable()),
+    h('section', { className: 'footer__hours' }, h('h2', {}, ui.hours), hoursTable()),
     h('nav', { 'aria-label': ui.contact, className: 'footer__nav' }, footerLinks.map(item => h('a', { href: item.href }, item.text)))),
-    h('div', { className: 'container footer__bottom' }, h('div', { className: 'footer__emergency' }, h('a', { href: practice.emergency.href }, practice.emergency.text), h('a', { href: practice.onCall.href }, practice.onCall.text)),
-      h('div', { className: 'footer__legal' }, practice.legal.map(link => h('a', { href: link.href }, link.text)), h('span', { className: 'small' }, ui.demo)))));
+    h('div', { className: 'container footer__bottom' }, h('div', { className: 'footer__legal' }, practice.legal.map(link => h('a', { href: link.href }, link.text)), h('span', { className: 'small' }, ui.demo)))));
 }
 

@@ -5,7 +5,7 @@
  * @typedef {{text:string,href:string,children?:{text:string,href:string}[]}} NavigationItem
  */
 export const footerLinks = [
-  { text: 'Willkommen', href: '#/' },
+  { text: 'Startseite', href: '#/' },
   { text: 'Leistungen', href: '#/leistungen', children: [
     { accent: 'health', text: 'Gesundheit', href: '#/leistungen/gesundheit' },
     { accent: 'prevention', text: 'Vorsorge', href: '#/leistungen/vorsorge' },
@@ -16,5 +16,5 @@ export const footerLinks = [
   { text: 'Überweisungswunsch', href: '#/ueberweisungswunsch' },
   { text: 'Anfahrt', href: '#/anfahrt' }
 ];
-export const navigation = [footerLinks[1], { text: 'Arzt & Team', href: '#/arzt' }, { text: 'Kontakt & Anfahrt', href: '#/anfahrt' }];
+export const navigation = [footerLinks[1], { text: 'Arzt & Team', href: '#/arzt' }, { text: 'Anfahrt', href: '#/anfahrt' }];
 

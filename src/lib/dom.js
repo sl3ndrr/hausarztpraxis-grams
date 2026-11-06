@@ -22,6 +22,6 @@ export function sectionHeading(title, intro) {
   return h('div', { className: 'section-heading' }, h('h2', {}, title), intro && h('p', {}, intro));
 }
 export function pageHeading(data) {
-  return h('div', { className: 'page-heading' }, h('p', { className: 'eyebrow' }, data.eyebrow), h('h1', { tabindex: '-1' }, data.title), data.intro && h('p', { className: 'lead' }, data.intro));
+  return h('div', { className: 'page-heading' }, h('h1', { tabindex: '-1' }, data.title), data.intro && h('p', { className: 'lead' }, data.intro));
 }
 export function list(items) { return h('ul', { className: 'text-list' }, items.map(item => h('li', {}, item))); }

@@ -19,13 +19,13 @@ export function serviceSearch(id) {
     const ready = Boolean(input.value.trim()) || showAll;
     const matches = ready ? filterServices(index, input.value) : [];
     count.textContent = ready ? `${presentation.searchCount} ${matches.length}` : `${presentation.searchReady} ${index.length}`;
-    results.replaceChildren(matches.map(entry => h('li', {}, h('a', { href: entry.href, className: `accent--${entry.accent}` }, h('strong', {}, entry.title), h('span', {}, entry.category)))));
+    results.replaceChildren(matches.map(entry => h('li', {}, h('a', { href: entry.href }, h('strong', {}, entry.title), h('span', {}, entry.category)))));
     empty.hidden = !ready || matches.length > 0;
   };
   input.addEventListener('input', render);
   const all = h('button', { type: 'button', className: 'button button--quiet', onclick: () => { input.value = ''; showAll = true; render(); input.focus(); } }, presentation.searchAll);
   const clear = h('button', { type: 'button', className: 'button button--quiet', onclick: () => { input.value = ''; showAll = false; render(); input.focus(); } }, presentation.searchReset);
   render();
-  return h('section', { className: 'service-search card', 'data-service-search': '' }, h('label', { for: input.id }, presentation.search),
+  return h('section', { className: 'service-search', 'data-service-search': '' }, h('label', { for: input.id }, presentation.search),
     h('p', { className: 'small', id: `${id}-hint` }, presentation.searchHint), input, h('div', { className: 'button-row' }, all, clear), count, empty, results);
 }

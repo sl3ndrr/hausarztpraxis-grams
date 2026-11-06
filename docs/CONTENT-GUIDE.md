@@ -57,7 +57,7 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
 ## Farbe ändern
 
 1. Das semantische Token in `styles/tokens.css` identifizieren, zum Beispiel `--color-primary`.
-2. Light-Wert sowie beide identischen Dark-Werte ändern. Beispiel der bestehenden Light-Farbe: `--color-primary: #0D5666;`.
+2. Light-Wert sowie beide identischen Dark-Werte ändern. Der Hellwert der Bedienfarbe ist `--color-primary: #173D78;`.
 3. Keine Farbe direkt in Komponenten-CSS eintragen. Der Checker kontrolliert Token-Parität und definierte Kontrastpaare; bei Fehlern Farbwert anpassen.
 
 ## Formularfeld ändern
@@ -75,4 +75,4 @@ Vor jeder Änderung `AGENTS.md` lesen. Danach die angegebenen Dateien ändern, T
 
 Neue Mikrotexte in `content/presentation.js` bzw. im zuständigen Content-Modul pflegen. Medizinische Texte nicht im Suchindex duplizieren: `content/search.js` referenziert Leistungsquellen. Altersstufen halten zusätzlich minAge/optional maxAge exakt passend zum ausgeschriebenen Titel; keine neuen Intervalle daraus ableiten. Deep-Links verwenden `#/route?section=id` und stabile englische IDs.
 
-`practice.js` und `hours.js` speisen lokale vCard und Druckkarte automatisch. Wunschformulare bleiben Demo; einen echten Übermittlungsschritt niemals allein durch Textänderung suggerieren. Neue Bereichsfarben samt Text-/Flächenpaaren in den Checker aufnehmen.
+`practice.js` und `hours.js` speisen lokale vCard und Druckkarte automatisch. Wunschformulare bleiben Demo; einen echten Übermittlungsschritt niemals allein durch Textänderung suggerieren. Bei neuen Farbrollen die zugehörigen Text-, Fokus- und Feldpaare in den Checker aufnehmen.

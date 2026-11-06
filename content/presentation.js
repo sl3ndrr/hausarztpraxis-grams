@@ -4,12 +4,9 @@
  * Mikrotexte hier pflegen, medizinische Inhalte bleiben in services/.
  */
 export const presentation = {
-  glance: 'Auf einen Blick', concerns: 'Was führt Sie zu uns?',
-  services: 'Drei Bereiche. Ihre Gesundheit.', servicesIntro: 'Entdecken Sie unsere Leistungen.',
-  contactTitle: 'Ein Anruf. Ein persönlicher Kontakt.',
-  emergencyTitle: 'Hilfe im Notfall', regular: 'Regulär:', statusLabel: 'Praxisstatus', now: 'Jetzt', closedDay: 'Keine reguläre Sprechzeit',
-  chapters: 'Auf dieser Seite', breadcrumb: 'Sie sind hier', home: 'Startseite', next: 'Nächster Bereich',
-  search: 'Leistung oder Qualifikation suchen', searchHint: 'Zum Beispiel Impfungen, Hausbesuche oder Sonographie.',
+  emergencyTitle: 'Hilfe im Notfall', regular: 'Nach regulären Sprechzeiten:', statusLabel: 'Praxisstatus', closedDay: 'Keine Sprechzeit',
+  chapters: 'Auf dieser Seite', breadcrumb: 'Sie sind hier', home: 'Startseite', next: 'Weiter zu',
+  search: 'Leistungen und Qualifikationen suchen', searchHint: 'Zum Beispiel Impfungen, Hausbesuche oder Sonographie.',
   searchEmpty: 'Keine passenden Einträge. Bitte versuchen Sie einen anderen Begriff oder rufen Sie uns an.',
   searchReady: 'Einträge durchsuchen:', searchReset: 'Suche zurücksetzen', searchCount: 'Gefundene Einträge:', searchAll: 'Alle Einträge anzeigen',
   qualificationGroups: { dmp: 'DMP', training: 'Schulungen', ultrasound: 'Sonographie', other: 'Weiteres' },
