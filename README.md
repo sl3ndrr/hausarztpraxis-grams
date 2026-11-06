@@ -58,3 +58,7 @@ Große Systemüberschriften, warme Bereichsfarben, Bento-Anliegen und ein separa
 Status und Wochenbalken verwenden ausschließlich reguläre Zeiten aus hours.js in Europe/Berlin. Lokale Suche auf Startseite/Leistungsübersicht filtert bestehende Leistungen und Qualifikationen ohne Dienst oder Speicherung. Die Anfahrt bietet Adresse kopieren, vCard und Praxiskarten-Druck. Beide Formulare zeigen einen Demo-Ablauf mit lokaler Prüfung und telefonischem Kontakt.
 
 Abnahme am 11.10.2026: Checker und 31 Tests grün. Screenshots/visuelle Abnahme nicht möglich: lokales Chromium fehlt, Cloud-Browser blockiert localhost. Prüfung bei 360/768/1280 px, beiden Themes, größter Schrift, reduced-motion, Druck und Screenreader bleibt vor Freigabe erforderlich. Details und ausschließlich vorgeschlagene Erweiterungen in docs/OPEN-POINTS.md.
+
+## Mitwirkende
+
+[Codex](https://github.com/codex) hat zu diesem Projekt beigetragen.
