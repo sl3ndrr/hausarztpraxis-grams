@@ -80,13 +80,13 @@ if (structured) {
   try { assert.deepEqual(actualHours, expectedHours); } catch { fail('index.html', 'JSON-LD Sprechzeiten stimmen nicht mit content/hours.js überein.'); }
 }
 const fallback = html.match(/<noscript>([\s\S]*?)<\/noscript>/)?.[1] ?? '';
-const contactPhone = fallback.match(/Telefon: <a href="([^"]+)">([^<]+)<\/a> · Telefax: ([^<]+)<\/p>/);
+const contactPhone = fallback.match(/Telefon: <a href="([^"]+)">([^<]+)<\/a><br>Telefax: ([^<]+)<\/p>/);
 expect(contactPhone?.[1] === practice.phone.href && contactPhone?.[2] === practice.phone.text && contactPhone?.[3] === practice.fax, 'index.html', 'noscript-Telefon/Fax weicht von practice.js ab.');
-expect(fallback.includes(`<p>${practice.doctor} · ${practice.address.street}, ${practice.address.postalCode} ${practice.address.city}</p>`), 'index.html', 'noscript-Adresszeile stimmt nicht mit practice.js überein.');
+expect(fallback.includes(`<p>${practice.doctor}<br>${practice.address.street}, ${practice.address.postalCode} ${practice.address.city}</p>`), 'index.html', 'noscript-Adresszeile stimmt nicht mit practice.js überein.');
 expect(fallback.includes(`<a href="mailto:${practice.email}">${practice.email}</a>`), 'index.html', 'noscript-E-Mail-Link stimmt nicht.');
 for (const fact of [practice.name, practice.doctor, practice.address.street, practice.address.postalCode, practice.address.city, practice.phone.text, practice.phone.href, practice.fax, practice.email]) expect(fallback.includes(fact), 'index.html', `noscript enthält den Fakt nicht: ${fact}`);
 const fallbackRows = [...fallback.matchAll(/<tr data-weekday="(\d+)"><th scope="row">([^<]+)<\/th><td>(.*?)<\/td><\/tr>/g)];
-const wantedRows = hours.map(day => ({ weekday: day.weekday, label: day.label, intervals: day.intervals.map(pair => pair.map(value => value.replace(/^0/, '')).join('–')) }));
+const wantedRows = hours.map(day => ({ weekday: day.weekday, label: day.label, intervals: day.intervals.map(pair => pair.map(value => value.replace(/^0/, '')).join(` ${ui.until} `)) }));
 const actualRows = fallbackRows.map(row => ({ weekday: Number(row[1]), label: row[2], intervals: [...row[3].matchAll(/<span>(.*?)<\/span>/g)].map(part => part[1]) }));
 try { assert.deepEqual(actualRows, wantedRows); } catch { fail('index.html', 'noscript-Sprechzeiten stimmen nicht mit content/hours.js überein.'); }
 for (const link of practice.legal) expect(fallback.includes(link.href), 'index.html', `Rechtslink fehlt: ${link.text}`);

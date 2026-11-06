@@ -1,45 +1,87 @@
 /*
- * Lesbare, semantische Grundeinstellungen und sichtbarer Tastaturfokus.
- * Eingaben: ausschließlich Design-Tokens.
- * Farben und Schriftgrößen in tokens.css ändern.
+ * Lesbare Grundeinstellungen, Sprunglink und sichtbarer Tastaturfokus.
+ * Eingaben: zentrale Design-Tokens und Einstellung der Schriftgröße.
+ * Scrollabstände mit Header und Mobilleiste abgleichen.
  */
 * { box-sizing: border-box; }
-html { font-size: var(--font-base); scroll-padding-top: var(--offset-anchor); }
-html[data-font-size="1"] { font-size: var(--font-base-large); }
-html[data-font-size="2"] { font-size: var(--font-base-largest); }
-body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); font-size: var(--font-body-size); line-height: var(--line-body); overflow-wrap: anywhere; }
-h1, h2, h3, p, ul, ol, fieldset { margin: 0; }
-h1, h2 { font-family: var(--font-heading); font-weight: var(--weight-bold); line-height: var(--line-heading); letter-spacing: var(--letter-heading); text-wrap: balance; }
-h1 { font-size: var(--font-h1); }
-h2 { font-size: var(--font-h2); }
-h3 { font-size: var(--font-h3); font-weight: var(--weight-medium); line-height: var(--line-heading); }
+html, body { overflow-x: clip; }
+html {
+  font-size: var(--text-base);
+  scroll-padding-block: var(--space-3) calc(var(--size-mobile-bar) + env(safe-area-inset-bottom) + var(--space-4));
+  scrollbar-color: var(--color-border) var(--color-bg);
+}
+html[data-font-size="1"] { font-size: var(--text-base-large); }
+html[data-font-size="2"] { font-size: var(--text-base-largest); }
+body {
+  margin: 0;
+  padding-bottom: calc(var(--size-mobile-bar) + env(safe-area-inset-bottom));
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--line-body);
+  font-synthesis: none;
+  overflow-wrap: anywhere;
+}
+::selection { background: var(--color-primary); color: var(--color-on-primary); }
+h1, h2, h3, h4, p, ul, ol, fieldset { margin: 0; }
+h1, h2, h3, h4 {
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  font-weight: var(--weight-bold);
+  line-height: var(--line-heading);
+  text-wrap: balance;
+}
+h1 { font-size: var(--text-h1); letter-spacing: var(--letter-heading); }
+h2 { font-size: var(--text-h2); letter-spacing: var(--letter-heading); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-body); }
+p { text-wrap: pretty; }
 p + p { margin-top: var(--space-4); }
-a { color: var(--color-primary); text-underline-offset: var(--space-1); text-decoration-thickness: var(--size-border); overflow-wrap: anywhere; }
+a {
+  color: var(--color-primary);
+  text-underline-offset: var(--space-1);
+  text-decoration-thickness: var(--size-border);
+}
 a:hover { text-decoration-thickness: var(--size-line); }
 button, input { font: inherit; }
-button, a, input { -webkit-tap-highlight-color: var(--color-highlight); }
+input { caret-color: var(--color-text); }
 button { cursor: pointer; }
-button:disabled { cursor: default; }
+button:disabled { cursor: not-allowed; }
 :focus-visible { outline: var(--size-focus) solid var(--color-focus); outline-offset: var(--space-1); }
-h1:focus { outline: none; }
 img { display: block; max-width: 100%; }
 address { font-style: normal; }
 [hidden] { display: none !important; }
-.sr-only { position: absolute; width: var(--size-hidden); height: var(--size-hidden); padding: 0; margin: var(--offset-hidden); overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-.skip-link { position: fixed; top: var(--space-2); left: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--color-surface); z-index: 50; transform: translateY(-200%); }
+.sr-only {
+  position: absolute;
+  width: var(--size-hidden);
+  height: var(--size-hidden);
+  padding: 0;
+  margin: var(--offset-hidden);
+  overflow: clip;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  z-index: 50;
+  transform: translateY(-200%);
+}
 .skip-link:focus { transform: translateY(0); }
-.small { font-size: var(--font-small); color: var(--color-muted); }
-.lead { font-size: var(--font-body-size); max-width: var(--width-prose); }
-.eyebrow { font-size: var(--font-small); font-weight: var(--weight-bold); letter-spacing: var(--letter-eyebrow); text-transform: uppercase; color: var(--color-primary); }
-.text-list { padding-left: var(--space-5); }
+.small { font-size: var(--text-small); color: var(--color-muted); }
+.lead, .prose { max-width: var(--width-prose); }
+.text-list { padding-inline-start: var(--space-5); }
 .text-list li + li { margin-top: var(--space-2); }
-.prose { max-width: var(--width-prose); }
 .prose > * + * { margin-top: var(--space-5); }
 
-
-section[id], article[id] { scroll-margin-top: var(--offset-anchor); }
-main { padding-bottom: var(--size-mobile-bar); }
-@media (min-width: 1100px) { main { padding-bottom: 0; } }
-
-html { scroll-padding-bottom: calc(var(--size-mobile-bar) + var(--space-4)); }
-@media (min-width: 1100px) { html { scroll-padding-bottom: var(--space-4); } }
+@media (min-width: 69rem) {
+  html { scroll-padding-block: var(--offset-anchor) var(--space-4); }
+  body { padding-bottom: 0; }
+}

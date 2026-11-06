@@ -51,13 +51,13 @@ Vor einem späteren Livegang: `docs/OPEN-POINTS.md` abarbeiten, Fakten bestätig
 Zuerst `AGENTS.md` und `docs/CONTENT-GUIDE.md` lesen. Änderungen an Sprechzeiten oder Kontakt erfordern zusätzlich den Abgleich von JSON-LD und `noscript` in `index.html`; der Checker erzwingt dies. Bild-URLs bleiben auf der Originaldomain, Impressum und Datenschutzerklärung bleiben Links auf die Originalseiten.
 
 
-## Überarbeitete Bedienwege
+## Das offene Praxisschild
 
-Große Systemüberschriften, warme Bereichsfarben, Bento-Anliegen und ein separat gerahmtes Hero-Foto schaffen klare Hierarchie. Die drei Leistungsseiten zeigen alle Kapitel sichtbar; `#/leistungen/gesundheit?section=acute` ist beispielsweise ein Deep-Link mit Fokusführung. Der Header bietet drei Bereiche und ein Panel für Schrift/Darstellung, auf Smartphones ergänzt die feste Kontaktleiste das Telefon.
+Der Einstieg zeigt die Praxis am Narzissenweg, den telefonischen Kontakt und die reguläre Woche. Rezept- und Überweisungswünsche führen in gekennzeichnete Demo-Formulare. Das Leistungsregister bündelt die medizinischen Einstiege und die lokale Suche. Arzt, Team, Lehrpraxis und Anfahrt behalten die vorhandenen Praxisinhalte.
 
-Status und Wochenbalken verwenden ausschließlich reguläre Zeiten aus hours.js in Europe/Berlin. Lokale Suche auf Startseite/Leistungsübersicht filtert bestehende Leistungen und Qualifikationen ohne Dienst oder Speicherung. Die Anfahrt bietet Adresse kopieren, vCard und Praxiskarten-Druck. Beide Formulare zeigen einen Demo-Ablauf mit lokaler Prüfung und telefonischem Kontakt.
+Das Design-System gilt für alle neun Hash-Routen. Hell, Dunkel, Automatik und die drei Schriftstufen bleiben in der Praxisleiste erreichbar. Auf kleinen Fenstern ergänzt die Kontaktleiste Telefon und Anfahrt. In der Anfahrt bleiben Adresskopie, vCard und Druck der Praxiskarte verfügbar.
 
-Abnahme am 11.10.2026: Checker und 31 Tests grün. Screenshots/visuelle Abnahme nicht möglich: lokales Chromium fehlt, Cloud-Browser blockiert localhost. Prüfung bei 360/768/1280 px, beiden Themes, größter Schrift, reduced-motion, Druck und Screenreader bleibt vor Freigabe erforderlich. Details und ausschließlich vorgeschlagene Erweiterungen in docs/OPEN-POINTS.md.
+Stand und Grenzen der Prüfung stehen in [docs/OPEN-POINTS.md](docs/OPEN-POINTS.md). Das Design und die Redaktion sind in [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) und [docs/TEXT-CHANGES.md](docs/TEXT-CHANGES.md) dokumentiert.
 
 ## Mitwirkende
 

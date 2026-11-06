@@ -9,14 +9,14 @@
 
 `main.js` verbindet globale Mountpunkte, Einstellungen und Außenklick. Der Header liefert eigenes Element, Menüschließung, Außenklick-Handler und Cleanup; sein Live-Status-Timer wird beim Entfernen beendet. Schrift und Theme besitzen weiterhin drei Stufen bzw. Automatik/Hell/Dunkel und speichern ausschließlich diese Einstellungen fehlertolerant. Beide Dark-Tokenblöcke sind identisch; die automatische CSS-Wahl und theme-init.js vermeiden Darstellungsflackern.
 
-`route-location.js` zerlegt `#/route?section=id` rein und akzeptiert ausschließlich sichere englische IDs. Der Router räumt View-Ressourcen/Reveal auf, setzt SEO, Navigation, höfliche Ansage und Fokus. Existiert der Deep-Anker, scrollt/fokussiert er dieses Ziel und markiert den Kapitel-Link mit aria-current=location; andernfalls das einzige H1. Browser-Zurück bleibt Hash-Verhalten. Der Skip-Link fokussiert main ohne Route zu ändern.
+`route-location.js` zerlegt `#/route?section=id` rein und akzeptiert ausschließlich sichere englische IDs. Der Router räumt View-Ressourcen auf, setzt SEO, Navigation, höfliche Ansage und Fokus. Existiert der Deep-Anker, scrollt/fokussiert er dieses Ziel und markiert den Kapitel-Link mit aria-current=location; andernfalls das einzige H1. Browser-Zurück bleibt Hash-Verhalten. Der Skip-Link fokussiert main ohne Route zu ändern.
 
 ## Komponenten und reine Logik
 
 | Verantwortung | Dateien |
 | --- | --- |
 | Reguläre Berliner Öffnung | `lib/opening-status.js`, `components/live-status.js` |
-| Textzeiten, Wochenbalken und Jetzt-Marke | `lib/week-segments.js`, `components/week-hours.js` |
+| Gemeinsame Zeitentabelle, Heute-Markierung und Wochenstatus | `components/hours-card.js`, `components/week-hours.js` |
 | Sichtbare Altersstufen | `lib/age-stages.js`, `components/age-stages.js` |
 | Lokale Suchfilter und Inhaltsindex | `lib/service-search.js`, `components/service-search.js` |
 | Lokale vCard, Escaping und UTF-8-Faltung | `lib/vcard.js`, `components/contact-tools.js` |
@@ -24,7 +24,7 @@
 | Demo-Ablauf und gemeinsame Validierung | `components/request-progress.js`, `request-form.js`, `lib/validate.js` |
 | Isolierte Druckkarte | `components/practice-card.js`, `styles/print.css` |
 
-Die Statuslogik verwendet Europe/Berlin statt Browser-/UTC-Tagesgrenzen und modelliert ausschließlich reguläre Zeiten. Keine Feiertags-/Urlaubsaussage. Globaler kompakter Header-Chip hat einen zugänglichen Grundlagenhinweis und Titel; im Hero und an Wochenzeiten steht die Grundlage sichtbar. Wochenbalken leiten Skala/Segmente aus den Intervallen ab; Textzeiten und das ausgeschriebene „heute“ bleiben sichtbar, die geometrische Grafik ist ergänzend. Komponenten mit Timern oder Blob-URLs liefern destroy; Views reichen diesen Cleanup weiter.
+Die Statuslogik verwendet Europe/Berlin und die regulären Intervalle. Der Wochenplan ruft dieselbe Statuskomponente auf wie der Header und markiert über deren Aktualisierung den Berliner Wochentag. Die Startseite und die Anfahrt zeigen die vollständige Woche mit sichtbarer Statusgrundlage. Der kompakte Header-Status und die zusätzliche Footer-Tabelle sind für die übrigen Routen vorgesehen. Die Druckkarte und der Footer teilen die statische Werktagstabelle. Komponenten mit Timern oder Blob-URLs liefern `destroy`. Die Views reichen diesen Cleanup weiter.
 
 Leistungen sind offen gerenderte Kapitel; Qualifikationen erscheinen genau einmal in rein gestalterischen Indexgruppen. Die Altersleiste ergänzt bestehende Titel durch dieselben numerischen Grenzen, ohne Ansprüche oder Intervalle abzuleiten. Suche indexiert Kapiteltexte/Listen/Stufen, Qualifikationen und Privatverfahren. Alle Suchwörter müssen passen; Groß-/Kleinschreibung, diakritische Zeichen und ß werden normalisiert. Ergebnisse sind normale Tastatur-Links mit Trefferansage; nichts wird gespeichert oder extern übertragen.
 
@@ -34,9 +34,9 @@ Kontaktkomfort generiert vCard ausschließlich lokal aus practice.js, maskiert S
 
 ## Gestaltung und Ressourcen
 
-`picture.js` bleibt die einzige Bildausgabe, liest ausschließlich images.js und liefert reservierte Maße sowie Initialen-Fallback. Porträts wachsen nie über 200 CSS-Pixel, auch nicht mit größter Schrift. Das Hero-Foto steht in einem eigenen Rahmen ohne Overlay/Textüberlagerung; das Motiv bleibt freigabepflichtig. Das Universitätslogo und sein Fallback haben gesondert geprüfte helle Farben.
+`picture.js` bleibt die einzige Bildausgabe und liest ausschließlich `images.js`. Reservierte Maße und der Initialen-Fallback bleiben erhalten. Porträts wachsen auch bei größter Schrift auf höchstens 200 CSS-Pixel. Das vorhandene Titelbild steht bei den Besuchsinformationen. Das Universitätslogo liegt auf einer hellen Unterlage.
 
-CSS ist nach Basis, Layout, Komponenten, Startseite, Stunden, Leistungen, Menschen, Kontakt/Formular, Suche, Bewegung und Druck geteilt. Sämtliche Designwerte sind Tokens; die drei Tokenblöcke werden auf Schlüssel-/Wertparität und definierte Kontrastpaare geprüft. Mediengrenzen dürfen feste Pixelwerte haben. Berechnete Balken-Prozentwerte stammen aus reinen Datenfunktionen. Reveal/Feedback bewegen nur transform/opacity, ohne automatische Bildbewegung oder pulsierenden Status; reduced-motion deaktiviert alle Bewegungen, auch bei Systemwechsel. Auf kleinen Ansichten bleibt der Header im Dokumentfluss, die mobile Telefon-/Anfahrtleiste erreichbar; Desktop-Header und Kapitelanker sind sticky.
+CSS bleibt in Basis, Layout, Komponenten, Startseite, Stunden, Leistungen, Menschen, Kontakt, Suche, Bedienrückmeldung und Druck gegliedert. Die Tokenblöcke werden auf Schlüssel- und Wertparität sowie Kontrastpaare geprüft. Inhalte sind unmittelbar sichtbar. Auf schmalen Fenstern liegen Menü und Einstellungen im Dokumentfluss. Sie schließen sich gegenseitig. Die Telefon- und Anfahrtleiste hat Platz am Ende der Seite und einen Scrollabstand für Sprungziele. Nur die breite Praxisleiste bleibt am oberen Fensterrand stehen.
 
 Kein Build, keine Abhängigkeiten, Tracker, externen Fonts/Skripte oder Karten-Embeds. Rechts-/Maps-/Universitätsziele bleiben normale Links, Praxisbilder die einzige externe Bildquelle. Hosting weiterhin statisch mit Hash-Routing und relativen URLs, inklusive GitHub-Pages-Unterpfad. Checker und reine Tests plus DOM-Testdouble sind keine visuelle Browser-, Screenreader- oder vollständige WCAG-Abnahme.
 

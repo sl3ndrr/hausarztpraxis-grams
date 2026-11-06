@@ -6,7 +6,7 @@
  */
 export const sports = {
   accent: 'sports',
-  eyebrow: 'Leistungen · Sportmedizin', title: 'Bewegung medizinisch begleiten.',
+  title: 'Sportmedizin',
   intro: 'Untersuchung, Beratung und Behandlung für Ihre sportliche Aktivität.',
   sections: [
     { id: 'assessment', title: 'Sportmedizinische Untersuchungen und Beratung', text: 'Auf Wunsch prüfen wir Ihre körperliche Belastbarkeit und Fitness. Wir beraten Sie zu Training und Verletzungsprävention.', items: ['Sporttauglichkeitsuntersuchungen', 'Leistungsdiagnostik', 'Individuelle Trainingsberatung'] },

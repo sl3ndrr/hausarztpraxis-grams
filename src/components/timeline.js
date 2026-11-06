@@ -1,8 +1,8 @@
 /**
- * Vertikale, semantische Zeitleiste für Untersuchungen und Werdegang.
+ * Semantische Liste für den Werdegang.
  * Eingaben: reine Schritte mit Titel und Text.
- * Schritte im jeweiligen content-Modul, Linienanimation in motion.css ändern.
+ * Schritte im zuständigen Content-Modul pflegen.
  */
 import { h } from '../lib/dom.js';
-export function timeline(steps, heading = 'h3') { return h('ol', { className: 'timeline timeline--career', 'data-reveal': '' }, steps.map(step => h('li', { className: 'timeline__item' }, h(heading, {}, step.title), h('p', {}, step.text)))); }
+export function timeline(steps, heading = 'h3') { return h('ol', { className: 'timeline' }, steps.map(step => h('li', { className: 'timeline__item' }, h(heading, {}, step.title), h('p', {}, step.text)))); }
 

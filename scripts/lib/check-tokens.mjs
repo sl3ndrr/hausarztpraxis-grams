@@ -28,13 +28,14 @@ export function checkTokens(css, sources, fail) {
     ['color-muted', 'color-bg', 7], ['color-muted', 'color-surface', 7], ['color-muted', 'color-surface-raised', 7],
     ['color-primary', 'color-bg', 7], ['color-primary', 'color-surface', 7], ['color-primary', 'color-surface-raised', 7],
     ['color-on-primary', 'color-primary', 7], ['color-on-primary', 'color-primary-hover', 7],
-    ['color-logo-text', 'color-logo-surface', 7], ['color-on-health', 'color-health', 7], ['color-on-prevention', 'color-prevention', 7], ['color-on-sports', 'color-sports', 7],
-    ['color-on-warm', 'color-warm', 7], ['color-status', 'color-surface', 7],
-    ['color-text', 'color-error-bg', 7], ['color-on-health', 'color-health', 3], ['color-on-prevention', 'color-prevention', 3], ['color-on-sports', 'color-sports', 3],
-    ['color-error', 'color-surface', 7], ['color-error', 'color-error-bg', 7],
-    ['color-border', 'color-surface', 3], ['color-border', 'color-bg', 3],
+    ['color-logo-text', 'color-logo-surface', 7], ['color-print-text', 'color-print-bg', 7],
+    ['color-text', 'color-error-bg', 7], ['color-error', 'color-bg', 7],
+    ['color-error', 'color-surface', 7], ['color-error', 'color-surface-raised', 7], ['color-error', 'color-error-bg', 7],
+    ['color-footer-text', 'color-footer-bg', 7], ['color-hero-text', 'color-hero-bg', 7],
+    ['color-hero-text', 'color-sign-current', 7], ['color-hero-bg', 'color-sign-hover', 7],
+    ['color-border', 'color-bg', 3], ['color-border', 'color-surface', 3], ['color-border', 'color-surface-raised', 3],
     ['color-focus', 'color-bg', 3], ['color-focus', 'color-surface', 3], ['color-focus', 'color-surface-raised', 3],
-    ['color-footer-text', 'color-footer-bg', 7], ['color-hero-text', 'color-hero-bg', 7]
+    ['color-focus', 'color-error-bg', 3], ['color-sign-divider', 'color-hero-bg', 3]
   ];
   for (const [mode, tokens] of [['Hell', light], ['Dunkel', explicitDark]]) for (const [foreground, background, minimum] of pairs) {
     const fg = tokens['--' + foreground]; const bg = tokens['--' + background];
@@ -42,6 +43,6 @@ export function checkTokens(css, sources, fail) {
     const ratio = contrast(fg, bg);
     if (ratio < minimum) fail('styles/tokens.css', `${mode}: ${foreground}/${background} ${ratio.toFixed(2)}:1; benötigt ${minimum}:1.`);
   }
-  // Das Foto ist eine eigene Fläche. Jeder Text bleibt außerhalb seiner DOM-Hülle.
+  // Praxisfotos bleiben von der Textfläche des Praxisschilds getrennt.
   if (/color-overlay|hero__picture::after/.test(sources['styles/views.css'] ?? '')) fail('styles/views.css', 'Hero darf keine Textüberlagerung des ungeprüften Motivs verwenden.');
 }

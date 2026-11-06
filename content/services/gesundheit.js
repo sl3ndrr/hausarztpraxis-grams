@@ -6,7 +6,7 @@
  */
 export const health = {
   accent: 'health',
-  eyebrow: 'Leistungen · Gesundheit', title: 'Gesundheit im Alltag begleiten.',
+  title: 'Gesundheit',
   intro: 'Wir betreuen Sie bei akuten Beschwerden und begleiten Sie bei chronischen Erkrankungen.',
   sections: [
     { id: 'checkups', title: 'Allgemeine Gesundheitsuntersuchungen', text: 'Regelmäßige Gesundheitsuntersuchungen helfen, Krankheiten früh zu erkennen und zu behandeln. Folgende Untersuchungen sind Krankenkassenleistungen:', steps: [

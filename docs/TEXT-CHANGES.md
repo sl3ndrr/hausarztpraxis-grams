@@ -46,6 +46,39 @@ Die Fakten und Leistungslisten des Auftrags wurden übernommen. Struktur, Übers
 Originale Impressum-/Datenschutztexte wurden nicht neu verfasst. Die dortigen Original-URLs bleiben verlinkt. Teamrollen, Studienangabe, Qualifikationen, alle Leistungsstichpunkte, Kontaktdaten und Zeiten wurden unverändert inhaltlich erhalten. Alle neutralisierenden Umformulierungen stehen ausdrücklich in dieser Liste.
 
 
+
+## Praxisschild am 06.11.2026
+
+Medizinische Kapiteltexte, Altersstufen, Qualifikationen, Lebenslaufdaten, Teamrollen, Kontaktangaben, Sprechzeiten und rechtliche Ziele sind erhalten. Einwilligung, Formularfelder, Validierung und Ergebnistext behalten ihren Wortlaut und Ablauf.
+
+| Ort | Vorher | Nachher |
+| --- | --- | --- |
+| Start, Einstieg | „Willkommen in unserer Praxis“ über „Ihre Gesundheit. Unser Alltag.“ | „Hausarztpraxis Grams“ als Hauptüberschrift. Darunter „Narzissenweg 4“ und „65201 Wiesbaden“. |
+| Start, Einordnung | „Wir sind vor Ort für Sie da. Melden Sie sich gerne telefonisch bei uns. Unser Praxisteam freut sich auf Ihren Besuch.“ | „Für einen Termin rufen Sie uns bitte an.“ |
+| Primäre Aktion | „Jetzt anrufen“ mit Nummer | Sichtbare Nummer „0611 21211“. „Praxis anrufen“ benennt den Link für assistive Technik und bleibt in der Mobilleiste sichtbar. |
+| Start, Status und Zeiten | „Anzeige auf Grundlage der regulären Sprechzeiten“, Zeitspannen mit Strich und ergänzende „Jetzt“-Marke | „Status nach regulären Sprechzeiten. Feiertage und Urlaub sind dabei unberücksichtigt.“ Reguläre Woche in einer Tabelle mit ausgeschriebenem „heute“ und „bis“ in den Zeitspannen. Wochenendzeilen „Keine Sprechzeit“. |
+| Kompakter Header-Status | „Regulär:“ und „Jetzt geschlossen · [Tag] ab [Uhrzeit] Uhr“ | „Nach regulären Sprechzeiten:“ und „Jetzt geschlossen, [Tag] ab [Uhrzeit] Uhr“. Die Startseite und Anfahrt zeigen die Grundlage am Wochenplan. |
+| Start, Schnellzugriff | „Was führt Sie zu uns?“ und „Wiederholungsrezept anfordern“, „Rezeptwunsch im Demo-Formular vorbereiten.“ | „Häufige Anliegen“ mit „Rezeptwunsch“, „Überweisungswunsch“, „Leistungen“ und „Anfahrt“. Bei beiden Formularlinks steht „Demo ohne Versand und Speicherung“. |
+| Start, medizinische Kurzwege | „Akute Beschwerden“, „Vorsorge“, „Hausbesuch“, „Attest“ und „Sportmedizin“ mit einleitenden Kurztexten | Kontextlinks „Akute Beschwerden“, „Krebsvorsorge“, „Hausbesuche nach Absprache“, „Atteste“ und „Sportmedizinische Untersuchung“ unter den zugehörigen Leistungsbereichen. Alle fünf Abschnittsziele und Angebotsinformationen bleiben erreichbar. |
+| Start, Übersicht | „Auf einen Blick“ mit Fachgebieten, Lehrpraxis, Hausbesuchen und Terminoption | Fachgebiete bei Oliver Grams, Lehrpraxis im eigenen Abschnitt, Hausbesuche bei Gesundheit und Terminoption im Kontaktabschnitt. |
+| Start, Leistungen | „Drei Bereiche. Ihre Gesundheit.“ und „Entdecken Sie unsere Leistungen.“ | „Leistungen“ und direkte Einträge „Gesundheit“, „Vorsorge“, „Sportmedizin“. Die wiederholten Links „Mehr erfahren“ gehen in den verlinkten Bereichstiteln auf. |
+| Start und Arztseite, Team | „Das Praxisteam“ mit „Wir freuen uns auf Ihren Besuch.“ | „Das Praxisteam“ mit Namen und Rollen. |
+| Start, Arzt | „Ihr Arzt“, „Medizin mit einem persönlichen Gesicht.“, „Oliver Grams kennenlernen“ | „Oliver Grams“ mit unveränderter Fachangabe und „Zum Arztprofil“. |
+| Start, Kontakt | „Ein Anruf. Ein persönlicher Kontakt.“ und „Bitte vereinbaren Sie einen Termin.“ | „Kontakt“ und „Termin vereinbaren“. „Das hilft uns, auf Notfälle zu reagieren und Wartezeiten möglichst kurz zu halten. Nach Absprache sind Termine außerhalb der regulären Sprechzeiten möglich, zum Beispiel am Abend.“ |
+| Leistungsübersicht | „Unsere Leistungen“, „Für Ihre Gesundheit. In jeder Lebensphase.“ und „Von akuten Beschwerden bis zur langfristigen Betreuung: Hier finden Sie die Leistungen unserer Praxis.“ | „Leistungen“ und „Hausärztliche Betreuung, Vorsorge und Sportmedizin.“ |
+| Gesundheitsseite | „Leistungen · Gesundheit“ über „Gesundheit im Alltag begleiten.“ | „Gesundheit“. |
+| Vorsorgeseite | „Leistungen · Vorsorge“ über „Frühzeitig auf Ihre Gesundheit achten.“ | „Vorsorge“. |
+| Sportmedizinseite | „Leistungen · Sportmedizin“ über „Bewegung medizinisch begleiten.“ | „Sportmedizin“. |
+| Leistungsdetails und Suche | „Nächster Bereich“, „Leistung oder Qualifikation suchen“ | „Weiter zu“, „Leistungen und Qualifikationen suchen“. |
+| Arztseite | „Ihr Arzt“ über „Hausärztliche Versorgung. Persönlich begleitet.“, „Oliver Grams“ als zweite Überschrift, „Der Werdegang“ | „Oliver Grams“ als Hauptüberschrift mit bisherigem Tätigkeitsprofil als Einleitung, „Werdegang“. „Ihr Arzt“ bleibt im Pfad. |
+| Rezeptwunsch | „Ihr Anliegen“ und „Dieser Dienst ist nur für Wiederholungsrezepte vorgesehen.“ | „Rezeptwunsch“ mit „Demo-Formular“ direkt darunter. „Rezeptwünsche sind nur für Wiederholungsrezepte vorgesehen.“ Die Angabe zu zwei Werktagen bleibt erhalten. |
+| Überweisungswunsch | „Ihr Anliegen“ und „Dieser Dienst ist nur für Routinekontrollen vorgesehen, zum Beispiel eine Kontrolluntersuchung oder Facharzt-Vorsorgeuntersuchung.“ | „Überweisungswunsch“ mit „Demo-Formular“ direkt darunter. „Überweisungswünsche sind nur für Routinekontrollen vorgesehen, zum Beispiel für eine Kontrolluntersuchung oder Facharzt-Vorsorgeuntersuchung.“ Die Angabe zu zwei Werktagen bleibt erhalten. |
+| Anfahrt, Einstieg | „Ihr Weg zu uns“, „So finden Sie unsere Praxis.“ und „Sie erreichen uns unter der folgenden Adresse. Bitte vereinbaren Sie Ihren Termin telefonisch.“ | „Anfahrt“, „Bitte vereinbaren Sie Ihren Termin telefonisch.“ Adresse und Kartenlinks folgen im Kontaktabschnitt. |
+| Anfahrt, Buslinien | „Buslinie 23 · Sonnenblumenweg“ und „Buslinien 23 und 39 · Ludwig-Erhard-Straße“ | „Buslinie 23: Sonnenblumenweg“ und „Buslinien 23 und 39: Ludwig-Erhard-Straße“. Haltestellen und Fußwege bleiben im Absatz ausgeschrieben. |
+| Navigation und Metadaten | „Willkommen“, „Kontakt & Anfahrt“, „Willkommen · Hausarztpraxis Grams“ | „Startseite“, „Anfahrt“, „Hausarztpraxis Grams“. |
+| Notfall und Fehleransicht | Zweite Wiederholung der Notfallnummern im Footer, „Orientierung“ vor der Fehlerüberschrift | Beide Rufnummern im Notfallband und auf der Praxiskarte. Die Fehleransicht beginnt mit „Diese Seite wurde nicht gefunden.“ |
+| Ansicht ohne JavaScript | „Bitte aktivieren Sie JavaScript für alle Ansichten. Unsere Kontaktdaten und Sprechzeiten finden Sie hier.“ | „Für weitere Ansichten benötigen Sie JavaScript.“ Adresse, Telefon, Fax, Rechts- und Notfalllinks sowie dieselben Zeiten sind darunter sichtbar. |
+
 ## Überarbeitung 11.10.2026 – Basis
 
 - `content/site.js`: „Lesen & Darstellung“ als Panel-Beschriftung, Schriftzeichen zentralisiert. Reine Bedienhilfe.

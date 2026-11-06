@@ -7,14 +7,12 @@ import { routes, fallbackRoute } from './routes.js';
 import { seo } from '../content/seo.js';
 import { ui } from '../content/site.js';
 import { routeLocation } from './lib/route-location.js';
-import { reveal } from './behaviors/reveal.js';
 export function startRouter(mount, closeMenu) {
   let current;
-  let stopReveal = () => {};
   function render() {
     const { path, section } = routeLocation(location.hash);
     const route = routes.find(entry => entry.path === path) ?? fallbackRoute;
-    stopReveal(); current?.destroy?.(); closeMenu();
+    current?.destroy?.(); closeMenu();
     current = route.view(); mount.replaceChildren(current.element);
     const metadata = seo[route.seo];
     document.title = metadata.title;
@@ -27,7 +25,6 @@ export function startRouter(mount, closeMenu) {
     mount.querySelectorAll('[data-chapter-link]').forEach(link => {
       if (section && routeLocation(link.getAttribute('href')).section === section) link.setAttribute('aria-current', 'location');
     });
-    stopReveal = reveal(mount);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     const title = mount.querySelector('h1');
     const target = section && mount.querySelector(`[id="${section}"]`);
@@ -37,6 +34,6 @@ export function startRouter(mount, closeMenu) {
   }
   window.addEventListener('hashchange', render);
   render();
-  return () => { window.removeEventListener('hashchange', render); stopReveal(); current?.destroy?.(); };
+  return () => { window.removeEventListener('hashchange', render); current?.destroy?.(); };
 }
 

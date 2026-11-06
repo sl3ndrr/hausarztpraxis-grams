@@ -11,7 +11,6 @@ import { mobileBar } from './components/mobile-bar.js';
 import { initializeTheme } from './behaviors/theme.js';
 import { initializeFontSize } from './behaviors/font-size.js';
 import { startRouter } from './router.js';
-document.documentElement.classList.add('js');
 const navigation = header();
 document.querySelector('[data-header-mount]').replaceChildren(navigation.element);
 document.querySelector('[data-footer-mount]').replaceChildren(footer());

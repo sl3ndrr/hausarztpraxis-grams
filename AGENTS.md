@@ -5,7 +5,7 @@
 -->
 # Arbeitsanweisung
 
-Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigabe durch den Praxisinhaber. Inhalt und Fakten stammen aus der bestehenden Praxis-Webseite und dem Projektauftrag. Die Seite soll selbstbewusst, warm, gut lesbar und mit wenig Kontext sicher pflegbar bleiben. Der sachlich-freundliche Ton und alle harten Regeln bleiben verbindlich.
+Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigabe durch den Praxisinhaber. Inhalt und Fakten stammen aus der bestehenden Praxis-Webseite und dem Projektauftrag. Das offene Praxisschild soll direkt, gut lesbar und mit wenig Kontext sicher pflegbar bleiben. Der sachlich-freundliche Ton und alle harten Regeln bleiben verbindlich.
 
 **Stack:** HTML, CSS, Vanilla-JS als ES-Module; nur `src/theme-init.js` ist ein synchrones klassisches Skript. Kein Build, keine Frameworks, keine Abhängigkeiten und keine externen Ressourcen außer den erlaubten Praxisbildern. Dev-Skripte verwenden ausschließlich Node-Bordmittel.
 
@@ -20,8 +20,8 @@ Dieses Repository ist der visuelle Relaunch der Hausarztpraxis Grams zur Freigab
 - `content/forms.js`, `content/services/`: Formularschemata und Leistungen.
 - `src/main.js`, `router.js`, `routes.js`: Einstieg, Routing, explizite View-Imports.
 - `src/components/`, `views/`: offene Kapitel, Status, Suche, Kontaktkomfort, Demo-Ablauf, sichere DOM-Ausgabe und Seitenaufbau.
-- `src/lib/`: reine Öffnungs-, Alters-, Wochenbalken-, Such-, vCard- und Deep-Anker-Logik; DOM-Helper, Speicher, Submit-Austauschpunkt.
-- `src/behaviors/`: Theme, Schrift und Reveal mit DOM-Zugriff.
+- `src/lib/`: reine Öffnungs-, Alters-, Such-, vCard- und Deep-Anker-Logik; DOM-Helper, Speicher, Submit-Austauschpunkt.
+- `src/behaviors/`: Theme und Schrift mit DOM-Zugriff.
 - `styles/`: je Datei ein Zweck; sämtliche Designwerte in `tokens.css`.
 - `scripts/`, `tests/`, `docs/`: Prüfung, Server, Tests und Pflegeanleitungen.
 
