@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<div class="shell article-shell">
+  {% if section == 'leistungen' and page.url != '/Leistungen/' %}
+  <nav class="parent-navigation" aria-label="Übergeordnete Seite">
+    <a href="{{ '/Leistungen/' | url }}">Alle Leistungen</a>
+  </nav>
+  {% endif %}
+  <article class="reading{% if contents %} reading--structured{% endif %}">
+    <h1>{{ title }}</h1>
+    {% if contents %}
+    <nav class="contents" aria-label="Auf dieser Seite">
+      <strong>Auf dieser Seite</strong>
+      <ul>
+        {% for item in contents %}
+        <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    <div class="article-copy">{{ content | safe }}</div>
+  </article>
+</div>

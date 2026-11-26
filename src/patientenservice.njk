@@ -1,0 +1,10 @@
+---
+layout: service.njk
+pagination:
+  data: praxis.services
+  size: 1
+  alias: serviceKey
+permalink: "{{ praxis.services[serviceKey].path }}"
+eleventyComputed:
+  title: "{{ praxis.services[serviceKey].title }}"
+---

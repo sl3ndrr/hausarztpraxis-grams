@@ -1,0 +1,76 @@
+---
+layout: base.njk
+section: start
+---
+<div class="shell">
+  <section class="praxis-intro" aria-labelledby="praxisname">
+    <h1 id="praxisname">{{ praxis.name }}</h1>
+    <div class="praxis-contact">
+      <p>{{ praxis.address.district }}</p>
+      <a class="praxis-phone" href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>
+      <div class="praxis-quick-links">
+        <a href="#sprechzeiten">Sprechzeiten</a>
+        <a href="#patientenservice">Patientenservice</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hours-board" id="sprechzeiten" aria-labelledby="zeiten-titel">
+    <div class="hours-intro">
+      <h2 id="zeiten-titel">Reguläre<br class="wide-only"> Sprechzeiten</h2>
+      <p>Bitte vereinbaren Sie vorab telefonisch einen Termin. Termine außerhalb der Sprechzeiten sind nach Absprache möglich.</p>
+    </div>
+    <div class="hours-body" data-time-zone="{{ praxis.timeZone }}">
+      <table class="hours-table" aria-label="Wochenplan der regulären Sprechzeiten">
+        <thead>
+          <tr>
+            <th scope="col">Wochentag</th>
+            <th scope="col">Vormittag</th>
+            <th scope="col">Nachmittag</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for slot in praxis.hours %}
+          <tr data-weekday="{{ slot.day }}">
+            <th scope="row">
+              {{ slot.name }}
+              <span class="today-label" hidden>Heute</span>
+            </th>
+            <td>{% if slot.morning %}{{ slot.morning | join('–') }}{% else %}<span class="closed">geschlossen</span>{% endif %}</td>
+            <td>{% if slot.afternoon %}{{ slot.afternoon | join('–') }}{% else %}<span class="closed">geschlossen</span>{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="hours-note"><strong>Mittagspause</strong> {{ praxis.middayDays | join(', ') }} von {{ praxis.midday.start }} bis {{ praxis.midday.end }} Uhr.</p>
+    </div>
+  </section>
+
+  <section class="home-section" id="patientenservice" aria-labelledby="service-titel">
+    <h2 id="service-titel">Patientenservice</h2>
+    <p>{{ praxis.serviceProcessing }}</p>
+    <ul class="link-list">
+      {% for key, service in praxis.services %}
+      <li>
+        <div>
+          <h3><a href="{{ service.path | url }}">{{ service.title }}</a></h3>
+          <p>{{ service.description }}</p>
+        </div>
+        {% include 'formular-link.njk' %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="home-section practice-summary" aria-labelledby="praxis-titel">
+    <div>
+      <h2 id="praxis-titel">Ihre Hausarztpraxis<br> am Narzissenweg</h2>
+      <p>{{ praxis.teachingPractice }}.</p>
+    </div>
+    <ul>
+      <li><a href="{{ '/Leistungen/' | url }}">Leistungen im Überblick</a></li>
+      <li><a href="{{ '/Arzt/' | url }}">Arzt und Team kennenlernen</a></li>
+      <li><a href="{{ '/Anfahrt/' | url }}">Anfahrt zur Praxis</a></li>
+    </ul>
+  </section>
+</div>

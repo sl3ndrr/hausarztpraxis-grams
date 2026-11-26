@@ -1,0 +1,18 @@
+{% if site.publisher.practice %}
+<address>
+  {{ praxis.doctor }}, {{ praxis.description }}<br>
+  {{ praxis.address.street }}<br>
+  {{ praxis.address.city }}<br>
+  Telefon <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a><br>
+  E-Mail <a href="mailto:{{ praxis.email }}">{{ praxis.email }}</a>
+</address>
+{% elif site.publisher.name %}
+<address>
+  {{ site.publisher.name }}<br>
+  {{ site.publisher.street }}<br>
+  {{ site.publisher.city }}<br>
+  E-Mail <a href="mailto:{{ site.publisher.email }}">{{ site.publisher.email }}</a>
+</address>
+{% else %}
+<p>Die Designvorschau wird über das GitHub-Konto <a href="{{ site.publisher.profile }}">{{ site.publisher.account }}</a> veröffentlicht. <a href="{{ site.publisher.repository }}">Repository der Designvorschau auf GitHub</a></p>
+{% endif %}

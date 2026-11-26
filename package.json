@@ -1,0 +1,18 @@
+{
+  "name": "hausarztpraxis-grams",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.8",
+    "parse5": "8.1.1"
+  }
+}
