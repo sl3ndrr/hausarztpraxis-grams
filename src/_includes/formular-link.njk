@@ -1,0 +1,5 @@
+{% if service.formAvailable %}
+<a class="form-link" href="{{ service.form }}">{{ service.action }}</a>
+{% else %}
+<span>Das Formular ist derzeit nicht erreichbar. Bitte rufen Sie uns an unter <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>.</span>
+{% endif %}

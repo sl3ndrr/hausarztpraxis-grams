@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if not site.indexable %}<meta name="robots" content="noindex">{% endif %}
+  <title>{% if title %}{{ title }} | {% endif %}{{ praxis.name }}{% if not title %} in {{ praxis.address.district }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
+  {% if section == 'start' %}<script type="module" src="{{ '/assets/sprechzeiten.mjs' | url }}"></script>{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  {% if site.preview %}
+  <div class="preview">
+    <div class="shell preview-inner">
+      <strong>Designvorschau</strong>
+      <a href="{{ site.currentWebsite }}">Zur aktuellen Praxiswebsite</a>
+    </div>
+  </div>
+  {% endif %}
+  <header class="site-header">
+    <div class="shell header-inner">
+      {% if section == 'start' %}
+      <span class="header-name">{{ praxis.description }}</span>
+      {% else %}
+      <a class="header-name" href="{{ '/' | url }}">{{ praxis.name }}</a>
+      {% endif %}
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="{{ '/' | url }}"{% if section == 'start' %} aria-current="page"{% endif %}>Startseite</a></li>
+          <li><a href="{{ '/Leistungen/' | url }}"{% if page.url == '/Leistungen/' %} aria-current="page"{% elif section == 'leistungen' %} class="nav-section"{% endif %}>Leistungen</a></li>
+          <li><a href="{{ '/Arzt/' | url }}"{% if page.url == '/Arzt/' %} aria-current="page"{% endif %}>Arzt und Team</a></li>
+          <li><a href="{{ '/Anfahrt/' | url }}"{% if page.url == '/Anfahrt/' %} aria-current="page"{% endif %}>Anfahrt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="inhalt" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <strong class="footer-name">{{ praxis.name }}</strong>
+        <address>
+          {{ praxis.address.street }}<br>
+          {{ praxis.address.city }}<br>
+          <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>
+        </address>
+      </div>
+      <nav aria-label="Rechtliche Informationen und Anfahrt">
+        <ul>
+          <li><a href="{{ '/Anfahrt/' | url }}">Anfahrt</a></li>
+          <li><a href="{{ '/Impressum/' | url }}"{% if page.url == '/Impressum/' %} aria-current="page"{% endif %}>Impressum</a></li>
+          <li><a href="{{ '/Datenschutzerklaerung/' | url }}"{% if page.url == '/Datenschutzerklaerung/' %} aria-current="page"{% endif %}>Datenschutz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
