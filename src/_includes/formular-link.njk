@@ -1,5 +1,6 @@
+{% from 'icons.njk' import icon %}
 {% if service.formAvailable %}
-<a class="form-link" href="{{ service.form }}">{{ service.action }}</a>
+<a class="button button--primary form-link" href="{{ service.form | escape }}">{{ service.action | escape }} (extern) {{ icon('external') }}</a>
 {% else %}
-<span>Das Formular ist derzeit nicht erreichbar. Bitte rufen Sie uns an unter <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>.</span>
+<p class="form-fallback">Das Formular ist derzeit nicht erreichbar. Bitte rufen Sie uns an unter <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>.</p>
 {% endif %}

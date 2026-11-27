@@ -7,7 +7,7 @@ layout: base.njk
     <a href="{{ '/Leistungen/' | url }}">Alle Leistungen</a>
   </nav>
   {% endif %}
-  <article class="reading{% if contents %} reading--structured{% endif %}">
+  <article class="reading{% if contents %} reading--structured{% elif wide %} reading--wide{% endif %}">
     <h1>{{ title }}</h1>
     {% if contents %}
     <nav class="contents" aria-label="Auf dieser Seite">

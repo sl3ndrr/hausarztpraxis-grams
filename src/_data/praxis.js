@@ -30,6 +30,12 @@ export default {
   hours,
   middayDays: hours.filter(slot => slot.morning && slot.afternoon).map(slot => slot.name.slice(0, 2)),
   midday: { start: morning[1], end: afternoon[0] },
+  hoursExceptions: [],
+  transitStops: [
+    { name: "Wiesbaden-Dotzheim Sonnenblumenweg", lines: [23], walkText: "Unter 300 m Fußweg zur Praxis" },
+    { name: "Wiesbaden-Dotzheim Ludwig-Erhard-Straße", lines: [23, 39], walkText: "Etwa 500 m Fußweg zur Praxis" }
+  ],
+  accessibilityNote: null,
   services: {
     recipe: {
       title: "Wiederholungsrezept",

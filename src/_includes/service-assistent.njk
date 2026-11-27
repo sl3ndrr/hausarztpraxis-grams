@@ -1,0 +1,95 @@
+{% from 'icons.njk' import icon %}
+<section class="home-section patient-service" id="patientenservice" aria-labelledby="service-titel" data-patient-service>
+  <h2 id="service-titel" tabindex="-1">Was möchten Sie erledigen?</h2>
+
+  <div class="assistant" data-service-assistant hidden>
+    <ol class="service-steps" aria-label="Schritte im Patientenservice">
+      <li data-service-stage="choose" aria-current="step">Anliegen wählen</li>
+      <li data-service-stage="prepare">Vorbereiten</li>
+      <li data-service-stage="next">Nächster Schritt</li>
+    </ol>
+    <div data-choose>
+      <ul class="service-choices">
+        {% for flow in patientenservice %}
+        <li>
+          <button class="choice-card" type="button" data-service-action="select" data-flow-id="{{ flow.id | escape }}" aria-pressed="false">
+            <span class="icon-chip">{{ icon(flow.icon) }}</span>
+            <strong>{{ flow.label | escape }}</strong>
+            {{ icon('arrow') }}
+          </button>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% for flow in patientenservice %}
+    {% set service = praxis.services[flow.serviceKey] %}
+    <div class="assistant-panel" data-flow="{{ flow.id | escape }}" hidden>
+      <div data-prepare>
+        <p class="assistant-topic">{{ flow.label | escape }}</p>
+        <h3 tabindex="-1"><span class="sr-only">{{ flow.label | escape }} · </span>Vorbereiten</h3>
+        {% if flow.actionType == 'externalForm' %}
+        <p>{{ service.description }} {{ praxis.serviceProcessing }}</p>
+        {% elif flow.showDirections %}
+        <p>Welche Unterlagen Sie brauchen und ob ein Termin möglich ist, klärt die Praxis telefonisch.</p>
+        {% endif %}
+        <ul class="checklist">
+          {% for item in flow.checklist %}
+          <li>
+            <button type="button" class="check-item" data-service-action="toggle" data-check-index="{{ loop.index0 }}" aria-pressed="false">
+              <span class="check-mark" aria-hidden="true"></span><span data-check-text>{{ item | escape }}</span>
+            </button>
+          </li>
+          {% endfor %}
+        </ul>
+        {% if flow.showDirections %}
+        <address>{{ praxis.address.street }}, {{ praxis.address.city }}</address>
+        <a class="action-link" href="{{ '/Anfahrt/' | url }}">Anfahrt zur Praxis {{ icon('arrow') }}</a>
+        {% endif %}
+        <div class="assistant-actions">
+          <button type="button" class="button button--primary" data-service-action="continue">Weiter {{ icon('arrow') }}</button>
+          <button type="button" class="button button--outline" data-service-action="copy" aria-describedby="kopierhinweis-{{ flow.id | escape }}">Vorbereitung kopieren</button>
+        </div>
+        <p class="copy-hint" id="kopierhinweis-{{ flow.id | escape }}">Kopiert die allgemeine Checkliste in Ihre Zwischenablage.</p>
+        <p class="copy-feedback" role="status" data-copy-feedback></p>
+        <pre class="copy-text" data-copy-text tabindex="0" aria-label="Vorbereitung zum manuellen Kopieren" hidden></pre>
+      </div>
+      <div data-next hidden>
+        <p class="assistant-topic">{{ flow.label | escape }}</p>
+        <h3 tabindex="-1"><span class="sr-only">{{ flow.label | escape }} · </span>Nächster Schritt</h3>
+        {% if flow.actionType == 'externalForm' %}
+        {% if service.formAvailable %}<p>Ihre Angaben machen Sie auf der aktuellen Praxiswebsite.</p>{% endif %}
+        {% include 'formular-link.njk' %}
+        {% else %}
+        {% if flow.showDirections %}
+        <address>{{ praxis.address.street }}, {{ praxis.address.city }}</address>
+        <a class="action-link" href="{{ '/Anfahrt/' | url }}">Anfahrt zur Praxis {{ icon('arrow') }}</a>
+        {% endif %}
+        <a class="button button--primary" href="{{ praxis.phone.href }}">{{ icon('phone') }} {{ flow.actionLabel | escape }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+    <div class="assistant-nav" data-service-controls hidden>
+      <button type="button" class="quiet-button" data-service-action="back">Zurück</button>
+      <button type="button" class="quiet-button" data-service-action="restart">Neu beginnen</button>
+    </div>
+  </div>
+
+  <details class="direct-service" data-direct-service open>
+    <summary>Direkte Links zum Patientenservice {{ icon('chevron') }}</summary>
+    <ul class="direct-links">
+      {% for key, service in praxis.services %}
+      <li>
+        <h3><a href="{{ service.path | url }}">{{ service.title }}</a></h3>
+        <p>{{ service.description }} {{ praxis.serviceProcessing }}</p>
+        {% include 'formular-link.njk' %}
+      </li>
+      {% endfor %}
+      <li>
+        <h3>Termin und Erstbesuch</h3>
+        <a class="action-link" href="{{ praxis.phone.href }}">Praxis anrufen · {{ praxis.phone.display }} {{ icon('phone') }}</a>
+        <a class="action-link" href="{{ '/Anfahrt/' | url }}">Anfahrt zur Praxis {{ icon('arrow') }}</a>
+      </li>
+    </ul>
+  </details>
+</section>

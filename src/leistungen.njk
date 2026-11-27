@@ -3,13 +3,7 @@ layout: article.njk
 title: Leistungen
 section: leistungen
 permalink: /Leistungen/
+wide: true
 ---
 <p class="lead">Die Praxis betreut Sie bei akuten Beschwerden, bei chronischen Erkrankungen und bei der Vorsorge.</p>
-<ul class="overview-list">
-  {% for area in leistungen %}
-  <li>
-    <h2><a href="{{ area.path | url }}">{{ area.title }}</a></h2>
-    <p>{{ area.summary }}</p>
-  </li>
-  {% endfor %}
-</ul>
+{% include 'kompass.njk' %}

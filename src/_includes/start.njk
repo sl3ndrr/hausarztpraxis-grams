@@ -2,75 +2,60 @@
 layout: base.njk
 section: start
 ---
-<div class="shell">
-  <section class="praxis-intro" aria-labelledby="praxisname">
-    <h1 id="praxisname">{{ praxis.name }}</h1>
-    <div class="praxis-contact">
-      <p>{{ praxis.address.district }}</p>
-      <a class="praxis-phone" href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>
-      <div class="praxis-quick-links">
-        <a href="#sprechzeiten">Sprechzeiten</a>
-        <a href="#patientenservice">Patientenservice</a>
+{% from 'icons.njk' import icon, daffodil %}
+<div class="shell home">
+  <div class="hero">
+    <section class="praxis-intro" aria-labelledby="praxisname">
+      {{ daffodil() }}
+      <p class="location">{{ icon('pin') }} {{ praxis.address.district }}</p>
+      <h1 id="praxisname">{{ praxis.name }}</h1>
+      <p class="hero-description">{{ praxis.description }}</p>
+      <div class="hero-actions">
+        <a class="button button--primary" href="{{ praxis.phone.href }}">
+          {{ icon('phone') }} <span>Anrufen <span class="phone-number">{{ praxis.phone.display }}</span></span>
+        </a>
+        <a class="action-link" href="#patientenservice">Patientenservice {{ icon('arrow') }}</a>
       </div>
-    </div>
-  </section>
+    </section>
+    {% include 'sprechzeiten.njk' %}
+  </div>
 
-  <section class="hours-board" id="sprechzeiten" aria-labelledby="zeiten-titel">
-    <div class="hours-intro">
-      <h2 id="zeiten-titel">Reguläre<br class="wide-only"> Sprechzeiten</h2>
-      <p>Bitte vereinbaren Sie vorab telefonisch einen Termin. Termine außerhalb der Sprechzeiten sind nach Absprache möglich.</p>
-    </div>
-    <div class="hours-body" data-time-zone="{{ praxis.timeZone }}">
-      <table class="hours-table" aria-label="Wochenplan der regulären Sprechzeiten">
-        <thead>
-          <tr>
-            <th scope="col">Wochentag</th>
-            <th scope="col">Vormittag</th>
-            <th scope="col">Nachmittag</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for slot in praxis.hours %}
-          <tr data-weekday="{{ slot.day }}">
-            <th scope="row">
-              {{ slot.name }}
-              <span class="today-label" hidden>Heute</span>
-            </th>
-            <td>{% if slot.morning %}{{ slot.morning | join('–') }}{% else %}<span class="closed">geschlossen</span>{% endif %}</td>
-            <td>{% if slot.afternoon %}{{ slot.afternoon | join('–') }}{% else %}<span class="closed">geschlossen</span>{% endif %}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      <p class="hours-note"><strong>Mittagspause</strong> {{ praxis.middayDays | join(', ') }} von {{ praxis.midday.start }} bis {{ praxis.midday.end }} Uhr.</p>
-    </div>
-  </section>
+  {% include 'service-assistent.njk' %}
 
-  <section class="home-section" id="patientenservice" aria-labelledby="service-titel">
-    <h2 id="service-titel">Patientenservice</h2>
-    <p>{{ praxis.serviceProcessing }}</p>
-    <ul class="link-list">
-      {% for key, service in praxis.services %}
-      <li>
-        <div>
-          <h3><a href="{{ service.path | url }}">{{ service.title }}</a></h3>
-          <p>{{ service.description }}</p>
-        </div>
-        {% include 'formular-link.njk' %}
+  <section class="home-section" aria-labelledby="leistungen-titel">
+    <div class="section-heading">
+      <h2 id="leistungen-titel">Leistungen</h2>
+      <a class="action-link" href="{{ '/Leistungen/' | url }}">Alle Leistungen {{ icon('arrow') }}</a>
+    </div>
+    <ul class="area-grid">
+      {% for area in leistungen %}
+      <li class="area-card">
+        <a href="{{ area.path | url }}">
+          <span class="icon-chip">{{ icon(area.icon) }}</span>
+          <div>
+            <h3>{{ area.title }}</h3>
+            <p>{{ area.summary }}</p>
+          </div>
+          {{ icon('arrow') }}
+        </a>
       </li>
       {% endfor %}
     </ul>
   </section>
 
-  <section class="home-section practice-summary" aria-labelledby="praxis-titel">
-    <div>
-      <h2 id="praxis-titel">Ihre Hausarztpraxis<br> am Narzissenweg</h2>
+  <div class="home-section practice-grid">
+    <section class="practice-card" aria-labelledby="team-titel">
+      <span class="icon-chip">{{ icon('person') }}</span>
+      <h2 id="team-titel">Arzt und Team</h2>
+      <p><strong>{{ praxis.doctor }}</strong> · {{ praxis.description }}</p>
       <p>{{ praxis.teachingPractice }}.</p>
-    </div>
-    <ul>
-      <li><a href="{{ '/Leistungen/' | url }}">Leistungen im Überblick</a></li>
-      <li><a href="{{ '/Arzt/' | url }}">Arzt und Team kennenlernen</a></li>
-      <li><a href="{{ '/Anfahrt/' | url }}">Anfahrt zur Praxis</a></li>
-    </ul>
-  </section>
+      <a class="action-link" href="{{ '/Arzt/' | url }}">Praxisteam kennenlernen {{ icon('arrow') }}</a>
+    </section>
+    <section class="practice-card" aria-labelledby="anfahrt-titel">
+      <span class="icon-chip">{{ icon('bus') }}</span>
+      <h2 id="anfahrt-titel">Anfahrt</h2>
+      <address>{{ praxis.address.street }}<br>{{ praxis.address.city }}</address>
+      <a class="action-link" href="{{ '/Anfahrt/' | url }}">Anfahrt und Zugang {{ icon('arrow') }}</a>
+    </section>
+  </div>
 </div>

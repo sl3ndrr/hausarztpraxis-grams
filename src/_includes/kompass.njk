@@ -1,0 +1,77 @@
+{% from 'icons.njk' import icon %}
+{% set intents = {
+  all: 'Alle', behandlung: 'Behandlung', 'check-up': 'Check-up', atteste: 'Atteste',
+  impfungen: 'Impfungen', krebsfrueherkennung: 'Krebsfrüherkennung', beratung: 'Herz und Ernährung', sportmedizin: 'Sportmedizin'
+} %}
+{% set ages = [
+  { id: 'all', label: 'Alle' }, { id: 'unter-18', label: 'Unter 18', min: 0, max: 17 },
+  { id: '18-34', label: '18–34', min: 18, max: 34 }, { id: '35-44', label: '35–44', min: 35, max: 44 },
+  { id: '45-49', label: '45–49', min: 45, max: 49 }, { id: '50-64', label: '50–64', min: 50, max: 64 },
+  { id: 'ab-65', label: 'Ab 65', min: 65 }
+] %}
+<section class="compass" aria-labelledby="kompass-titel" data-kompass>
+  <h2 id="kompass-titel">Leistungen nach Anliegen</h2>
+  <div class="compass-controls" data-kompass-controls hidden>
+    <fieldset>
+      <legend>Anliegen</legend>
+      <div class="filter-list">
+        {% for id, label in intents %}
+        <button class="filter-button" type="button" data-intent="{{ id | escape }}" aria-pressed="{{ 'true' if id == 'all' else 'false' }}">{{ label | escape }}</button>
+        {% endfor %}
+      </div>
+    </fieldset>
+    <fieldset data-age-group hidden>
+      <legend>Altersbezogene Untersuchungen</legend>
+      <div class="filter-list">
+        {% for age in ages %}
+        <button class="filter-button" type="button" data-age="{{ age.id | escape }}"{% if age.id != 'all' %} data-min-age="{{ age.min }}"{% if age.max is defined %} data-max-age="{{ age.max }}"{% endif %}{% endif %} aria-pressed="{{ 'true' if age.id == 'all' else 'false' }}">{{ age.label | escape }}</button>
+        {% endfor %}
+      </div>
+      <p class="filter-hint">Die Altersgruppen helfen Ihnen, die veröffentlichten Untersuchungen zu finden. Welche Untersuchung für Sie infrage kommt, klärt die Praxis mit Ihnen.</p>
+    </fieldset>
+    <button type="button" class="quiet-button reset-filter" data-reset-filters>Auswahl zurücksetzen</button>
+  </div>
+
+  <ul class="area-grid">
+    {% for area in leistungen %}
+    <li class="area-card">
+      <a href="{{ area.path | url }}">
+        <span class="icon-chip">{{ icon(area.icon) }}</span>
+        <div>
+          <h3>{{ area.title | escape }}</h3>
+          <p>{{ area.summary | escape }}</p>
+        </div>
+        {{ icon('arrow') }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="compass-results">
+    <h3>Abschnitte und Untersuchungen</h3>
+    <p class="result-count" role="status" data-result-count></p>
+    <div class="empty-results" data-empty-results hidden>
+      <p>Für diese Auswahl enthält die Übersicht keinen Eintrag.</p>
+      <button type="button" class="button button--outline" data-reset-filters>Alle Leistungen zeigen</button>
+    </div>
+    <ul class="topic-list" data-topic-list>
+      {% for area in leistungen %}
+      {% for topic in area.topics %}
+      <li data-topic="{{ topic.id | escape }}" data-topic-intent="{{ topic.intent | escape }}">
+        <a class="action-link topic-link" href="{{ (area.path + '#' + topic.anchor) | url }}">{{ topic.label | escape }} {{ icon('arrow') }}</a>
+        {% if topic.checks %}
+        <dl class="age-list">
+          {% for check in topic.checks %}
+          <div data-check="{{ loop.index0 }}" data-min-age="{{ check.minAge }}"{% if check.maxAge is defined %} data-max-age="{{ check.maxAge }}"{% endif %}>
+            <dt>{{ check.label | escape }}</dt>
+            <dd>{{ check.text | escape }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+        {% endif %}
+      </li>
+      {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
