@@ -11,12 +11,10 @@ layout: base.njk
     <p class="lead">{{ service.description }}</p>
     <p>{{ praxis.serviceProcessing }}</p>
     <div class="service-action">
-    {% if service.formAvailable %}
       {% include 'formular-link.njk' %}
+      {% if service.formAvailable %}
       <p>Das Formular öffnet sich auf der aktuellen Praxiswebsite. Dort geben Sie Ihre Daten ein.</p>
-    {% else %}
-      <p>{% include 'formular-link.njk' %}</p>
-    {% endif %}
+      {% endif %}
     </div>
     {% if service.formAvailable %}
     <p>Bei Fragen erreichen Sie die Praxis unter <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a>.</p>

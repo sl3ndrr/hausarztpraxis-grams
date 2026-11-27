@@ -1,12 +1,18 @@
+{% from 'icons.njk' import icon %}
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   {% if not site.indexable %}<meta name="robots" content="noindex">{% endif %}
   <title>{% if title %}{{ title }} | {% endif %}{{ praxis.name }}{% if not title %} in {{ praxis.address.district }}{% endif %}</title>
   <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
-  {% if section == 'start' %}<script type="module" src="{{ '/assets/sprechzeiten.mjs' | url }}"></script>{% endif %}
+  {% if section == 'start' %}
+  <script type="module" src="{{ '/assets/sprechzeiten.mjs' | url }}"></script>
+  <script type="module" src="{{ '/assets/service-assistent.mjs' | url }}"></script>
+  {% elif page.url == '/Leistungen/' %}
+  <script type="module" src="{{ '/assets/kompass.mjs' | url }}"></script>
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -14,17 +20,16 @@
   <div class="preview">
     <div class="shell preview-inner">
       <strong>Designvorschau</strong>
-      <a href="{{ site.currentWebsite }}">Zur aktuellen Praxiswebsite</a>
+      <a href="{{ site.currentWebsite }}">Aktuelle Praxiswebsite {{ icon('external') }}</a>
     </div>
   </div>
   {% endif %}
   <header class="site-header">
     <div class="shell header-inner">
-      {% if section == 'start' %}
-      <span class="header-name">{{ praxis.description }}</span>
-      {% else %}
-      <a class="header-name" href="{{ '/' | url }}">{{ praxis.name }}</a>
-      {% endif %}
+      <a class="header-name" href="{{ '/' | url }}">
+        <span class="site-mark">{{ icon('flower') }}</span>
+        {{ praxis.name }}
+      </a>
       <nav aria-label="Hauptnavigation">
         <ul class="nav-list">
           <li><a href="{{ '/' | url }}"{% if section == 'start' %} aria-current="page"{% endif %}>Startseite</a></li>
@@ -38,9 +43,14 @@
   <main id="inhalt" tabindex="-1">
     {{ content | safe }}
   </main>
+  <nav class="mobile-actions" aria-label="Schnellzugriff">
+    <a href="{{ praxis.phone.href }}">{{ icon('phone') }} Anrufen</a>
+    <a href="{{ '/#sprechzeiten' | url }}">{{ icon('clock') }} Sprechzeiten</a>
+    <a href="{{ '/#patientenservice' | url }}">{{ icon('document') }} Service</a>
+  </nav>
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <div>
+      <div class="footer-contact">
         <strong class="footer-name">{{ praxis.name }}</strong>
         <address>
           {{ praxis.address.street }}<br>

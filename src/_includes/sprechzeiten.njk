@@ -1,0 +1,78 @@
+{% from 'icons.njk' import icon %}
+<section class="hours-board" id="sprechzeiten" aria-labelledby="zeiten-titel" data-schedule data-time-zone="{{ praxis.timeZone | escape }}" data-calendar-years="{{ feiertage.years | join(',') }}">
+  <div class="hours-heading">
+    <span class="icon-chip">{{ icon('clock') }}</span>
+    <div>
+      <h2 id="zeiten-titel">Sprechzeiten heute</h2>
+      <p class="hours-date" data-schedule-date hidden></p>
+    </div>
+  </div>
+  <div class="hours-status" data-schedule-status>
+    <p class="status-title" data-status-title>Reguläre Sprechzeiten</p>
+    <p class="hours-detail" data-status-detail hidden></p>
+    <p class="hours-detail" data-status-countdown hidden></p>
+    <p class="hours-note" data-status-note hidden></p>
+    <p class="hours-today" data-today-hours hidden></p>
+  </div>
+  <p class="sr-only" role="status" data-schedule-announcement></p>
+  <p class="hours-appointment">Bitte vereinbaren Sie vorab telefonisch einen Termin. Termine außerhalb der Sprechzeiten sind nach Absprache möglich.</p>
+
+  <details class="week-plan">
+    <summary>Wochenplan ansehen {{ icon('chevron') }}</summary>
+    <div class="week-content">
+      <table class="hours-table">
+        <caption>Reguläre Sprechzeiten im Wochenplan</caption>
+        <thead>
+          <tr><th scope="col">Wochentag</th><th scope="col">Vormittag</th><th scope="col">Nachmittag</th></tr>
+        </thead>
+        <tbody>
+          {% for slot in praxis.hours %}
+          <tr data-weekday="{{ slot.day | escape }}" data-day-name="{{ slot.name | escape }}">
+            <th scope="row">{{ slot.name | escape }} <span class="today-label" hidden>Heute</span></th>
+            {% for period in ['morning', 'afternoon'] %}
+            {% set interval = slot[period] %}
+            {% if interval %}
+            <td data-period="{{ period }}" data-start="{{ interval[0] | escape }}" data-end="{{ interval[1] | escape }}">
+              <time datetime="{{ interval[0] | escape }}">{{ interval[0] | escape }}</time>–<time datetime="{{ interval[1] | escape }}">{{ interval[1] | escape }}</time>
+            </td>
+            {% else %}
+            <td class="closed">geschlossen</td>
+            {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="hours-note"><strong>Mittagspause</strong> {{ praxis.middayDays | join(', ') }} von {{ praxis.midday.start }} bis {{ praxis.midday.end }} Uhr.</p>
+      {% if praxis.hoursExceptions | length %}
+      <h3>Abweichende Sprechzeiten</h3>
+      <ul class="hours-exceptions">
+        {% for exception in praxis.hoursExceptions %}
+        {% set date = (exception.date | string).split('-') %}
+        {% set hasIntervals = exception.intervals is defined and exception.intervals is not null and exception.intervals is iterable and exception.intervals is not string %}
+        <li data-schedule-exception="{{ exception.date | escape }}"{% if not hasIntervals %} data-unknown-hours{% endif %}>
+          <time datetime="{{ exception.date | escape }}">{% if date | length == 3 %}{{ date[2] | escape }}.{{ date[1] | escape }}.{{ date[0] | escape }}{% else %}{{ exception.date | escape }}{% endif %}</time>
+          {% if not hasIntervals %}
+          Sprechzeiten bitte telefonisch klären.
+          {% elif exception.intervals | length %}
+          {% for interval in exception.intervals %}
+          <span data-start="{{ interval[0] | escape }}" data-end="{{ interval[1] | escape }}">{{ interval[0] | escape }}–{{ interval[1] | escape }} Uhr</span>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+          {% else %}
+          geschlossen.
+          {% endif %}
+          {% if exception.note %}<span data-exception-note>{{ exception.note | escape }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </details>
+  <button class="quiet-button update-button" type="button" data-schedule-toggle hidden>Automatische Aktualisierung pausieren</button>
+  <p class="hours-note" data-schedule-paused hidden></p>
+  <div hidden>
+    {% for date, name in feiertage.dates %}
+    <span data-holiday="{{ date | escape }}" data-holiday-name="{{ name | escape }}"></span>
+    {% endfor %}
+  </div>
+</section>

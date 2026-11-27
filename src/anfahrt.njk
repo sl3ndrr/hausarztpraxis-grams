@@ -3,24 +3,30 @@ layout: article.njk
 title: Anfahrt
 permalink: /Anfahrt/
 ---
+{% from 'icons.njk' import icon %}
 <address class="address-block">
   <strong>{{ praxis.name }}</strong><br>
   {{ praxis.address.street }}<br>
   {{ praxis.address.city }}
 </address>
-<p><a href="{{ praxis.directions }}">Route in Google Maps planen (extern)</a></p>
+<p><a class="button button--outline" href="{{ praxis.directions | escape }}">Route in Google Maps planen (extern) {{ icon('external') }}</a></p>
 
 <h2>Mit dem Bus</h2>
 <dl class="stop-list">
+  {% for stop in praxis.transitStops %}
   <div>
-    <dt>Wiesbaden-Dotzheim Sonnenblumenweg</dt>
-    <dd>Buslinie 23, unter 300&nbsp;m Fußweg zur Praxis.</dd>
+    <dt>{{ icon('bus') }} {{ stop.name | escape }}</dt>
+    <dd>{{ 'Linien' if stop.lines | length > 1 else 'Linie' }} {{ stop.lines | join(' und ') }} · {{ stop.walkText | escape }}</dd>
   </div>
-  <div>
-    <dt>Wiesbaden-Dotzheim Ludwig-Erhard-Straße</dt>
-    <dd>Buslinien 23 und 39, etwa 500&nbsp;m Fußweg zur Praxis.</dd>
-  </div>
+  {% endfor %}
 </dl>
+
+<h2>Zugang zur Praxis</h2>
+{% if praxis.accessibilityNote %}
+<p>{{ praxis.accessibilityNote | escape }}</p>
+{% else %}
+<p>Bei Fragen zum Zugang rufen Sie uns bitte vor Ihrem Besuch unter <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a> an.</p>
+{% endif %}
 
 <h2>Kontakt zur Praxis</h2>
 <p>Telefon <a href="{{ praxis.phone.href }}">{{ praxis.phone.display }}</a><br>

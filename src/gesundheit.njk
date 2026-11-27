@@ -31,7 +31,7 @@ contents:
   </ul>
 </details>
 <details>
-  <summary>Hausbesuche und Betreuung</summary>
+  <summary>Wann ist ein Hausbesuch möglich?</summary>
   <p>Wenn Sie aus gesundheitlichen Gründen nicht in die Praxis kommen können, sind Hausbesuche nach Absprache und je nach Dringlichkeit im Einzelfall möglich.</p>
   <ul>
     <li>Hausbesuche bei Bettlägerigkeit</li>
@@ -44,11 +44,15 @@ contents:
 <details>
   <summary>Allgemeine Untersuchungen als Kassenleistung</summary>
   <dl class="age-list">
-    <div><dt>18 bis 34 Jahre, einmalig</dt><dd>Erhebung der Krankengeschichte, Beratung und körperliche Untersuchung.</dd></div>
-    <div><dt>Ab 35 Jahren, alle drei Jahre</dt><dd>Beratung, körperliche Untersuchung und Kontrolle der Zucker- und Blutfettwerte.</dd></div>
-    <div><dt>Männer ab 45 Jahren</dt><dd>Untersuchung der Geschlechtsorgane einschließlich Prostata und Beratung. Die PSA-Untersuchung ist zusätzlich als Wunschleistung möglich.</dd></div>
-    <div><dt>Ab 50 Jahren</dt><dd>Beratung zur Darmkrebsfrüherkennung und gegebenenfalls Test auf Blut im Stuhl. Bei Bedarf leitet die Praxis Sie zur Darmspiegelung weiter.</dd></div>
-    <div><dt>Männer ab 65 Jahren, einmalig</dt><dd>Ultraschall zur Früherkennung eines Bauchaortenaneurysmas.</dd></div>
+    {% for area in leistungen %}
+    {% if area.id == 'gesundheit' %}
+    {% for topic in area.topics %}
+    {% for check in topic.checks %}
+    <div><dt>{{ check.label | escape }}</dt><dd>{{ check.text | escape }}</dd></div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
   </dl>
 </details>
 <details>
